@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  10 JUL 2022 02:05
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  11 JUL 2022 14:46
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1292,6 +1292,21 @@ chapter 2.
 
 ]
 chapter 3.
+! You can't use `macro parameter character #' in horizontal mode.
+<recently read> ##
+                  
+l.10 \\#
+        TODO simulation based security definition
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2--12
+
+ []
+
 ) (related_work.tex [5] [6
 
 
@@ -1308,8 +1323,8 @@ Package rerunfilecheck Info: File `thesis_name.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  28984 strings out of 479334
- 576049 string characters out of 2856609
- 1061154 words of memory out of 3000000
+ 575589 string characters out of 2856609
+ 1061155 words of memory out of 3000000
  45849 multiletter control sequences out of 15000+200000
  506176 words of font info for 87 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1339,7 +1354,7 @@ lic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX
 /fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis_name.pdf (15 pages, 332829 bytes).
+Output written on thesis_name.pdf (15 pages, 334116 bytes).
 PDF statistics:
  252 PDF objects out of 1000 (max. 8388607)
  42 named destinations out of 1000 (max. 500000)
