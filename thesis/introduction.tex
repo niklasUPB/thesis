@@ -1,0 +1,17 @@
+\chapter {Introduction}
+A famous problem in the context of MPC is Yao's millionaire's problem. In Yao's millionaire's problem there are two millionaires Alice and Bob. We will call Alice's wealth x and Bob's wealth y. Alice and Bob want to know who of them is has more money. i.e. they want to compute the function F(x,y) := $ 
+\begin{dcases} 
+	Alice \,  is \, richer   &  y \leq  x \\
+	Bob \, is \, richer   &  y > x  \\
+\end{dcases}  $. Yet neither of them is willing to trust the other and tell him how much money he has. 
+Yao's millionaire's problem can be generalised into the general MPC problem.    Instead of Bob and Alice, we now consider n parties $ p_0,\dots,p_{n-1} $ and each party i holds an arbitrary input  $ x_i $ for an arbitrary function F($ x_0,\dots,x_{n-1}$).  that all parties have agreed upon.  
+A MPC protocol $ \pi $  is protocol, that allows  $ p_0,\dots,p_{n-1} $ to compute F($ x_0,\dots,x_{n-1} )$ without revelling any information about $ x_0,\dots,x_{n-1}. $
+
+
+
+
+
+
+
+
+

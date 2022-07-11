@@ -1,0 +1,106 @@
+% Bibliography File
+% Insert your References here!
+
+@article{testref,
+    author = {Eti, Y.},
+    title = {{On the Importance of Correct Stirring}},
+    journal = {{International Journal of Cookie Theory}},
+    year = {2014},
+    volume = {13},
+    number = {1},
+    pages = {1--247}
+}
+
+
+@misc{cryptoeprint:2021:576,
+	author       = {Surya Addanki and
+	Kevin Garbe and
+	Eli Jaffe and
+	Rafail Ostrovsky and
+	Antigoni Polychroniadou},
+	title        = {Prio+: Privacy Preserving Aggregate Statistics via Boolean Shares},
+	howpublished = {Cryptology ePrint Archive, Report 2021/576},
+	year         = {2021},
+	note         = {\url{https://ia.cr/2021/576}},
+}
+
+@inproceedings{10.1145/3302424.3303982,
+	author = {Volgushev, Nikolaj and Schwarzkopf, Malte and Getchell, Ben and Varia, Mayank and Lapets, Andrei and Bestavros, Azer},
+	title = {Conclave: Secure Multi-Party Computation on Big Data},
+	year = {2019},
+	isbn = {9781450362818},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3302424.3303982},
+	doi = {10.1145/3302424.3303982},
+	abstract = {Secure Multi-Party Computation (MPC) allows mutually distrusting parties to run joint computations without revealing private data. Current MPC algorithms scale poorly with data size, which makes MPC on "big data" prohibitively slow and inhibits its practical use.Many relational analytics queries can maintain MPC's end-to-end security guarantee without using cryptographic MPC techniques for all operations. Conclave is a query compiler that accelerates such queries by transforming them into a combination of data-parallel, local cleartext processing and small MPC steps. When parties trust others with specific subsets of the data, Conclave applies new hybrid MPC-cleartext protocols to run additional steps outside of MPC and improve scalability further.Our Conclave prototype generates code for cleartext processing in Python and Spark, and for secure MPC using the Sharemind and Obliv-C frameworks. Conclave scales to data sets between three and six orders of magnitude larger than state-of-the-art MPC frameworks support on their own. Thanks to its hybrid protocols and additional optimizations, Conclave also substantially outperforms SMCQL, the most similar existing system.},
+	booktitle = {Proceedings of the Fourteenth EuroSys Conference 2019},
+	articleno = {3},
+	numpages = {18},
+	location = {Dresden, Germany},
+	series = {EuroSys '19}
+}
+
+@article{Archer2018FromKT,
+	title={From Keys to Databases - Real-World Applications of Secure Multi-Party Computation},
+	author={David W. Archer and Dan Bogdanov and Yehuda Lindell and Liina Kamm and Kurt Nielsen and Jakob Illeborg Pagter and Nigel P. Smart and Rebecca N. Wright},
+	journal={Comput. J.},
+	year={2018},
+	volume={61},
+	pages={1749-1771}
+}
+@inbook{10.1145/3372297.3423358,
+	author = {Mohassel, Payman and Rindal, Peter and Rosulek, Mike},
+	title = {Fast Database Joins and PSI for Secret Shared Data},
+	year = {2020},
+	isbn = {9781450370899},
+	publisher = {Association for Computing Machinery},
+	address = {New York, NY, USA},
+	url = {https://doi.org/10.1145/3372297.3423358},
+	abstract = {We present a scalable protocol for database joins on secret shared data in the honest-majority three-party setting. The key features of our protocol are a rich set of SQL-like join/select queries and the ability to compose join operations together due to the inputs and outputs being generically secret shared between the parties. Provided that all joins operate on unique primary keys, no information is revealed to any party during the protocol. In particular, not even the sizes of intermediate joins are revealed. All of our protocols are constant-round and achieve O(n) communication and computation overhead for joining two tables of n rows.These properties make our protocol ideal for outsourced secure computation. In this setting several non-colluding servers are setup and the input data is shared among them. These servers then perform the relevant secret shared computation and output the result. This model has recently been gaining traction in industry, e.g. Facebook's Crypten, Cape Privacy's TFEncrypted, Mozilla Telemetry.We additionally implement two applications on top of our framework. The first application detects voter registration errors within and between agencies of 50 US states, in a privacy-preserving manner. The second application allows several organizations to compare network security logs to more accurately identify common security threats, e.g. the IP addresses of a bot net. In both cases, the practicality of these applications depends on efficiently performing joins on millions of secret shared records. For example, our three party protocol can perform a join on two sets of 1 million records in 4.9 seconds or, alternatively, compute the cardinality of this join in just 3.1 seconds.},
+	booktitle = {Proceedings of the 2020 ACM SIGSAC Conference on Computer and Communications Security},
+	pages = {1271–1287},
+	numpages = {17}
+}
+
+@misc{aby3,
+	author = {Peter Rindal},
+	title = {{The ABY3 Framework for Machine Learning and Database Operations.}},
+	howpublished = {\url{https://github.com/ladnir/aby3}},
+}
+@misc{aly2021scale,
+  title={Scale--mamba v1. 12: Documentation},
+  author={Aly, Abdelrahaman and Cong, K and Cozzo, D and Keller, M and Orsini, E and Rotaru, D and Scherer, O and Scholl, P and Smart, N and Tanguy, T and others},
+  year={2021},
+  publisher={Accessed: May}
+}
+
+@inproceedings {201553,
+author = {Henry Corrigan-Gibbs and Dan Boneh},
+title = {Prio: Private, Robust, and Scalable Computation of Aggregate Statistics},
+booktitle = {14th USENIX Symposium on Networked Systems Design and Implementation (NSDI 17)},
+year = {2017},
+isbn = {978-1-931971-37-9},
+address = {Boston, MA},
+pages = {259--282},
+url = {https://www.usenix.org/conference/nsdi17/technical-sessions/presentation/corrigan-gibbs},
+publisher = {USENIX Association},
+month = mar,
+}
+
+@article{rogers2022vaultdb,
+  title={VaultDB: A Real-World Pilot of Secure Multi-Party Computation within a Clinical Research Network},
+  author={Rogers, Jennie and Adetoro, Elizabeth and Bater, Johes and Canter, Talia and Fu, Dong and Hamilton, Andrew and Hassan, Amro and Martinez, Ashley and Michalski, Erick and Mitrovic, Vesna and others},
+  journal={arXiv preprint arXiv:2203.00146},
+  year={2022}
+}
+
+@misc{Cosmian,
+  author = {Cosmian },
+  title = {CipherCompute},
+  year = {2021},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/Cosmian/CipherCompute}},
+  commit = {2fe8e06388d65ff459dfc80fffa160ada12cbfad}
+}

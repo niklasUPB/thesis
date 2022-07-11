@@ -1,0 +1,40 @@
+\chapter{Basic definitions and notation}
+\todo[inline]{This file contains example content. It is meant to get you started.}
+\todo[inline]{You can remove this example content from the thesis by removing the input statement for example.tex from the thesis\_main.tex file.}
+
+\section{Basic notation}
+\label{sec:basicnotation}
+Throughout this thesis, we will use the following notation:
+\begin{itemize}
+	\item $\N := \{1,2,\dots\}$ denotes the set of natural numbers (excluding zero). %see config/defs.tex file for the definition of the $\N$ macro.
+	\item For a bit string $s = (s_0,\dots,s_{n-1}) \in \{0,1\}^n$ and $0\leq i \leq j < n$, we write $s[i:j] := (s_i, \dots, s_{j-1})$ to denote substrings.
+	In particular, $s[i:i]$ is the empty string $\epsilon$ and $s[0:n]$ is the complete string $s$. 
+	\item For two vectors $\vec{u},\vec{v}\in \{0,1\}^n$, with $\vec{u}=(u_1,\dots,u_n), \vec{v} = (v_1,\dots,v_n)$, the expression $\vec{u}\odot\vec{v}$ denotes the Hadamard product. $(\vec{u}\odot\vec{v})_i = u_i\cdot v_i$.
+\end{itemize}
+
+\section{Gobbling schemes}
+\todo[inline]{Don't try to make sense of this. It's just a syntax example with no real connection to anything.}
+Gobbling schemes \todo{This is an example for a todonote. They're super useful!} are useful whenever the the Hadamard product of two random bit vectors needs to be hidden from polynomially bounded adversaries. 
+They are an important building block for twaddle signatures, which we investigate in this thesis.
+\subsection{Syntax definition}
+Our definition for gobbling schemes is taken from \cite{testref} \todo[fancyline]{note the citation} with minor syntactic changes. 
+See Section~\ref{sec:basicnotation} \todo[fancyline]{note the reference} for basic notation.
+
+\begin{definition}[Gobbling scheme]
+	A \emph{gobbling scheme} $\Pi$ consists of the following three probabilistic polynomial-time algorithms:
+	\begin{itemize}
+		\item $\pk \leftarrow \setup(1^\lambda)$ \todo{note that $\pk$ and $\setup$ are macros defined in defs.tex.} 
+			on input a unary security parameter $\lambda$, $\setup$ generates a public key $\pk$.
+		\item $\vec{q} \leftarrow \gobble(\pk, \vec{u}, \vec{v})$ generates a \emph{gobbled} vector $\vec{q}\in\{0,1\}^n$ given a key $\pk$ and two vectors $\vec{u},\vec{v}\in\{0,1\}^n$.
+		\item $\vec{z} \leftarrow \ungobble(\pk, \vec{q})$ given a gobbled vector $\vec{q}\in\{0,1\}^n$ outputs an ungobbled vector $\vec{z}\in\{0,1\}^{2n}$.
+	\end{itemize}
+	$\Pi$ is \emph{correct} if there exists a negligible function $\mu$ such that for all $\lambda,n\in\N$,
+	\begin{align*}
+		1-\mu(\lambda) \leq \Pr[\vec{z} = \vec{u}\odot\vec{v} \mid & k\leftarrow \setup(1^\lambda); \vec{u},\vec{v}\leftarrow \{0,1\}^n; \\
+		& \vec{z} \leftarrow \ungobble(k, \gobble(k, \vec{u},\vec{v}))]
+	\end{align*}
+\end{definition}
+\noindent Intuitively, correctness guarantees \dots
+
+\subsection{Security definition}
+\dots

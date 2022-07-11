@@ -1,0 +1,45 @@
+\documentclass{cukthesis} % add [german] if required
+
+\input{config/config.tex}
+\input{config/includes.tex}
+\input{config/defs.tex}
+\usepackage{amsmath}
+\begin{document}
+
+\bibliographystyle{alpha}
+
+\pagenumbering{roman}
+
+\input{pretext/titlepage.tex}
+
+\input{pretext/declaration.tex}
+
+\tableofcontents
+
+% If you have figures, uncomment this
+%\listoffigures
+
+% If you have algorithms, uncomment this
+%\listofalgorithms
+
+\cleardoublepage
+\pagenumbering{arabic}
+
+% Input your files here!
+\input{example.tex}
+\input{abstract.tex}
+\input{introduction.tex}
+\input{related_work}
+\input{conclave}
+\input{aby3}
+\input{smcql}
+
+
+
+
+%%
+\bibliography{references}
+
+\appendix
+
+\end{document}
