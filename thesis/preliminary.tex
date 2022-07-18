@@ -21,14 +21,8 @@ Once a party is corrupted the adversary get full information about every message
 We can now formalise the question if a protocol $ \pi $ archives our security goal of "not revelling $ x_0,\dots,x_{n-1}. $", this is done by describing an ideal world where there exits a perfect solution for the MPC problem and them comparing the execution of $ \pi $ to this ideal world. In an ideal world there exists an incorruptible third party P that all parties trust. In the real world there is no such incorruptible third party. Instead the parties execute the protocol $ \pi $ be exchanging messages.
 In the ideal world evaluating F($ x_0,\dots,x_{n-1}. $) can be done in two steps. In a first round of communication party $ p_i $ send $x_i $ to P.
 This gives P all the information required for computing F($ x_0,\dots,x_{n-1} $). In a second round of communication P send each party F($ x_0,\dots,x_{n-1} $).
-If F($ x_0,\dots,x_{n-1}) $ is computed this way the ability of the adversary to gain new knowledge about $ x_0,\dots,x_{n-1} $ is minimized. We say that  $ \pi $ is secure against adversary A if A cannot learn more information by attacking $ \pi $ in the real world then by attack the ideal world. This can be shown using simulation based proof. 
-
-The View of a party consist of     
+If F($ x_0,\dots,x_{n-1}) $ is computed this way the ability of the adversary to gain new knowledge about $ x_0,\dots,x_{n-1} $ is minimized. We say that  $ \pi $ is secure against adversary A if A cannot learn more information by attacking $ \pi $ in the real world then by attack the ideal world. This can be shown using simulation based proof 
+The View of a party consist of its input, the state of its memory which includes its internal randomness i and all messages it received. 
+We say $ \pi $ is secure against A,  if their exists an probabilistic polynomial-time simulator S that given the ideal world views of all parties A corrupts can compute the corresponding views in the real world. We require that the output of S has an identical distribution of values as the views that A would see when A attacks $ \pi $ in the real world. Given such S exists, A could instead of attacking the real world, simply attack the ideal world and then run S to get views that are identical distributed as the views A would have obtained by attacking the real world. So their is no advantage for A in attacking the real world compared to attacking the ideal world. Furthermore $ \pi $ is secure ,if $ \pi $ is secure against all A.       
       
 
-
-   
-
-
--simulation based proofs \\
--   
