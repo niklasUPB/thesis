@@ -1,17 +1,17 @@
 \chapter {Introduction}
+\section{MPC and Databases}
 A famous problem in the context of MPC is Yao's millionaire's problem. In Yao's millionaire's problem there are two millionaires Alice and Bob. We will call Alice's wealth x and Bob's wealth y. Alice and Bob want to know who of them is has more money. i.e. they want to compute the function F(x,y) := $ 
 \begin{dcases} 
 	Alice \,  is \, richer   &  y \leq  x \\
 	Bob \, is \, richer   &  y > x  \\
 \end{dcases}  $. Yet neither of them is willing to trust the other and tell him how much money he has. 
-Yao's millionaire's problem can be generalised into the general MPC problem.    Instead of Bob and Alice, we now consider n parties $ p_0,\dots,p_{n-1} $ and each party i holds an arbitrary input  $ x_i $ for an arbitrary function F($ x_0,\dots,x_{n-1}$),  that all parties have agreed upon.  
+Yao's millionaire's problem can be generalised into the general MPC problem.  Instead of Bob and Alice, we now consider n parties $ p_0,\dots,p_{n-1} $ and each party i holds an arbitrary input  $ x_i $ for an arbitrary function F($ x_0,\dots,x_{n-1}$),  that all parties have agreed upon.  
 A MPC protocol $ \pi $  is protocol, that allows  $ p_0,\dots,p_{n-1} $ to compute F($ x_0,\dots,x_{n-1} )$ without revelling any information about $ x_0,\dots,x_{n-1}. $
-Before we can formalize our security goal of "not revelling $ x_0,\dots,x_{n-1}. $", it is necessary to talk about our adversary and its capability's.  An adversary has the ability to corrupt one or more party's. Once a party is corrupted the adversary get full information about every message the party send our receives, this also includes the messages from the time before the party had been corrupted. There are multiple categorizations of adversary's  and their capability's. On such categorization is the distinction between passive and active adversary's. A passive adversary can not force a corrupted party to deviate from the protocol in an any way. A active adversary has the power to force a corrupted party to deviate from the protocol in an arbitrary way. So if for example the protocol would at some point require that each party choses an integer between 1 and n uniformly at random.  Then a passive adversary would have no choice but to choose the integer between 1 and n uniformly at random. On the contrary an active adversary would be able to force a corrupted party to chose the value 42 or any other value that the adversary considers to be advantageous for him.       
-\\#TODO simulation based security definition
-\\
+       
 
              
 Andrew Yao proposed a solution for Yao's millionaire's problem in 1982 [].  It has also been shown that MPC is Turing-complete[]. This means that for any function f that can be computed with a Turing machine. There exists a MPC protocol $ \pi $ that can compute f.    
+-Databases ...
 
 
 

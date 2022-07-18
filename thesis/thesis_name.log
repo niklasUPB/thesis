@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  11 JUL 2022 14:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  18 JUL 2022 06:25
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1252,111 +1252,115 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 ]
-(thesis_name.toc)
+(thesis_name.toc
+Overfull \hbox (5.57303pt too wide) in paragraph at lines 6--6
+ [][] [][]\T1/lmr/m/n/10.95 From Keys to DatabasesReal-World Ap-pli-ca-tions o
+f Se-cure Multi- 
+ []
+
+)
 \tf@toc=\write5
 \openout5 = `thesis_name.toc'.
 
  [5] [6
 
 
-] (example.tex
+] (abstract.tex
 chapter 1.
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 2.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 9
-.
-(C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-26.
-(C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmss.fd
-File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-
-LaTeX Warning: Marginpar on page 1 moved.
-
-[1
+) (introduction.tex [1
 
 
-]) (abstract.tex [2]
+] [2
+
+
+]
 chapter 2.
-) (introduction.tex [3
-
-
-] [4
+) (related_work.tex) (goals.tex) (struktur.tex) (preliminary.tex [3] [4
 
 
 ]
 chapter 3.
-! You can't use `macro parameter character #' in horizontal mode.
-<recently read> ##
-                  
-l.10 \\#
-        TODO simulation based security definition
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 2--12
+Underfull \hbox (badness 10000) in paragraph at lines 3--8
 
  []
 
-) (related_work.tex [5] [6
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--16
+
+ []
+
+[5]) (framework_description.tex [6]
+chapter 4.
+) (conclave.tex
+Underfull \hbox (badness 10000) in paragraph at lines 2--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+
+ []
+
+) (aby3.tex) (smcql.tex) (implementation.tex
+Underfull \vbox (badness 2753) has occurred while \output is active []
+
+ [7
 
 
 ]
-chapter 4.
-) (conclave.tex) (aby3.tex) (smcql.tex) (thesis_name.bbl [7] [8
+[8]
+chapter 5.
+) (evaluation.tex [9
+
+
+] [10
+
+
+]
+chapter 6.
+) (thesis_name.bbl [11] [12
 
 
 ]
 chapter without number
-) [9] (thesis_name.aux)
+) [13] (thesis_name.aux)
 Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28984 strings out of 479334
- 575589 string characters out of 2856609
- 1061155 words of memory out of 3000000
- 45849 multiletter control sequences out of 15000+200000
- 506176 words of font info for 87 fonts, out of 3000000 for 9000
+ 28764 strings out of 479334
+ 570580 string characters out of 2856609
+ 1045154 words of memory out of 3000000
+ 45624 multiletter control sequences out of 15000+200000
+ 481996 words of font info for 79 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,19n,130p,10609b,1131s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.e
-nc}{C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}
-{C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:
-/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
-:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{
-C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}<C:
-/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymr10.
-pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10
-.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
-2.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcs
-c10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-csco10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmex10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmmi10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmmi8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmr10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmr12.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmr8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmri10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmss10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/lm/lmssbx10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/amsfonts/symbols/msam10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX
-/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on thesis_name.pdf (15 pages, 334116 bytes).
+ 125i,19n,130p,10609b,525s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
+C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
+Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:
+/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C
+:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}<
+C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymr1
+0.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx
+12.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmc
+sc10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mcsco10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmex10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmmi10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmmi8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmr10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmr12.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmr8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmri10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmss10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmssbx10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/symbols/msam10.pfb>
+Output written on thesis_name.pdf (19 pages, 306769 bytes).
 PDF statistics:
- 252 PDF objects out of 1000 (max. 8388607)
- 42 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 276 PDF objects out of 1000 (max. 8388607)
+ 44 named destinations out of 1000 (max. 500000)
+ 167 words of extra memory for PDF output out of 10000 (max. 10000000)
 

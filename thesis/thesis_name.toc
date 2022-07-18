@@ -1,14 +1,20 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}Basic definitions and notation}{1}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Basic notation}{1}{section.1.1}%
-\contentsline {section}{\numberline {1.2}Gobbling schemes}{1}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Syntax definition}{1}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Security definition}{2}{subsection.1.2.2}%
-\contentsline {chapter}{\numberline {2}Abstract}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Introduction}{5}{chapter.3}%
-\contentsline {chapter}{\numberline {4}related work}{7}{chapter.4}%
+\contentsline {chapter}{\numberline {1}Abstract}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Introduction}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}MPC and Databases}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}related work}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}From Keys to Databases—Real-World Applications of Secure Multi-Party Computation}{3}{subsection.2.2.1}%
+\contentsline {section}{\numberline {2.3}goals}{3}{section.2.3}%
+\contentsline {section}{\numberline {2.4}structure}{3}{section.2.4}%
+\contentsline {chapter}{\numberline {3}preliminary}{5}{chapter.3}%
+\contentsline {section}{\numberline {3.1}MPC definition}{5}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}the adversary and its capability's.}{5}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}real world vs ideal world}{5}{subsection.3.1.2}%
+\contentsline {chapter}{\numberline {4}framework description}{7}{chapter.4}%
 \contentsline {section}{\numberline {4.1}conclave}{7}{section.4.1}%
 \contentsline {section}{\numberline {4.2}aby3}{7}{section.4.2}%
-\contentsline {section}{\numberline {4.3}smcql}{7}{section.4.3}%
-\contentsline {chapter}{\nonumberline Bibliography}{9}{chapter*.12}%
+\contentsline {section}{\numberline {4.3}smcql}{8}{section.4.3}%
+\contentsline {chapter}{\numberline {5}implementation}{9}{chapter.5}%
+\contentsline {chapter}{\numberline {6}evaluation}{11}{chapter.6}%
+\contentsline {chapter}{\nonumberline Bibliography}{13}{chapter*.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

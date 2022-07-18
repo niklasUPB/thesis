@@ -1,2 +1,21 @@
 \section{conclave}
-2019, end-to-end security by mix max, "SMCQL most similar existing system"
+- published in 2019,\\
+- combining MPC operations and cleartext processing\\ 
+- moving operations outside of MPC to maximise performance\\
+- allows to explicitly annotate trust between parties\\
+- utilises trust through hybrid operations for additional performance increase \\
+- maintaining same end-to-end security as "pure" MPC     \\
+- relying on Obliv-C and Sharemind as MPC backend\\
+- backend theoretic exchangeable through generic interface\\
+
+- Query optimization aims to move as work outside of mpc\\
+- contrary to conventional sql operations that aims to minimize the total amount of work e.g. filters before join \\
+
+- secure against semi-honest adversary \\
+- adversary is statically\\
+- no secure channel setting\\
+- inherits security guarantees of backend -> honest majority \\
+- compares to "SMCQL most similar existing system"\\
+- jiff dependency \\
+- requires python 3.5 \\
+- ...
