@@ -7,9 +7,9 @@
 \contentsline {section}{\numberline {2.3}goals}{3}{section.2.3}%
 \contentsline {section}{\numberline {2.4}structure}{3}{section.2.4}%
 \contentsline {chapter}{\numberline {3}preliminary}{5}{chapter.3}%
-\contentsline {section}{\numberline {3.1}MPC definition}{5}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}the adversary and its capability's.}{5}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}real world vs ideal world}{5}{subsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.0.1}MPC definition}{5}{subsection.3.0.1}%
+\contentsline {subsection}{\numberline {3.0.2}the adversary and its capability's.}{5}{subsection.3.0.2}%
+\contentsline {subsection}{\numberline {3.0.3}real world vs ideal world}{5}{subsection.3.0.3}%
 \contentsline {chapter}{\numberline {4}framework description}{7}{chapter.4}%
 \contentsline {section}{\numberline {4.1}conclave}{7}{section.4.1}%
 \contentsline {section}{\numberline {4.2}aby3}{7}{section.4.2}%
