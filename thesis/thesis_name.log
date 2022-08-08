@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  7 AUG 2022 22:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  8 AUG 2022 13:46
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1282,43 +1282,48 @@ chapter 2.
 chapter 3.
 [5]) (framework_description.tex [6]
 chapter 4.
-) (conclave.tex
-Underfull \hbox (badness 10000) in paragraph at lines 9--17
-
- []
-
-[7
+) (conclave.tex [7
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 18--20
+Underfull \hbox (badness 10000) in paragraph at lines 8--13
 
  []
 
-) (aby3.tex) (smcql.tex) (implementation.tex [8]
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--20
+
+ []
+
+) (aby3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 8--12
+
+ []
+
+[8]) (smcql.tex) (implementation.tex [9] [10
+
+
+]
 chapter 5.
-) (evaluation.tex [9
-
-
-] [10
+) (evaluation.tex [11] [12
 
 
 ]
 chapter 6.
-) (thesis_name.bbl [11] [12
+) (thesis_name.bbl [13] [14
 
 
 ]
 chapter without number
-) [13] (thesis_name.aux)
+) [15] (thesis_name.aux)
 Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28784 strings out of 479334
- 570785 string characters out of 2856609
- 1047155 words of memory out of 3000000
- 45634 multiletter control sequences out of 15000+200000
+ 28795 strings out of 479334
+ 571028 string characters out of 2856609
+ 1048155 words of memory out of 3000000
+ 45641 multiletter control sequences out of 15000+200000
  481996 words of font info for 79 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,19n,130p,10609b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1339,14 +1344,15 @@ lm/lmmi10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /lm/lmr12.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
 /lm/lmr8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
 lm/lmri10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/lm/lmss10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmssbx10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
-blic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (19 pages, 319703 bytes).
+/lm/lmro10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmss10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmssbx10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/
+public/amsfonts/symbols/msam10.pfb>
+Output written on thesis_name.pdf (21 pages, 350176 bytes).
 PDF statistics:
- 327 PDF objects out of 1000 (max. 8388607)
- 54 named destinations out of 1000 (max. 500000)
- 247 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 350 PDF objects out of 1000 (max. 8388607)
+ 58 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 

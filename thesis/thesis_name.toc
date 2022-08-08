@@ -17,14 +17,16 @@
 \contentsline {section}{\numberline {4.2}Prio+}{7}{section.4.2}%
 \contentsline {section}{\numberline {4.3}conclave}{7}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}functionality}{7}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}underlying MPC technology}{7}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.2}underlying MPC technology}{8}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}querie optimization}{8}{subsection.4.3.3}%
 \contentsline {section}{\numberline {4.4}aby3}{8}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}functionality}{8}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}underlying MPC technology}{8}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}smcql}{8}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}functionality}{8}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}underlying MPC technology}{8}{subsection.4.5.2}%
-\contentsline {chapter}{\numberline {5}implementation}{9}{chapter.5}%
-\contentsline {chapter}{\numberline {6}evaluation}{11}{chapter.6}%
-\contentsline {chapter}{\nonumberline Bibliography}{13}{chapter*.5}%
+\contentsline {subsection}{\numberline {4.4.2}underlying MPC technology}{9}{subsection.4.4.2}%
+\contentsline {section}{\numberline {4.5}smcql}{9}{section.4.5}%
+\contentsline {subsection}{\numberline {4.5.1}functionality}{9}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {4.5.2}underlying MPC technology}{9}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {4.5.3}querie optimization}{9}{subsection.4.5.3}%
+\contentsline {chapter}{\numberline {5}implementation}{11}{chapter.5}%
+\contentsline {chapter}{\numberline {6}evaluation}{13}{chapter.6}%
+\contentsline {chapter}{\nonumberline Bibliography}{15}{chapter*.5}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
