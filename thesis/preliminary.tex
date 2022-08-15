@@ -1,29 +1,42 @@
-\chapter{preliminary}
-\section{MPC definition}
-In the an MPC scenario there are n parties $ p_0,\dots,p_{n-1} $ that want to compute an agreed upon functionality F($ x_0,\dots,x_{n-1} $). A functionality is a function that is allowed to have internal randomness, so its not function in the strict mathematically sense of the word. 
- Each party $ p_i $ holds an input value $ x_i $  and does not want to reveal anything about it.
-Therefore they jointly execute an MPC protocol $ \pi $ that enables them to compute F($ x_0,\dots,x_{n-1}. $) without revelling their inputs. The attacker or adversary in this scenario has the ability to corrupt one or more party's. Once a party is corrupted the adversary get full information about every message the party send our receives, this also includes the messages from the time before the party had been corrupted.    
+\chapter{Preliminary}
+\section{Secure Multiparty Computation}
+In the an secure multiparty computation(short MPC) scenario there are n parties $ p_0,\dots,p_{n-1} $. They want to compute an agreed upon functionality F($ x_0,\dots,x_{n-1} $). A functionality is a function that is allowed to have internal randomness, so its not function in the strict mathematically sense of the word. 
+Each party $ p_i $ holds an input value $ x_i $. 
+The parties hold their input private and do not want to reveal any information about it. The Goal of secure multiparty computation is to develop a protocol  $ \pi $ that enables them to jointly compute F($ x_0,\dots,x_{n-1}. $). The security goal of "not revelling the inputs" is often formalised through the Real-/Ideal-World Paradigm. 
 
-\subsection{passive adversary vs active adversary}
-There are multiple categorizations of adversary's  and their capability's. On such categorization is the distinction between passive and active adversary's. A passive adversary can not force a corrupted party to deviate from the protocol in an any way. A active adversary has the power to force a corrupted party to deviate from the protocol in an arbitrary way. So if for example the protocol would at some point require that each party choses an integer between 1 and n uniformly at random.  Then a passive adversary would have no choice but to choose the integer between 1 and n uniformly at random. On the contrary an active adversary would be able to force a corrupted party to chose the value 42 or any other value that the adversary considers to be advantageous for him.
 
-\subsection{monolithic adversary}
-In the following we will assume a monolithic adversary unless explicitly stated otherwise. This means that there is only a single adversary that controls all corrupt parties. For the honest parties a monolithic adversary is a worst-case scenario. A monolithic adversary is more powerful compared to multiple adversary's that control the same total amount of parties but to not corporate with each other. A protocol that is secure in the presence of a single adversary that corrupts n parties and is able to coordinate their efforts. Will be secure in the presence of up to n adversary's that corrupt n parties total and do not coordinate their efforts.   
 
-\subsection{general adversary vs threshold adversary}
-In the threshold MPC setting the adversary can choose to corrupt any party. The threshold adversary is only limited in the way that can at most corrupt t parties where t is set to be 0 < t < n. A common setting for t is t = $\left \lfloor{ \frac{n}{2} }\right \rfloor  $, which called the honest majority. For example and for n=3 the presence of an honest majority means, that it is assumed that the threshold adversary can corrupt at most 1 party. Threshold MPC best fits scenarios that feature a very homogenous group of parties. A general adversary is limited in his choice which party he corrupts by an adversary structure  
-$ Z = \{ Z_1, \dots, Z_l  \} $. Where $ Z_i $ can be any set of parties. The general adversary must corrupt a set of parties  $ P $ such that there exists an $ x \in Z $ that holds $ P \subset x $. This allows for a flexible way to formalise assumptions. If for example in protocol there are two parties that hold a very vital role and one want to assume that no adversary can corrupt both of these parties. That can be formalised by using a general adversary an defining $ Z $ so that no element in  $Z $ contains both of these two parties.  
- 
 
-\subsection{static adversary vs dynamic adversary}
-Another important distinction is the distinction between static and adaptive adversary's. An static adversary is bound to chose which parties he wants to corrupt before the execution of $ \pi $ starts. An adaptive adversary can corrupt a party during the execution of the protocol. This makes the adaptive adversary much more powerful. As he can try to identify "weak links" based on the information he gets during the execution of the protocol and then choose corrupt those.   
 
-\section{real world vs ideal world }
+The attacker or adversary in this scenario has the ability to corrupt one or more party's. 
+Once a party is corrupted the adversary get full information about every message the party send our receives, this also includes the messages from the time before the party had been corrupted.    
+
+
+\subsection{Real World and Ideal World}
 For semi-honest adversary's we can now formalise the question if a protocol $ \pi $ archives our security goal of "not revelling $ x_0,\dots,x_{n-1}. $", this is done by describing an ideal world where there exits a perfect solution for the MPC problem and them comparing the execution of $ \pi $ to this ideal world. In an ideal world there exists an incorruptible third party P that all parties trust. In the real world there is no such incorruptible third party. Instead the parties execute the protocol $ \pi $ be exchanging messages.
 In the ideal world evaluating F($ x_0,\dots,x_{n-1}. $) can be done in two steps. In a first round of communication party $ p_i $ send $x_i $ to P.
 This gives P all the information required for computing F($ x_0,\dots,x_{n-1} $). In a second round of communication P send each party F($ x_0,\dots,x_{n-1} $).
 If F($ x_0,\dots,x_{n-1}) $ is computed this way the ability of the adversary to gain new knowledge about $ x_0,\dots,x_{n-1} $ is minimized. We say that  $ \pi $ is secure against adversary A if A cannot learn more information by attacking $ \pi $ in the real world then by attack the ideal world. This can be shown using simulation based proof. 
 The View of a party consist of its input, the state of its memory which includes its internal randomness i and all messages it received. 
 We say $ \pi $ is secure against A,  if their exists an probabilistic polynomial-time simulator S that given the ideal world views of all parties A corrupts can compute the corresponding views in the real world. We require that the output of S has an identical distribution of values as the views that A would see when A attacks $ \pi $ in the real world. Given such S exists, A could instead of attacking the real world, simply attack the ideal world and then run S to get views that are identical distributed as the views A would have obtained by attacking the real world. So their is no advantage for A in attacking the real world compared to attacking the ideal world. Furthermore $ \pi $ is secure ,if $ \pi $ is secure against all A.       
-      
 
+\subsection{Adversarial Models}
+There are multiple models and categorizations of adversary's and their capability's. These distinctions have significant impact on feasibility and difficulty of secure multiparty computation. In the following we will outline the most important adversary properties and security assumptions. 
+
+\paragraph{Passive Adversary vs Active Adversary}
+A passive adversary can not force a corrupted party to deviate from the protocol in an any way.  A active adversary has the power to force a corrupted party to deviate from the protocol in an arbitrary way. So if for example the protocol would at some point require that each party choses an integer between 1 and n uniformly at random.  Then a passive adversary would have no choice but to choose the integer between 1 and n uniformly at random. On the contrary an active adversary would be able to force a corrupted party to chose the value 42 or any other value that the adversary considers to be advantageous for him. In the ideal world a passive adversary is bound to forward the real input values. A active adversary can choose to ignore the real input and forward any value instead.
+
+\paragraph{Monolithic Adversary}
+In the following we will assume a monolithic adversary unless explicitly stated otherwise. This means that there is only a single adversary that controls all corrupt parties. For the honest parties a monolithic adversary is a worst-case scenario. A monolithic adversary is more powerful compared to multiple adversary's that control the same total amount of parties but to not corporate with each other. A protocol that is secure in the presence of a single adversary that corrupts n parties and is able to coordinate their efforts. Will be secure in the presence of up to n adversary's that corrupt n parties total and do not coordinate their efforts.   
+\paragraph{General Adversary vs Threshold Adversary}
+In the threshold MPC setting the adversary can choose to corrupt any party. The threshold adversary is only limited in the way that can at most corrupt t parties where t is set to be 0 < t < n. A common setting for t is t = $\left \lfloor{ \frac{n}{2} }\right \rfloor  $, which called the honest majority. For example and for n=3 the presence of an honest majority means, that it is assumed that the threshold adversary can corrupt at most 1 party. Threshold MPC best fits scenarios that feature a very homogenous group of parties. A general adversary is limited in his choice which party he corrupts by an adversary structure  
+$ Z = \{ Z_1, \dots, Z_l  \} $. Where $ Z_i $ can be any set of parties. The general adversary must corrupt a set of parties  $ P $ such that there exists an $ x \in Z $ that holds $ P \subset x $. This allows for a flexible way to formalise assumptions. If for example in protocol there are two parties that hold a very vital role and one want to assume that no adversary can corrupt both of these parties. That can be formalised by using a general adversary an defining $ Z $ so that no element in  $Z $ contains both of these two parties.  
+ 
+\paragraph{Static vs Dynamic Corruptions}
+Another important distinction is the distinction between static and adaptive adversary's. A static adversary is bound to chose which parties he wants to corrupt before the execution of $ \pi $ starts. An adaptive adversary can corrupt a party during the execution of the protocol. This makes the adaptive adversary much more powerful. As he can try to identify "weak links" based on the information he gets during the execution of the protocol and then choose corrupt those.   
+
+
+
+\subsection{Additional Properties}
+
+\section{Databases}

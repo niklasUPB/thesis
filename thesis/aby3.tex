@@ -3,7 +3,7 @@
 
 \subsection{functionality }
 aby3 is a 3 party MPC framework that allows to compute query's on relational database tables. These query's are not limited to queering only one table. Aby3 supports a variety of join operations these include but are not limited to  left join , right join, set union, set minus and also full joins. Note that the semantic of the set union operator in aby3 does not 100 percent matches the semantic of the SQL union operator. 
-
+Similar to the SQL-union the aby3-union does row-concatenation of two tables.  \todo[fancyline]{union und andere oparatioren die von standart sql abweichen beschreiben}
 The result of such join can again be queried using with query's that have a comparable semantic to the SELECT,FROM,WHERE; statement in SQL. Furthermore aby3 comes with a description how aggregate functions like MAX,SUM,COUNT can be realised when utilising aby3.
 
 \subsection{underlying MPC technology}
@@ -18,9 +18,10 @@ aby3 demonstrates its capability's in two prototype applications. One of them co
 
 
 
+
 \
 In \cite{10.1145/3372297.3423358} ..
 -  prototype 
 - does feature a LAN VS WAN comparison in benchmarks
-
-  
+- fully  composable
+- arbitrary computation computation  

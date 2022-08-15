@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  10 AUG 2022 16:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  15 AUG 2022 05:56
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1281,30 +1281,46 @@ chapter 2.
 ]
 chapter 3.
 
-Underfull \vbox (badness 1043) has occurred while \output is active []
+Overfull \hbox (21.91953pt too wide) in paragraph at lines 3--6
+\T1/lmr/m/n/10.95 In the an se-cure mul-ti-party com-pu-ta-tion(short MPC) sce-
+nario there are n par-ties $\OML/lmm/m/it/10.95 p[]; [] ; p[]$\T1/lmr/m/n/10.95
+ .
+ []
 
- [5]
-[6]) (framework_description.tex [7] [8
+[5] [6]) (framework_description.tex [7] [8
 
 
 ]
 chapter 4.
 ) (conclave.tex [9]
-Underfull \hbox (badness 10000) in paragraph at lines 8--13
+Underfull \hbox (badness 10000) in paragraph at lines 10--15
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--20
+Underfull \hbox (badness 10000) in paragraph at lines 26--29
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 31--34
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 35--36
 
  []
 
 ) (aby3.tex
+Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
+ine 6.
+ [10]
 Underfull \hbox (badness 10000) in paragraph at lines 10--14
 
  []
 
-[10]) (smcql.tex) (implementation.tex [11] [12
+) (smcql.tex) (implementation.tex [11] [12
 
 
 ]
@@ -1324,13 +1340,13 @@ Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 28799 strings out of 479334
- 571064 string characters out of 2856609
- 1048155 words of memory out of 3000000
- 45642 multiletter control sequences out of 15000+200000
+ 28951 strings out of 479334
+ 574563 string characters out of 2856609
+ 1047154 words of memory out of 3000000
+ 45782 multiletter control sequences out of 15000+200000
  481996 words of font info for 79 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,19n,130p,10609b,524s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 125i,19n,130p,10609b,964s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
 C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
 Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:
@@ -1354,9 +1370,9 @@ ic/lm/lmssbx10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (23 pages, 355139 bytes).
+Output written on thesis_name.pdf (23 pages, 357061 bytes).
 PDF statistics:
- 364 PDF objects out of 1000 (max. 8388607)
- 61 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 375 PDF objects out of 1000 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
