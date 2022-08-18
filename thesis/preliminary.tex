@@ -8,24 +8,52 @@ The parties hold their input private and do not want to reveal any information a
 
 
 
-The attacker or adversary in this scenario has the ability to corrupt one or more party's. 
-Once a party is corrupted the adversary get full information about every message the party send our receives, this also includes the messages from the time before the party had been corrupted.    
+
 
 
 \subsection{Real World and Ideal World}
-TODO noch zu überarbeiten
-For semi-honest adversary's we can now formalise the question if a protocol $ \pi $ archives our security goal of "not revelling $ x_0,\dots,x_{n-1}. $", this is done by describing an ideal world where there exits a perfect solution for the MPC problem and them comparing the execution of $ \pi $ to this ideal world. In an ideal world there exists an incorruptible third party P that all parties trust. In the real world there is no such incorruptible third party. Instead the parties execute the protocol $ \pi $ be exchanging messages.
-In the ideal world evaluating F($ x_0,\dots,x_{n-1}. $) can be done in two steps. In a first round of communication party $ p_i $ send $x_i $ to P.
-This gives P all the information required for computing F($ x_0,\dots,x_{n-1} $). In a second round of communication P send each party F($ x_0,\dots,x_{n-1} $).
-If F($ x_0,\dots,x_{n-1}) $ is computed this way the ability of the adversary to gain new knowledge about $ x_0,\dots,x_{n-1} $ is minimized. We say that  $ \pi $ is secure against adversary A if A cannot learn more information by attacking $ \pi $ in the real world then by attack the ideal world. This can be shown using simulation based proof. 
-The View of a party consist of its input, the state of its memory which includes its internal randomness i and all messages it received. 
-We say $ \pi $ is secure against A,  if their exists an probabilistic polynomial-time simulator S that given the ideal world views of all parties A corrupts can compute the corresponding views in the real world. We require that the output of S has an identical distribution of values as the views that A would see when A attacks $ \pi $ in the real world. Given such S exists, A could instead of attacking the real world, simply attack the ideal world and then run S to get views that are identical distributed as the views A would have obtained by attacking the real world. So their is no advantage for A in attacking the real world compared to attacking the ideal world. Furthermore $ \pi $ is secure ,if $ \pi $ is secure against all A.       
 
-\subsection{Adversarial Models}
-There are multiple models and categorizations of adversary's and their capability's. These distinctions have significant impact on feasibility and difficulty of secure multiparty computation. In the following we will outline the models and assumptions that are of importance for our benchmarks  . 
+\paragraph{Real World}
+In the real world there exists a protocol $\pi $ that enables the parties to compute F. All parties execute the protocol together. During the execution they exchange several rounds of communication. The attacker or adversary has the ability to corrupt one or more of the parties. His capability to influence the corrupted parties is an important parameter and may differ based on different security assumptions. These may range for example from a relative weak adversary that can only read massages to a very powerful adversary. We explain the adversary models that are of importance for our benchmarks in \hyperref[sec:Adversarial Models]{Section 3.2} in detail.
+The real world view of party A consist of the input of A, all massages A sends or receives during the execution of the protocol and his internal randomness. The protocol achieves the security goal of confidentially if the attacker is unable to derive new information from the views of the parties he did corrupt. ...
+\paragraph{Ideal World}\todo[fancyline]{Schaubild einfügen ?}
+In the Ideal World the parties to not need run a protocol. Instead they can rely on a trusted, incorruptible third party P that aids them.  With the aid of P, the parties can evaluate F in two simple steps. In a first round of communication every party send P its input. P now holds all information it needs to compute F. Afterwards P can send each party the result in a second round of communication. Like in the real world, in the ideal world their also exists an adversary. Similar to his real world counterparty he is also able to corrupt one or more parties.    Compared to his real world counter part the ideal world adversary has otherwise very limited ability's. He can only see the input and output of the parties he corrupts. Since the computation with the aid of P produces no intermediate results that he can observe. Depending on the underlying security assumptions he also may be able to modify the input a corrupted party sends to P in the first round of communication. Because of these very limited ability's it is desired that for every adversary in the real world their exits a comparable powerful adversary in the ideal world. This is often formalised using simulation based proof.
+
+\paragraph{Security}
+Given an real-world adversary A , a secure multiparty protocol $\pi $ , and a functionality F for $\pi $ to be secure we require the existence of a so called simulator S.
+S is an ideal world adversary for F that mirror's the behaviour of A. This means that S and A corrupt the same parties and also that if a A changes the output of F then S does the same. After S has performed its attack S outputs a real world view. $\pi $ is secure against A, if the view S outputs is indistinguishable from a view of A. This means that the real world attacker A cannot learn more then the ideal world attacker S. Despite the very limited ability's S has compared to A. Finally we say $\pi $  is secure against if, for all A $\pi $ is secure against A. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+\section{Adversarial Models}
+\label{sec:Adversarial Models}
+There are multiple models and categorizations of adversary's and their capability's. These distinctions have significant impact on feasibility and difficulty of secure multiparty computation. In the following we will outline the models and assumptions that are of importance for our benchmarks. 
 
 \paragraph{Passive Adversary vs Active Adversary}
-A passive adversary can not force a corrupted party to deviate from the protocol in an any way.  A active adversary has the power to force a corrupted party to deviate from the protocol in an arbitrary way. So if for example the protocol would at some point require that each party choses an integer between 1 and n uniformly at random.  Then a passive adversary would have no choice but to choose the integer between 1 and n uniformly at random. On the contrary an active adversary would be able to force a corrupted party to chose the value 42 or any other value that the adversary considers to be advantageous for him. In the ideal world a passive adversary is bound to forward the real input values. A active adversary can choose to ignore the real input and forward any value instead.
+A passive adversary can not force a corrupted party to deviate from the protocol in an any way. One could think of a passive adversary as a "read-only" adversary. As a passive adversary is only able to read the messages his corrupted parties receive or send. A active adversary can do everything a passive adversary can additionally he has the power to force a corrupted party to deviate from the protocol in an arbitrary way. So if for example the protocol would at some point require that each party choses an integer between 1 and n uniformly at random. 
+Then a passive adversary would have no choice but to choose the integer between 1 and n uniformly at random. 
+On the contrary an active adversary would be able to force a corrupted party to chose the value 42 or any other value that the adversary considers to be advantageous for him. In the ideal world a passive adversary is bound to forward the real input values. A active adversary can choose to ignore the real input and forward any value instead.
 
 \paragraph{Monolithic Adversary}
 In the following we will assume a monolithic adversary unless explicitly stated otherwise. This means that there is only a single adversary that controls all corrupt parties. For the honest parties a monolithic adversary is a worst-case scenario. A monolithic adversary is more powerful compared to multiple adversary's that control the same total amount of parties but to not corporate with each other. A protocol that is secure in the presence of a single adversary that corrupts n parties and is able to coordinate their efforts. Will be secure in the presence of up to n adversary's that corrupt n parties total and do not coordinate their efforts.   
@@ -35,7 +63,6 @@ $ Z = \{ Z_1, \dots, Z_l  \} $. Where $ Z_i $ can be any set of parties. The gen
  
 \paragraph{Static vs Dynamic Corruptions}
 Another important distinction is the distinction between static and adaptive adversary's. A static adversary is bound to chose which parties he wants to corrupt before the execution of $ \pi $ starts. An adaptive adversary can corrupt a party during the execution of the protocol. This makes the adaptive adversary much more powerful. As he can try to identify "weak links" based on the information he gets during the execution of the protocol and then choose corrupt those.   
-
 
 
 \subsection{Additional Properties}
