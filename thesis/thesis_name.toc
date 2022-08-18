@@ -12,14 +12,13 @@
 \contentsline {paragraph}{\nonumberline Real World}{5}{paragraph*.6}%
 \contentsline {paragraph}{\nonumberline Ideal World}{5}{paragraph*.8}%
 \contentsline {paragraph}{\nonumberline Security}{6}{paragraph*.11}%
-\contentsline {subsection}{\numberline {3.1.2}Real World and Ideal World}{6}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Adversarial Models}{6}{section.3.2}%
-\contentsline {paragraph}{\nonumberline Passive Adversary vs Active Adversary}{7}{paragraph*.13}%
-\contentsline {paragraph}{\nonumberline Monolithic Adversary}{7}{paragraph*.15}%
+\contentsline {paragraph}{\nonumberline Passive Adversary vs Active Adversary}{6}{paragraph*.13}%
+\contentsline {paragraph}{\nonumberline Monolithic Adversary}{6}{paragraph*.15}%
 \contentsline {paragraph}{\nonumberline General Adversary vs Threshold Adversary}{7}{paragraph*.17}%
 \contentsline {paragraph}{\nonumberline Static vs Dynamic Corruptions}{7}{paragraph*.19}%
-\contentsline {subsection}{\numberline {3.2.1}Additional Properties}{8}{subsection.3.2.1}%
-\contentsline {section}{\numberline {3.3}Databases}{8}{section.3.3}%
+\contentsline {subsection}{\numberline {3.2.1}Additional Properties}{7}{subsection.3.2.1}%
+\contentsline {section}{\numberline {3.3}Databases}{7}{section.3.3}%
 \contentsline {chapter}{\numberline {4}framework description}{9}{chapter.4}%
 \contentsline {section}{\numberline {4.1}CipherCompute}{9}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Prio+}{9}{section.4.2}%

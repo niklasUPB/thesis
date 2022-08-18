@@ -5,19 +5,13 @@ Each party $ p_i $ holds an input value $ x_i $.
 The parties hold their input private and do not want to reveal any information about it. The Goal of secure multiparty computation is to develop a protocol  $ \pi $ that enables them to jointly compute F($ x_0,\dots,x_{n-1}. $). The security goal of "not revelling the inputs" is often formalised through the Real-/Ideal-World Paradigm. 
 
 
-
-
-
-
-
-
 \subsection{Real World and Ideal World}
-
+When modelling security of secure multiparty computation we compare the real world, to a perfect ideal world, where the problem can be solved in the best way possible.
 \paragraph{Real World}
 In the real world there exists a protocol $\pi $ that enables the parties to compute F. All parties execute the protocol together. During the execution they exchange several rounds of communication. The attacker or adversary has the ability to corrupt one or more of the parties. His capability to influence the corrupted parties is an important parameter and may differ based on different security assumptions. These may range for example from a relative weak adversary that can only read massages to a very powerful adversary. We explain the adversary models that are of importance for our benchmarks in \hyperref[sec:Adversarial Models]{Section 3.2} in detail.
 The real world view of party A consist of the input of A, all massages A sends or receives during the execution of the protocol and his internal randomness. The protocol achieves the security goal of confidentially if the attacker is unable to derive new information from the views of the parties he did corrupt. ...
 \paragraph{Ideal World}\todo[fancyline]{Schaubild einfügen ?}
-In the Ideal World the parties to not need run a protocol. Instead they can rely on a trusted, incorruptible third party P that aids them.  With the aid of P, the parties can evaluate F in two simple steps. In a first round of communication every party send P its input. P now holds all information it needs to compute F. Afterwards P can send each party the result in a second round of communication. Like in the real world, in the ideal world their also exists an adversary. Similar to his real world counterparty he is also able to corrupt one or more parties.    Compared to his real world counter part the ideal world adversary has otherwise very limited ability's. He can only see the input and output of the parties he corrupts. Since the computation with the aid of P produces no intermediate results that he can observe. Depending on the underlying security assumptions he also may be able to modify the input a corrupted party sends to P in the first round of communication. Because of these very limited ability's it is desired that for every adversary in the real world their exits a comparable powerful adversary in the ideal world. This is often formalised using simulation based proof.
+In the Ideal World the parties to not need run a protocol. Instead they can rely on a trusted, incorruptible third party P that aids them. With the aid of P, the parties can evaluate F in two simple steps. In a first round of communication every party send P its input. P now holds all information it needs to compute F. Afterwards P can send each party the result in a second round of communication. Like in the real world, in the ideal world their also exists an adversary. Similar to his real world counterparty he is also able to corrupt one or more parties.    Compared to his real world counter part the ideal world adversary has otherwise very limited ability's. He can only see the input and output of the parties he corrupts. Since the computation with the aid of P produces no intermediate results that he can observe. Depending on the underlying security assumptions he also may be able to modify the input a corrupted party sends to P in the first round of communication. Because of these very limited ability's it is desired that for every adversary in the real world their exits a comparable powerful adversary in the ideal world. This is often formalised using simulation based proof.
 
 \paragraph{Security}
 Given an real-world adversary A , a secure multiparty protocol $\pi $ , and a functionality F for $\pi $ to be secure we require the existence of a so called simulator S.
