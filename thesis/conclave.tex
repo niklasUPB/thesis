@@ -1,40 +1,36 @@
 \section{conclave}
 
 
-\subsection{functionality}
-Conclave is a framework that allows two or three parties to perform MPC analytics on "big data". Conclave aims provide a high-level interface that abstracts internal MPC details away from the user. Through this high abstraction level conclave aims to make MPC more accessible for those who are not experts in this field.  Every operation done with conclave is composable, that means that the output of every query can be the input of another query. This mechanism makes it possible to construct very complex queries out of multiple relative simple queries.  With conclave one can join tables using the equivalent of an equi-join or an union operator. Conclave also supports a range of aggregate functions these include sum, mean, standard deviation. 
+\paragraph {functionality}
+Conclave allows to perform MPC analytics on "big data". Conclave aims provide a high-level interface that abstracts internal MPC details away from the user. Through this high abstraction level conclave aims to make MPC more accessible for those who are not experts in this field.  Every operation done with conclave is composable, that means that the output of every query can be the input of another query. This mechanism makes it possible to construct very complex queries out of multiple relative simple queries.  With conclave one can join tables using the equivalent of an equi-join or an union operator. Conclave also supports a range of aggregate functions these include sum, mean, standard deviation. 
 
-\subsection{underlying MPC technology}
+\paragraph{underlying MPC technology}
+Conclave utilises existing MPC frameworks for its backend to perform its underlying MPC opertaions. Therefore Conclave inherits most security guarantees and assumptions from the frameworks. The concrete frameworks of use are Sharemind and Obliv-C. As both of these frameworks are designed to withstand passive adversary's and do not support more then 3 parties. Conclave also assumes a passive adversary and supports up to 3 parties. Conclave interacts with its backend through a generic interface. Therefore it is theoretically feasible to integrate another framework to add support for more then 3 parties. 
 
-
-- relying on Obliv-C and Sharemind as MPC backend\\
 - inherits security guarantees of backend -> honest majority \\
-- secure against semi-honest adversary \\
 - adversary is statically\\
 - no secure channel setting\\
-
 Instead of exclusively using MPC operations, conclave evaluates queries with a combination of cleartext processing and MPC operations. 
 MPC techniques are usually multiple orders of magnitude slower then cleartext processing. 
 
 
+\paragraph{trust annotations}
+Conclave features optional trust annotations. With these trust annotations one party can annotate that it does trust another party to learn the values of a specific column. 
+\paragraph{hybrid operations}
+\paragraph{querie rewriting}
+
 \subsection{Querie optimization}
 Conclave speeds up computation by optimizing queries. There are two key techniques conclave applies for optimizing queries. The first one is rearranging the query's operation to minimize the amount of MPC operations required. The second technique is cutting out redundant MPC sorts and shuffles.  \paragraph{Rearranging queries} 
-\paragraph{Sorts and shuffles}   
-
+\paragraph{Sorts and shuffles}
+Many of conclaves high-level operators include "sub-protocols" like sorts and shuffles. These sorts and shuffles are MPC operations. As such they are highly expansive operations. Yet not all of these sorts and shuffles are always necessary. If for example a operator produces a sorted intermediate result like for example an order by operation would do, it is redundant to sort again as part of the next operator. Conclave is able to identify such redundant sorts and shuffles and eliminates them where possible. The ability to skip such expansive MPC operations provides significant performance gains.
 
 
 - moving operations outside of MPC to maximise performance\\
 - maintaining same end-to-end security as "pure" MPC     \\
 - contrary to conventional sql operations that aims to minimize the total amount of work e.g. filters before join \\
 
-
 - published in 2019,\\
-- allows to explicitly annotate trust between parties\\
 - utilises trust through hybrid operations for additional performance increase \\
-
-- backend theoretic exchangeable through generic interface\\
-
-
 - compares to "SMCQL most similar existing system"\\
 - jiff dependency \\
 - requires python 3.5 \\
