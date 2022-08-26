@@ -22,25 +22,27 @@
 \contentsline {paragraph}{\nonumberline garbled circuits ???}{7}{paragraph*.23}%
 \contentsline {section}{\numberline {3.3}Databases}{7}{section.3.3}%
 \contentsline {chapter}{\numberline {4}framework description}{9}{chapter.4}%
-\contentsline {section}{\numberline {4.1}CipherCompute}{9}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Prio+}{9}{section.4.2}%
-\contentsline {section}{\numberline {4.3}conclave}{9}{section.4.3}%
+\contentsline {section}{\numberline {4.1}conclave}{9}{section.4.1}%
 \contentsline {paragraph}{\nonumberline functionality}{9}{paragraph*.25}%
-\contentsline {paragraph}{\nonumberline underlying MPC technology}{10}{paragraph*.27}%
-\contentsline {paragraph}{\nonumberline trust annotations}{10}{paragraph*.29}%
-\contentsline {paragraph}{\nonumberline hybrid operations}{10}{paragraph*.31}%
-\contentsline {paragraph}{\nonumberline querie rewriting}{10}{paragraph*.33}%
-\contentsline {subsection}{\numberline {4.3.1}Querie optimization}{10}{subsection.4.3.1}%
-\contentsline {paragraph}{\nonumberline Rearranging queries}{10}{paragraph*.35}%
-\contentsline {paragraph}{\nonumberline Sorts and shuffles}{10}{paragraph*.37}%
-\contentsline {section}{\numberline {4.4}aby3}{11}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}functionality}{11}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}underlying MPC technology}{11}{subsection.4.4.2}%
-\contentsline {section}{\numberline {4.5}smcql}{12}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}functionality}{12}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}underlying MPC technology}{12}{subsection.4.5.2}%
-\contentsline {subsection}{\numberline {4.5.3}querie optimization}{12}{subsection.4.5.3}%
+\contentsline {paragraph}{\nonumberline underlying MPC technology}{9}{paragraph*.27}%
+\contentsline {paragraph}{\nonumberline query rewriting}{9}{paragraph*.29}%
+\contentsline {paragraph}{\nonumberline Trust Annotations}{9}{paragraph*.31}%
+\contentsline {paragraph}{\nonumberline Hybrid Operations}{10}{paragraph*.33}%
+\contentsline {paragraph}{\nonumberline Sorts and Shuffles}{10}{paragraph*.35}%
+\contentsline {paragraph}{\nonumberline Rearranging queries}{10}{paragraph*.37}%
+\contentsline {section}{\numberline {4.2}aby3}{11}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}functionality}{11}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}underlying MPC technology}{11}{subsection.4.2.2}%
+\contentsline {section}{\numberline {4.3}smcql}{11}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}functionality}{11}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}underlying MPC technology}{11}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}querie optimization}{11}{subsection.4.3.3}%
+\contentsline {paragraph}{\nonumberline slicing}{11}{paragraph*.40}%
+\contentsline {section}{\numberline {4.4}rejected frameworks}{12}{section.4.4}%
+\contentsline {paragraph}{\nonumberline CipherCompute}{12}{paragraph*.42}%
+\contentsline {paragraph}{\nonumberline Prio+}{12}{paragraph*.44}%
+\contentsline {paragraph}{\nonumberline VaultDB}{12}{paragraph*.46}%
 \contentsline {chapter}{\numberline {5}implementation}{13}{chapter.5}%
 \contentsline {chapter}{\numberline {6}evaluation}{15}{chapter.6}%
-\contentsline {chapter}{\nonumberline Bibliography}{17}{chapter*.39}%
+\contentsline {chapter}{\nonumberline Bibliography}{17}{chapter*.47}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
