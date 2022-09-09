@@ -1,14 +1,16 @@
-\section{conclave}
+\section{Conclave}
 
 
 \paragraph {functionality}
 Conclave allows to perform MPC analytics on "big data". Conclave aims provide a high-level interface that abstracts internal MPC details away from the user. Through this high abstraction level conclave aims to make MPC more accessible for those who are not experts in this field.  Every operation done with conclave is composable, that means that the output of every query can be the input of another query. This mechanism makes it possible to construct very complex queries out of multiple relative simple queries.  With conclave one can join tables using the equivalent of an equi-join or an union operator. Conclave also supports a range of aggregate functions these include sum, mean, standard deviation. 
 
 \paragraph{underlying MPC technology}
-Conclave utilises existing MPC frameworks for its backend to perform its underlying MPC opertaions. Therefore Conclave inherits most security guarantees and assumptions from these frameworks. The concrete frameworks of use are Sharemind and Obliv-C. As both of these frameworks are designed to withstand passive adversary's and do not support more then 3 parties. Since Obliv-C is based on garbled circuits and Sharemind on secret sharing, Conclave uses both. Conclave also assumes a passive adversary and supports up to 3 parties. Conclave interacts with its backend through a generic interface. Therefore it is theoretically feasible to integrate another framework to add support for more then 3 parties. Conclave assumes a threshold adversary that corrupts statically and is bound by an honest majority.
+Conclave utilises existing MPC frameworks for its backend to perform its underlying MPC opertaions. Therefore Conclave inherits most security guarantees and assumptions from these frameworks. The concrete frameworks of use are Sharemind and Obliv-C. As both of these frameworks are designed to withstand passive adversary's and do not support more then 3 parties. Conclave also assumes a passive adversary and supports up to 3 parties.
+Since Obliv-C is based on garbled circuits and Sharemind on secret sharing, Conclave uses both. Conclave interacts with its backend through a generic interface. Therefore it is theoretically feasible to integrate another framework to add support for more then 3 parties. Conclave assumes a threshold adversary that corrupts statically and is bound by an honest majority.
 
-\paragraph{query rewriting}
-MPC techniques are multiple orders of magnitude slower then cleartext processing. Its conclave key principle to archive better performance by avoiding the use of MPC techniques where possible. Instead of exclusively using MPC operations, conclave evaluates queries with a combination of local cleartext processing and MPC operations. 
+\subsection{Optimizations}
+MPC techniques are multiple orders of magnitude slower then cleartext processing. Its conclave key principle to archive better performance by avoiding the use of MPC techniques where possible. Instead of exclusively using MPC operations, conclave evaluates queries with a combination of local cleartext processing and MPC operations. When Conclave compiles a query it applies various optimizations to it, one such optimization is conclave's query rewriting 
+\paragraph{Query Rewriting}
 - moving operations outside of MPC to maximise performance\\
 - maintaining same end-to-end security as "pure" MPC     \\
 - contrary to conventional sql operations that aims to minimize the total amount of work e.g. filters before join \\
@@ -17,7 +19,7 @@ MPC techniques are multiple orders of magnitude slower then cleartext processing
 \paragraph{Trust Annotations}
 Conclave features optional trust annotations that allow for trade-off between security and performance. With these trust annotations one party can annotate that it does trust another party to learn the values of a specific column. There exists a variety of use-cases that fit these mechanism. For example, the sensitivity of data may largely differ between columns. Therefore it may be desirable , for a party to reveal some less sensible data in order to speed up the computation. If a party decides to do so , Conclave uses these annotations to apply optimisations, that speed up query evaluation. One such optimization are conclaves hybrid operators.
 \paragraph{Hybrid Operations}
-When possible Conclave substitutes expansive MPC operations with cheaper hybrid operations. In a hybrid operation one party is "promoted" to a selectively-trusted party (short STP). Conclave reveals some input columns to the STP. Such leakage is only possible if the parties did explicitly allow it with the trust annotations. Otherwise it is not possible to apply hybrid operations. With the information the STP obtains, it can evaluate the operator using mainly local computation and only minor MPC based aid from the other parties. Besides the leakage of the input columns to the STP Conclave upholds it's normal security guarantees for every other column. For these special operations conclaves security assumptions differ from its normal security assumptions and can be modelled using a general adversary. Conclave can withstand any adversary that can corrupt a set of parties that, does contain the STP but no other party, or does not contain the STP. 
+When possible Conclave substitutes expansive MPC operations with cheaper hybrid operations. In a hybrid operation one party is "promoted" to a selectively-trusted party (short STP). Conclave reveals some input columns to the STP. Such leakage is only possible if the parties did explicitly allow it with the trust annotations. Otherwise it is not possible to apply hybrid operations. With the information the STP obtains, it can evaluate the operator using mainly local computation and only minor MPC based aid from the other parties. Besides the leakage of the input columns to the STP Conclave upholds it's normal security guarantees for every other column. For these special operations conclaves security assumptions differ from its normal security assumptions and can be modelled using a general adversary. Conclave's hybrid operations can withstand any adversary that can corrupt a set of parties that, does contain the STP but no other party, or does not contain the STP and could be withstand by a normal operation. 
 \paragraph{Sorts and Shuffles}
 Many of conclaves high-level operators include "sub-protocols" like sorts and shuffles. These sorts and shuffles are MPC operations. As such they are highly expansive operations. Yet not all of these sorts and shuffles are always necessary. If for example a operator produces a sorted intermediate result like for example an order by operation would do, it is redundant to sort again as part of the next operator. Conclave is able to identify such redundant sorts and shuffles and eliminates them where possible. The ability to skip such expansive MPC operations provides significant performance gains.
 
@@ -28,7 +30,5 @@ Many of conclaves high-level operators include "sub-protocols" like sorts and sh
 - compares to "SMCQL most similar existing system"\\
 - jiff dependency \\
 - requires python 3.5 \\
-- ...
-
-Conclave speeds up computation by optimizing queries. There are two key techniques conclave applies for optimizing queries. The first one is rearranging the query's operation to minimize the amount of MPC operations required. The second technique is cutting out redundant MPC sorts and shuffles.  
+- ... 
 - no secure channel setting\\
