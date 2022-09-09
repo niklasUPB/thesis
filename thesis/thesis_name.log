@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  9 SEP 2022 10:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  9 SEP 2022 11:12
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1308,11 +1308,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 29--1
 
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-[11]) (smcql.tex [12] [13]) (old_framework.tex) (implementation.tex [14]
+[10] [11]) (smcql.tex [12] [13]) (old_framework.tex) (implementation.tex
+[14]
 chapter 5.
 ) (evaluation.tex [15
 
@@ -1362,7 +1359,7 @@ ic/lm/lmssbx10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/p
 ublic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/
 public/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (25 pages, 374398 bytes).
+Output written on thesis_name.pdf (25 pages, 374484 bytes).
 PDF statistics:
  409 PDF objects out of 1000 (max. 8388607)
  112 named destinations out of 1000 (max. 500000)
