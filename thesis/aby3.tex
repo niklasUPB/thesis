@@ -1,5 +1,5 @@
 \section{ABY3}
-ABY3 is 
+ABY3 ..
 \subsection{functionality }
 ABY3 is a 3-party MPC framework that allows to compute queries on relational database tables. It focuses on computing various SQL-like join as efficiently as possible. Therefore it features a large range of different join operations these include but are not limited to left join, right join, set union, set minus, and also full joins.  
 Besides joins it is also possible to query a single table with query's that have a comparable semantic to the SELECT, FROM,WHERE; statement in SQL. For example a selection like "select X1 from X  where X2 > 42" can be done with relative ease using the implemented features of ABY3. One of ABY3 great strengths is its composability.
@@ -16,8 +16,9 @@ ABY3 demonstrates how it could be used by the states to detect such double regis
 \subsection{underlying MPC technology}
 ABY3 works within a 3 party setting. This is a conscious decision as the two partiy and tree party setting each provide their own advantages and disadvantages.
 The third party allows to deploy more efficient algorithms that could not be deployed in a two-party setting. For example, oblivious permutations can be done in O(n) in a three-party setting instead of O(n log n) in a two-party setting. On the other hand, there are already established solutions for many problems in the two-party setting that are not easily extendable to a three-party setting. ABY3 guarantees security against a semi-honest threshold adversary that is bound by an honest majority. For executing its MPC operations ABY3 relies mainly on secret sharing. As secret sharing comes with the advantage that algorithms based on secret sharing can have their input present in secret shared form and their output also is secret shared. When considering composability this is a great advantage as having input and output in the same format, as it allows to directly feed the output of one operation as input into the next one. While other MPC techniques like oblivious transfer require either input or output to be in the clear and would need to expansively transform it after each operation. 
+ABY3s key feature are its new protocols for joins based on a MPC based cuckoo hash table. With these new protocols it is possible to join n rows with only O(n) overhead.
 
--% all protocols constant rounds of communication \\
+% all protocols constant rounds of communication \\
 %- O(n) overhead in for join where n is number of rows \\
 
 %-unique join keys
