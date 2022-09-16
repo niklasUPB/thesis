@@ -1,1 +1,71 @@
-\chapter{implementation}
+\chapter{Benchmarking}
+For benchmarking performance there is often a variety of different metrics that are relevant and require to be measured with great care. As flawed or unclean measuring may deteriorate the value of the results. In this chapter, we describe the different metrics we want to benchmark and the different tools we use to achieve clean results.
+
+\section{Measuring Runtime}
+A very basic metric of how well a program functions, is its runtime. Time is often measured in either wall-clock time or process time. Wall-clock time references, as the name implies the passing of time on a wall-clock while the program runs. 
+Process time resembles the actual time a CPU was used by the program. If for example the program blocks for a longer period of time its wall-clock and process execution time may largely differ. One needs to be careful what time is measured and that it is measured precisely. Otherwise one may obtain flawed or unfairly biased results. In order to do so, toll-aided measuring is required.
+\paragraph{Conclave}
+ For python3 the two primary candidates are timeit \cite{time} and the python profiler \cite{cProfile},
+ both are python libraries that offer a simple way to measure wall-clock or process execution time. Timeit measures only end-to-end execution time. The python profiler comes with a more detailed analysis that includes detailed information on which functions have been executed, how often they have been executed, and how long it took to execute them. The extra utility provided by the python profiler does not come for free, as the python profiler has as compared to timeit a significant overhead that slows the execution down. Therefore we have decided to use timeit to measure the execution time of Conclave. 
+\paragraph{ABY3}
+Since ABY3 is based on c++ we can not use python specific tools for it we use for Conclave. Fortunately the cryptoTools library \cite{cryotoTools} is integrated into ABY3. CryptoTools is a C++ toolbelt to features a variety of tools for building cryptographic protocols. Among these utilities is a benchmarking tool for measuring runtime. With cryptoTools it is possible to measure end-to-end execution time or to measure the execution time of specific parts of the protocol. As croytoTools provides to functionality we need and is already "inbuilt" into ABY3, we have decided to use it for measuring ABY3's runtime.
+\paragraph{SMCQL}
+TODO time \cite{time_sh}
+ 
+\section{Networking}
+In our standard setup all parties run on the same machine and communicate through localhost. This simulates a practically perfect LAN connection with very low latency and high throughput. It is also of interest how well the frameworks function in less ideal conditions. Therefore we are also going to simulate a suboptimal WAN(wide area network) connection with high latency and limited bandwidth. In order to so we require a proxy server. Instead of connecting the parties to one another we connection them to the proxy server. And the proxy server forwards the incoming messages to the addressed parties. To simulate a slow connection with high latency all the proxy server needs to do is delaying incoming messages.    
+
+ \paragraph{Toxiproxy}
+ Both ABY3 and SMCQL implement communication between parties based on a plain standard socket. In the case of ABY3 it is the standard C++ socket and for SMCQL it is the standard java socket. Both of these are tcp based and can be proxied with a standard TCP proxy. For this purpose we use Shopify's Toxiproxy \cite{toxiproxy}. Toxiproxy is a Go framework that allows to simulate different hazardous network conditions. These include a connection that delays it messages to simulate a high latency setup. Once the proxy server is setup it can be configured over the CLI or alternatively over a HTTP interface. In order to simplify using the HTTP interface Toxiproxy provides multiple different dedicated clients for this purpose. The clients differ in that they over an interface in different programming language but provide identical functionality otherwise. We have chosen to use the provided Ruby client as its the one recommended. A simplified example how to use Toxiproxy to simulate latency can be found in \hyperref[the_label]{Listing 5.1}. 
+ 
+   \phantomsection
+ \label{Toxi_label}				
+ \begin{lstlisting}[caption={Setting up a proxy that simulates latency between two parties with Toxiporxy}]
+ #First we instantiate a connection between the two parties. 
+ Toxiproxy.populate([
+ {
+ 	name: "aby3_party2_party1",
+ 	#party 3 sends its messages for party1 to port 50010 therefore the proxy must listen to this port
+ 	listen: "127.0.0.1:50010",   
+ 	#party 1 listens to port 50001 therefore theproxy must forward to this port
+ 	upstream: "127.0.0.1:50001"  
+}
+ ])
+ #Then we simulate a latency of 1000ms 
+ toxiproxy-cli add aby3_party2_party1 -type latency -name upstream latency=1000 -upstream
+ toxiproxy-cli add aby3_party2_party1 -type latency -name downstream latency=1000 -downstream
+ 
+ \end{lstlisting}
+ \paragraph{Node-Http-Proxy}
+ Conclaves communication is based partially on websockets and partially on plain standard HTTP.
+ Websockets are implemented on top of TCP. Hence Websockets use a single TCP socket for bidirectional communication. Therefore for proxying Conclave cannot be done with a simple TCP proxy. Instead we use node-http-proxy a library for proxying HTTP that also supports websockets. Node-http-proxy is based on JavaScript and relies heavily on a event driven programming paradigm. A simplified example how to use node-http-proxy can be found in \hyperref[the_label]{Listing 5.2}. With node-http-proxy we are able to delay massages to simulate high latency. It is also possible to measure the amount of data send and received over a connection.
+ 
+  \phantomsection
+  \label{the_label}				
+ \begin{lstlisting}[caption={Setting up a proxy that simulates latency with node-http-proxy}]
+  TODO hier mehr kommentare einfuegen
+ 	var proxy = new httpProxy.createProxyServer({
+ 		target: {
+ 			host: 'localhost',
+ 			port: 9005
+ 		},
+ 		ws:true 
+ 	});
+ 	 # Here we crate a standart HTTP server that delayes ever incomming message for 500ms and then forwars it the proxy server.
+ 	var proxyServer = http.createServer(function (req, res) {
+ 		setTimeout(function () {
+ 			proxy.web(req, res);
+ 		}, 500);
+ 	}).listen(9000);
+ 	# for every outgoing message the proxy emits a proxyReqWs event that we reacte to and dellay the message for 500 milliseconds
+ 	proxy.on('proxyReqWs', function(){
+ 		 setTimeout(function(){ },500) 
+ 	 });
+  	# each time a connection is closed the proxy emits a "close" event that we reacte to and safe the amount of bytes transmitoned through the connection
+ 	proxy.on('close' ,function (res,socket,head) { 
+ 		send  = socket.bytesRead;
+ 		received  = socket.bytesWritten;
+ 	});
+ \end{lstlisting}
+
+ 

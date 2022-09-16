@@ -1,14 +1,56 @@
-\begin{thebibliography}{MRR20}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{LWN{\etalchar{+}}15}
 
-\bibitem[Eti14]{testref}
-Y.~Eti.
-\newblock {On the Importance of Correct Stirring}.
-\newblock {\em {International Journal of Cookie Theory}}, 13(1):1--247, 2014.
+\bibitem[BEE{\etalchar{+}}16]{bater}
+Johes Bater, Gregory Elliott, Craig Eggen, Satyender Goel, Abel Kho, and Jennie
+  Rogers.
+\newblock Smcql: Secure querying for federated databases.
+\newblock {\em arXiv preprint arXiv:1606.06808}, 2016.
 
-\bibitem[MRR20]{10.1145/3372297.3423358}
-Payman Mohassel, Peter Rindal, and Mike Rosulek.
-\newblock {\em Fast Database Joins and PSI for Secret Shared Data}, page
-  1271–1287.
-\newblock Association for Computing Machinery, New York, NY, USA, 2020.
+\bibitem[cPr21]{cProfile}
+The python profilers.
+\newblock \url{https://docs.python.org/3/library/profile.html}, 2021.
+
+\bibitem[JNS17]{johnson2017practical}
+Noah~M Johnson, Joseph~P Near, and Dawn~Xiaodong Song.
+\newblock Practical differential privacy for sql queries using elastic
+  sensitivity.
+\newblock {\em CoRR, abs/1706.09479}, 2017.
+
+\bibitem[LWN{\etalchar{+}}15]{liu2015oblivm}
+Chang Liu, Xiao~Shaun Wang, Kartik Nayak, Yan Huang, and Elaine Shi.
+\newblock Oblivm: A programming framework for secure computation.
+\newblock In {\em 2015 IEEE Symposium on Security and Privacy}, pages 359--376.
+  IEEE, 2015.
+
+\bibitem[Ran21]{cryotoTools}
+Peter Randal.
+\newblock cryptotools.
+\newblock \url{https://github.com/ladnir/cryptoTools}, 2021.
+
+\bibitem[Rin]{aby3}
+Peter Rindal.
+\newblock {The ABY3 Framework for Machine Learning and Database Operations.}
+\newblock \url{https://github.com/ladnir/aby3}.
+
+\bibitem[Sho22]{toxiproxy}
+Shopify.
+\newblock toxiproxy.
+\newblock https://github.com/Shopify/toxiproxy, 2022.
+
+\bibitem[tim21a]{time_sh}
+time.
+\newblock \url{https://manpages.debian.org/stretch/time/time.1.en.html}, 2021.
+
+\bibitem[tim21b]{time}
+timeit.
+\newblock \url{https://docs.python.org/3/library/timeit.htmll}, 2021.
+
+\bibitem[VSG{\etalchar{+}}19]{10.1145/3302424.3303982}
+Nikolaj Volgushev, Malte Schwarzkopf, Ben Getchell, Mayank Varia, Andrei
+  Lapets, and Azer Bestavros.
+\newblock Conclave: Secure multi-party computation on big data.
+\newblock In {\em Proceedings of the Fourteenth EuroSys Conference 2019},
+  EuroSys '19, New York, NY, USA, 2019. Association for Computing Machinery.
 
 \end{thebibliography}

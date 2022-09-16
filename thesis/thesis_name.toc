@@ -34,21 +34,31 @@
 \contentsline {subsection}{\numberline {4.2.1}functionality}{11}{subsection.4.2.1}%
 \contentsline {paragraph}{\nonumberline Prototype Implementations}{11}{paragraph*.37}%
 \contentsline {subsection}{\numberline {4.2.2}underlying MPC technology}{11}{subsection.4.2.2}%
-\contentsline {paragraph}{\nonumberline Computing Joins}{12}{paragraph*.39}%
-\contentsline {paragraph}{\nonumberline Oblivious Switching Network}{12}{paragraph*.41}%
-\contentsline {section}{\numberline {4.3}smcql}{12}{section.4.3}%
-\contentsline {paragraph}{\nonumberline functionality}{12}{paragraph*.43}%
-\contentsline {paragraph}{\nonumberline underlying MPC technology}{12}{paragraph*.45}%
-\contentsline {paragraph}{\nonumberline ObliVM}{13}{paragraph*.47}%
-\contentsline {paragraph}{\nonumberline Accesses Control}{13}{paragraph*.49}%
+\contentsline {paragraph}{\nonumberline Cuckoo Hashing}{12}{paragraph*.39}%
+\contentsline {paragraph}{\nonumberline Computing Joins}{12}{paragraph*.41}%
+\contentsline {paragraph}{\nonumberline Oblivious Switching Network}{12}{paragraph*.43}%
+\contentsline {section}{\numberline {4.3}SMCQL}{12}{section.4.3}%
+\contentsline {paragraph}{\nonumberline functionality}{12}{paragraph*.45}%
+\contentsline {paragraph}{\nonumberline underlying MPC technology}{13}{paragraph*.47}%
+\contentsline {paragraph}{\nonumberline ObliVM}{13}{paragraph*.49}%
+\contentsline {paragraph}{\nonumberline Accesses Control}{13}{paragraph*.51}%
 \contentsline {subsection}{\numberline {4.3.1}Optimizations}{13}{subsection.4.3.1}%
-\contentsline {paragraph}{\nonumberline Slicing}{13}{paragraph*.51}%
-\contentsline {paragraph}{\nonumberline Split Operators}{13}{paragraph*.53}%
+\contentsline {paragraph}{\nonumberline Slicing}{13}{paragraph*.53}%
+\contentsline {paragraph}{\nonumberline Split Operators}{13}{paragraph*.55}%
 \contentsline {section}{\numberline {4.4}rejected frameworks}{14}{section.4.4}%
-\contentsline {paragraph}{\nonumberline CipherCompute}{14}{paragraph*.55}%
-\contentsline {paragraph}{\nonumberline Prio+}{14}{paragraph*.57}%
-\contentsline {paragraph}{\nonumberline VaultDB}{14}{paragraph*.59}%
-\contentsline {chapter}{\numberline {5}implementation}{15}{chapter.5}%
-\contentsline {chapter}{\numberline {6}evaluation}{17}{chapter.6}%
-\contentsline {chapter}{\nonumberline Bibliography}{19}{chapter*.60}%
+\contentsline {paragraph}{\nonumberline CipherCompute}{14}{paragraph*.57}%
+\contentsline {paragraph}{\nonumberline Prio+}{14}{paragraph*.59}%
+\contentsline {paragraph}{\nonumberline VaultDB}{14}{paragraph*.61}%
+\contentsline {chapter}{\numberline {5}Benchmarking}{15}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Measuring Runtime}{15}{section.5.1}%
+\contentsline {paragraph}{\nonumberline Conclave}{15}{paragraph*.63}%
+\contentsline {paragraph}{\nonumberline ABY3}{15}{paragraph*.65}%
+\contentsline {paragraph}{\nonumberline SMCQL}{15}{paragraph*.67}%
+\contentsline {section}{\numberline {5.2}Networking}{16}{section.5.2}%
+\contentsline {paragraph}{\nonumberline Toxiproxy}{16}{paragraph*.69}%
+\contentsline {paragraph}{\nonumberline Node-Http-Proxy}{17}{paragraph*.72}%
+\contentsline {chapter}{\numberline {6}Use-Cases}{19}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Use-Cases}{19}{section.6.1}%
+\contentsline {chapter}{\numberline {7}evaluation}{21}{chapter.7}%
+\contentsline {chapter}{\nonumberline Bibliography}{23}{chapter*.74}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
