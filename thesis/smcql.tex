@@ -20,8 +20,9 @@ A detailed description of these optimization can found in \hyperref[sec:Optimiza
 \paragraph{ObliVM}
 TODO hier beschreibung von ObliVM und ORAM 
 %-c-style syntax
-
-\paragraph{Accesses Control}
+  \phantomsection
+\label{Accesses_label}	
+\paragraph{Access Control}
 SMCQL features an accesses control system that enables the data owners to adequately model the sensitivity of their data. 
 The accesses control is column based and each column is either public, protected, or private. 
 A public column may always be revealed to any party including the honest broker. A protected column may be revealed if the query is k-anonymous. A query is k-anonymous if for each queried tuple it holds that the projection onto its protected attributes is indistinguishable from at least k-1 other tuples. A private column is under no circumstances revealed to any party. With these accesses control mechanisms, SMCQL is able to speed up querie evaluation by applying various optimizations. If for example an operator only works with public columns it can be evaluated without using expansive MPC operations.

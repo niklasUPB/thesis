@@ -15,7 +15,8 @@ MPC techniques are multiple orders of magnitude slower then cleartext processing
 - maintaining same end-to-end security as "pure" MPC     \\
 - contrary to conventional sql operations that aims to minimize the total amount of work e.g. filters before join \\
 
-
+\phantomsection
+\label{Trust_label}	
 \paragraph{Trust Annotations}
 Conclave features optional trust annotations that allow for trade-off between security and performance. With these trust annotations one party can annotate that it does trust another party to learn the values of a specific column. There exists a variety of use-cases that fit these mechanism. For example, the sensitivity of data may largely differ between columns. Therefore it may be desirable , for a party to reveal some less sensible data in order to speed up the computation. If a party decides to do so , Conclave uses these annotations to apply optimisations, that speed up query evaluation. One such optimization are conclaves hybrid operators.
 \paragraph{Hybrid Operations}
