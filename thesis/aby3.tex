@@ -1,23 +1,29 @@
 \section{ABY3}
-ABY3 \cite{aby3} ...
+ABY3 \cite{aby3} is a three party MPC framework that is based on secret sharing and uses new join algorithms to compute relational database joins in a  efficient way.
 \subsection{functionality }
 ABY3 is a 3-party MPC framework that allows to compute queries on relational database tables. It focuses on computing various SQL-like join operations as efficiently as possible. Therefore it features a large range of different join operations. These include but are not limited to left join, right join, set union, set minus, and also full joins.  
-Besides joins it is also possible to query a single table with query's that have a comparable semantic to the SELECT, FROM,WHERE; statement in SQL. For example a selection like "select X1 from X  where X2 > 42" can be done with relative ease using the implemented features of ABY3. One of ABY3 great strengths is its composability.
+Besides joins it is also possible to query a single table with query's that have a comparable semantic to the "SELECT ... FROM ... WHERE" statement in SQL. For example a selection like "select X1 from X  where X2 > 42" can be done with relative ease using the implemented features of ABY3. In theory, ABY3 is able to compute any polynomial time function of a table, in practice, the efficiency may differ between functions and may not always be sufficient. For executing its MPC operations ABY3 relies mainly on secret sharing. 
+One of ABY3 great strengths is its composability. 
 Each operation done on one or more tables produces as output also a table, which is a valid input for another query. This allows to build larger complex applications out of many small ones, very similar like one would do with a pipes-and-filters architecture. 
-Furthermore, ABY3 comes with a description of how aggregate functions like MAX, SUM, COUNT can be realized when utilizing ABY3. For example, the maximum operator can be evaluated with a recursive algorithm that computes the maximum of the first and second half of the rows. In theory, ABY3 is able to compute any polynomial time function of a table, in practice, the efficiency may differ between functions and may not always be sufficient.   For executing its MPC operations ABY3 relies mainly on secret sharing.
 
 
 \paragraph{Prototype Implementations}
 ABY3 demonstrates its capability in two prototype applications. One of them illustrates the possibility of ensuring the validity of voter registration records. In the United States, each state maintains its own list of registered voters. Through the highly sensitive nature of these records coordination between states to ensure their faultlessness is not trivial. For that reason, one person moving from one state to another may often result in being registered in both states, which would allow them to illegitimacy cast a vote in both of these states.
 ABY3 demonstrates that it provides the states with  the tools needed to detect such double registration while preserving the confidentially of the records. 
 
+\paragraph{Documentation} 
+An important characteristics of every software is its documentation. 
+Probably the common form of documentation for any software are comments within the code, in this aspect ABY3 has plenty room to improve, as one hand it feature classes that are very well documented, while on the other hand there are important classes that have barely any comments in them. 
+ABY3's documentation also features a quick start guide that demonstrates some of its core capability's like setting up three parties and performing basic integer operations.
+For external documentation ABY3 comes with a description of how aggregate functions like MAX, SUM, COUNT can be realized when utilizing ABY3. For example, the maximum operator can be evaluated with a recursive algorithm that computes the maximum of the first and second half of the rows. Yet these descriptions focus an high level concepts and many important details remain unspecified. ABY3's pre implemented prototype implementations contribute also to its documentation, as they demonstrated how some of its more complex functions are supposed to be utilised.
 
 
 \subsection{underlying MPC technology}
 ABY3 works within a 3 party setting with a honest majority. This is a conscious decision as the two party and tree party setting each provide their own advantages and disadvantages.
-The third party allows to deploy more efficient algorithms that could not be deployed in a two-party setting. For example, oblivious permutations can be done in O(n) in a three-party setting instead of O(n log n) in a two-party setting.
+The third party allows to deploy more efficient algorithms that could not be deployed in a two-party setting. For example, oblivious permutations can be done in O(n) in a three-party setting instead of O(n log n) in a two-party setting \cite{aby3}.
  %On the other hand, there are already established solutions for many problems in the two-party setting that are not easily extendable to a three-party setting. 
- ABY3 guarantees security against a semi-honest threshold adversary. For executing its MPC operations ABY3 relies mainly on secret sharing. As secret sharing comes with the advantage that algorithms based on  secret sharing can have their input present in secret shared form and their output also is secret shared. When considering composability this is a great advantage as having input and output in the same format, as it allows to directly feed the output of one operation as input into the next one. While other MPC techniques like oblivious transfer require either input or output to be in the clear and would need to expansively transform it after each operation. 
+ ABY3 guarantees security against a semi-honest threshold adversary. For executing its MPC operations ABY3 relies mainly on secret sharing. In order to archive composability of operations it is important that input and output have the same format. For ABY3 this requirement means that input and output of its operations are secret shared. For secret sharing based techniques having the output in a secret shared from can be archived by omitting the final  reconstruction step, that would transform the output into the clear. Therefore having a secret shared based protocol be composable can be archived in a natural way. This property gives ABY3 a significant advantage over many other MPC frameworks. Pinkas Et al. \cite{pinkas2014faster} for example present a framework with similar capability and performance as ABY3 that is not composable as its algorithms require the input to be present in cleartext and also cannot extended to be composable in trivial way \cite{aby3}.      
+  
  
 ABY3s key feature are its new protocols for joins based on a MPC based cuckoo hash table. With these new protocols it is possible to join n rows with only O(n) overhead.
 
@@ -28,17 +34,22 @@ ABY3s key feature are its new protocols for joins based on a MPC based cuckoo ha
 %- does feature a LAN VS WAN comparison in benchmarks
 
 \paragraph{ Cuckoo Hashing }
-
-
+ABY3's version of cuckoo hashing is a special variant of a hash table. The table is based on a vector T that has m slots that can hold items. We address the i-th slot of T with T[i] for any i with 1 $\leq$ i $ \leq $ m. For a given keyspace X the hash table utilises two hash functions $ h_0 $ , $ h_1 $: X $ \mapsto $   $ \{ 1,....,m \} $. A hash function can be practically any function and is used to map the data to its storage location, as the size of the keyspace is normally larger then m, the hash functions cannot be injective.
+To insert any x $ \in $ X into the hash table x is inserted into T[$h_i(x)$] where i $ \in $ $ \{ 1,2 \} $ is decided with a coin toss. If T[$h_i(x)$] contains already an element the element is removed from the hash table and the reinserted. This approche yields a important invariant(1): For any x it always hold that x is located in T[$h_0(x)$] or T[$h_1(x)$]. Therefore cuckoo hash tables have O(1) worst case lookup time, as a lookup only needs to check two possible positions in the table. 
+% - key based data structure
+%As the size of the keyspace is larger then m, the hash functions cannot be injective. Therefore the event of two value
 \paragraph{Computing Joins}
-One key task for computing any kind of join is identifying which rows have identical join keys. More precisely if for two tables X,Y and key columns $X_1$, $Y_1$ and any given i  their exists j such that $X_1[i]$ = $Y_1[y]$, where X[i] denotes the i-th row of table X and $ X_1[i] $ the i-th entry of the first column of table X. 
+One key task for computing any kind of join is identifying which rows have identical join keys. More precisely for two tables X,Y and key columns $X_1$, $Y_1$ and any given i the question, if their exists j such that $X_1[i]$ = $Y_1[y]$, must be answered, where X[i] denotes the i-th row of table X and $ X_1[i] $ the i-th entry of the first column of table X. 
 
 ABY3 implements an algorithm that solves this problem using a secure cuckoo hash table T with two hash functions $ h_1 $ and $h_2$. 
 In a first step each row of Y is inserted into the hash table, such that Y[i] is inserted into $ T[h_0(Y_1 [i]  )] $ or $T[h_1(Y_1 [i]  )] $. 
-If $X_1[i]$ has a matching join key, such that  $X_1[i]$ = $Y_1[y]$,  the matching row can only be located in $ T[h_0(X_1[i])] $ or  $T[h_1( X_1[i])] $. 
-Therefore in a second step a match can found by comparing $X_1[i]$ and $ T[h_0(X[i])] $,  $T[h_1(X[i])] $ in a secure way. The key challenge in this algorithm is the construction and usage of a secure cuckoo hash table that does not leak sensitive information. ABY3 implements such a hash table based on an oblivious switching network.
-\paragraph{Oblivious Switching Network}
-TODO
+If $X_1[i]$ has a matching join key $Y_1[y]$, then per definition it holds that  $X_1[i]$ = $Y_1[y]$, this implies also $ h_0(X_1[i]) = h_0(Y_1[y])$ and $ h_1(X_1[i]) = h_1(Y_1[y])$. With invariant(1) the matching row $Y[y]$, if it exists, can only be located in $ T[h_0(X_1[i])] $ or $T[h_1( X_1[i])] $. 
+Therefore in a second step a match can found by comparing $Y[y]$ to $ T[h_0(Y_1[y])] $ and $T[h_1(Y_1[y])] $ in a secure way. 
+
+To summarize the algorithm in a more intuitive way. First the rows of Y are inserted successively into the hash table. In order to find matches the keys that are used for the hash table are the keys for the join. To check a if a row x from table X has a row in table Y that matches the join criteria, one can compare it, with the two rows in the hash table that are located at the locations where one would insert x. Since hash keys and join keys are identical, every possible match of join keys is indicated by a possible collision in the hash table.
+
+The key challenge in this algorithm is the construction and usage of a secure cuckoo hash table that does not leak sensitive information. ABY3 implements such a hash table based on an oblivious switching network \cite{aby3}. 
+
 
 
 

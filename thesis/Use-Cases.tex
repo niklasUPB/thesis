@@ -1,13 +1,9 @@
 \chapter{Use-Cases}
-In this chapter we describe the use-cases we have chosen to implement and benchmark. So its is clear what use-cases we have chosen, why we have chosen them and how we did implement them. 
-
-
-
-\section{Use-Cases} TODO mehr code beispiele einfügen für die fehlenden use-cases
-
-We have decided to implement every use-case with Conclave and SMCQL for two parties. As ABY3 does not allow a two party protocol but requires at least three parties, we have implemented everything for ABY3 with three parties. For ABY3 there will always be only two parties that provide input data. The third party will not provide input data but will assist in the execution of the protocol. We will revere to first party that provides input as Alice and to the second party that provides input as Bob. 
+In this chapter we describe the use-cases we have chosen to implement and benchmark. We first describe and motivate our choice of use-cases and, afterwards, give reasonable details on their implementation.
+\section{Use-Case Description} 
+We have decided to implement every use-case with Conclave and SMCQL for two parties. As ABY3 does not allow a two party protocol but requires at least three parties, we have implemented everything for ABY3 with three parties. For ABY3 there will always be only two parties that provide input data. The third party will not provide input data but will assist in the execution of the protocol. We will refer to first party that provides input as Alice and to the second party that provides input as Bob. 
 \paragraph{Use-Case 1}
-For our first use-case, we have chosen a simple join. The use-case may be simple but not irrelevant as joins are of great importance for practically every relational database operation. It is estimated that over 60 \% of privacy-sensitive analytics queries rely on a join in one form or another \cite{johnson2017practical}. In our first experiment, Alice and Bob each hold one table. Each of these tables consists of 4 columns. The first column serves as the primary key that is used for the join. The other 3 columns are filled with random none negative integers and simulate user data. We are calculating an equijoin with the primary key generated in such a way that 50 \% of the entries in each table will match the join criteria. As result, we will reveal the entire outcome of the join. So the primary utility provided by the use of MPC operations is the fact that the entries that do not match the join criteria are obscured.
+For our first use-case, we have chosen a single join. A single join may not be a very complex use-case but it is not irrelevant as joins are of great importance for practically every relational database query. It is estimated that over 60 \% of privacy-sensitive analytics queries include at least one join \cite{johnson2017practical}. In our first experiment, Alice and Bob each hold one table. Each of these tables consists of 4 columns. The first column serves as the primary key that is used for the join. The other 3 columns are filled with random non-negative integers and simulate user data. We are calculating an equijoin with the primary key generated in such a way that 50 \% of the entries in each table will match the join criteria. As result, we will reveal the entire outcome of the join. So the primary utility provided by the use of MPC operations is the fact that the entries that do not match the join criteria are obscured.
 
    \phantomsection
 \label{SQL1_label}				
@@ -19,107 +15,8 @@ ON  A.primary_key = B.primary_key
    \phantomsection
 \label{SQL1}
 			
-\begin{lstlisting}[caption={ The Python protocol of Conclave for our first use-case    }]
-def protocol():
-	# define the schema for the input tables 
-	columns_in_party1 = [
-	defCol("primary_key", "INTEGER", [1]),
-	defCol("user_data1_Alice", "INTEGER", [1]),
-	defCol("user_data2_Alice", "INTEGER", [1]),
-	defCol("user_data3_Alice", "INTEGER", [1]),
-	]
-	# the content of the tables is loaded from a pregenerated .csv
-	input_1 = create("input_1", columns_in_party1, {1})
-	
-	columns_in_party2 = [
-	defCol("primary_key", "INTEGER", [2]),
-	defCol("user_data1_Bob", "INTEGER", [2]),
-	defCol("user_data2_Bob", "INTEGER", [2]),
-	defCol("user_data3_Bob", "INTEGER", [2])
-	]
-	input_2 = create("input_2", columns_in_party2, {2})
-	# calculate the join over the two tables 
-	join_result = join(input_1, input_2, 'join_result', ['primary_key'], ['primary_key'])
-	# reveal the output of the join to Alice
-	collect(join_result, 1)
-	# reveal the output of the join  to Bob
-	collect(join_result, 2)
-	
-if __name__ == "__main__":
-	with open(sys.argv[1], "r") as config:
-		# load the configuration data
-		config = json.load(config)
-		# tell Conclave to generate secure code for the protocol an execute it
-		workflow.run(protocol, c, mpc_framework="jiff", apply_optimisations=True)
-\end{lstlisting}
-TODO mehr kommentare einfügen	
-\begin{lstlisting}[caption={Simpifiyed Protocol for our first use-case in ABY3}]
-
-std::vector<ColumnInfo> AliceCols = { ColumnInfo{ "key", TypeID::IntID, keyBitCount } };
-std::vector<ColumnInfo> BobCols = { ColumnInfo{ "key", TypeID::IntID, keyBitCount } };
-
-for (u32 i = 1; i < cols; ++i)
-{
-	AliceCols.emplace_back("Alice" + std::to_string(i), TypeID::IntID, 32);
-	BobCols.emplace_back("Bob" + std::to_string(i), TypeID::IntID, 32);
-}
-# Create tables for Alice and Bob and fill them with content
-Table AliceTable(rows, AliceCols);
-Table BobTable(rows, BobCols);
-# Fill the primary columns 
-for (u64 i = 0; i < rows; ++i)
-{
-	# if out is false then the entry will be included in the join
-	auto out = (i >= intersectionsize);
-	for (u64 j = 0; j < 2; ++j)
-	{
-		AliceTable.mColumns[0].mData(i, j) = i + 1;
-		BobTable.mColumns[0].mData(i, j) = i + 1 + (rows * out);
-	}
-}
-# Fill the other columns with random integers
-for (u64 i = 1;  i < cols; ++i){
-	for (u64 j =0; j < rows; ++j){
-		AliceTable.mColumns[i].mData(j, 0) = rand() ;
-		BobTable.mColumns[i].mData(j, 0) = rand();	
-	}
-}
-# instanciate Timer for benchmarking
-Timer t;
-# Alice and Bob each run their own thread 
-auto routine = [&](int i) { setThreadName("t0");
-	t.setTimePoint("start");
-	# 
-	auto A = (i == 0) ? srvs[i].localInput(AliceTable) : srvs[i].remoteInput(0);
-	auto B = (i == 0) ? srvs[i].localInput(BobTable) : srvs[i].remoteInput(0);
-	
-	if (i == 0) t.setTimePoint("inputs");
-	if (i == 0) srvs[i].setTimer(t);
-	std::vector<SharedTable::ColRef>  First_Select_collumns;		
-	for (u64 i = 0;  i < cols; ++i){
-		First_Select_collumns.emplace_back(SharedTable::ColRef(B,B.mColumns[i]) );
-	}
-	for (u64 i = 1;  i < cols; ++i){
-		First_Select_collumns.emplace_back(SharedTable::ColRef(A,A.mColumns[i]) );
-	}
-	auto result =srvs[i].join( SharedTable::ColRef(A,A.mColumns[0]) , SharedTable::ColRef(B,B.mColumns[0]), First_Select_collumns);
-	if (i == 0) t.setTimePoint("intersect");
-	for (u64 index = 0; index < result.mColumns.size(); ++index)
-	{
-		aby3::i64Matrix reveal(result.mColumns[index].rows(),  result.mColumns[index].i64Cols());
-		server[i].mEnc.revealAll(server[i].mRt.mComm, T.mColumns[index], reveal);
-		if (i == 0) std:: cout << reveal << std::endl;	
-	}
-};
-
-auto t0 = std::thread(routine, 0);
-auto t1 = std::thread(routine, 1);
-t0.join();
-t1.join();
-}
-\end{lstlisting}
 \paragraph{Use-Case 2}
-Computing joins alone is of limited use if the result of the join can not be subject to further selection. Therefore in our second use-case we will first compute a join and the query the result with a classic SELECT,FROM,WHERE statement. In our second experiment Alice and Bob again each hold one table. The tables consist of two columns. The first column serves as primary key and the second column contains a boolean values that is generated at random. For our experiment we will in a first step compute again compute the equijoin of the two tables with respect to the primary key column. In a second step we will apply a where filter to the result of the join and eliminate every row that does not have two identical boolean values. This use case functions also as a simple showcase example for composability and will show how well this mechanism functions in practise.   
+Computing joins alone is of limited use if the result of the join can not be subject to further selection. Therefore in our second use-case we will first compute a join and the query the result with a classic "SELECT ... FROM ... WHERE" statement. Similar to first experiment Alice and Bob again each hold one table. The tables consist of two columns. The first column serves as primary key and the second column contains a boolean values that is generated at random. For our experiment we will in a first step compute again compute the equijoin of the two tables with respect to the primary key column. In a second step we will apply a where filter to the result of the join and eliminate every row that does not have two identical boolean values. This use case functions also as a simple showcase example for composability and will show how well this mechanism functions in practise.   
 \begin{lstlisting}[caption={Functional equivalent SQL statement for our second use-case}]
 	SELECT * 
 	FROM Alice A JOIN Bob B 
@@ -132,7 +29,7 @@ Besides joins, another very important group of SQL operations are aggregate func
  
 
 \paragraph{Use-Case 4}
-For our fourth and last use-case, we wait to compare a special feature of SMCQL and Conclave. Both Conclave and SMCQL feature a mechanic, that allows revealing some of the columns of the input data. The revelation of the input data allows them to apply optimizations that speed up computation while preserving the privacy of the other columns. For a more detailed description see \hyperref[Accesses_label]{SMCQL's access control} and \hyperref[Trust_label]{Conclave's trust annotations}. Therefore in our fourth use-case, we are going to replicate the setup of our first use-case but this time we will allow the leakage of the primary key column. That will allow both Conclave and SMCQL to apply their optimization. Replicating the setup of the first use-case enables us, to compare the results of the fourth use-case to the first use-case. This comparison will show how big the speed up of these optimizations is in practice. 
+For our fourth and last use-case, we compare two special features of SMCQL and Conclave. Both Conclave and SMCQL feature a mechanic, that allows revealing some of the columns of the input data. The revelation of the input data allows them to apply optimizations that speed up computation while preserving the privacy of the other columns. For a more detailed description see \hyperref[Accesses_label]{SMCQL's access control} and \hyperref[Trust_label]{Conclave's trust annotations}. Therefore in our fourth use-case, we are going to replicate the setup of our first use-case but this time we will allow the leakage of the primary key column. That will allow both Conclave and SMCQL to apply their optimization. Replicating the setup of the first use-case enables us, to compare the results of the fourth use-case to the first use-case. This comparison will show how big the speed up of these optimizations is in practice. 
 
 
 

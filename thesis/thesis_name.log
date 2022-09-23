@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  19 SEP 2022 06:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  23 SEP 2022 16:25
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1295,10 +1295,7 @@ f Se-cure Multi-
 \tf@toc=\write6
 \openout6 = `thesis_name.toc'.
 
- [5] [6
-
-
-] (abstract.tex
+ [5] [6] (abstract.tex
 chapter 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -1318,6 +1315,8 @@ Class scrbook Warning: \float@addtolists detected!
 ) (introduction.tex [1
 
 
+
+
 ] [2
 
 
@@ -1329,40 +1328,41 @@ chapter 2.
 ]
 chapter 3.
 
-Overfull \hbox (21.91953pt too wide) in paragraph at lines 3--6
+Overfull \hbox (21.91953pt too wide) in paragraph at lines 5--9
 \T1/lmr/m/n/10.95 In the an se-cure mul-ti-party com-pu-ta-tion(short MPC) sce-
 nario there are n par-ties $\OML/lmm/m/it/10.95 p[]; [] ; p[]$\T1/lmr/m/n/10.95
  .
  []
 
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 13.
+ine 16.
 [5] [6]) (framework_description.tex [7] [8
 
 
 ]
 chapter 4.
-) (conclave.tex
-Underfull \hbox (badness 10000) in paragraph at lines 14--17
+) (conclave.tex [9]
+Underfull \hbox (badness 10000) in paragraph at lines 17--20
 
  []
 
-[9]) (aby3.tex
-Underfull \hbox (badness 10000) in paragraph at lines 30--1
+[10]) (aby3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 33--1
 
  []
 
-[10] [11]) (smcql.tex [12] [13]) (old_framework.tex) (implementation.tex
-[14]
+[11] [12]) (smcql.tex [13] [14]) (old_framework.tex [15]) (implementation.tex
+[16]
 chapter 5.
-[15
+[17
 
 
 ]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 23.
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 3
-5.
+nput line 32.
+ [18]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
+4.
  (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1372,49 +1372,45 @@ Class scrbook Warning: `\caption' outside float.
 (scrbook)              Maybe you are using a package that uses `\@makecaption'
 (scrbook)              without setting `\@captype' before.
 (scrbook)              Because I cannot detect the caption type, I'm using
-(scrbook)              the empty one. on input line 38.
+(scrbook)              the empty one. on input line 47.
 
-[16]) (Use-Cases.tex [17] [18
-
-
-]
+[19]) (Use-Cases.tex [20]
 chapter 6.
-[19] [20]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+[21
 
- [21])
-(evaluation.tex [22]
+
+]) (code.tex [22] [23]) (evaluation.tex [24]
 chapter 7.
-) (thesis_name.bbl [23
+) (thesis_name.bbl [25
 
 
-] [24
+] [26
 
 
 ]
 chapter without number
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-2.
+4.
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-Underfull \hbox (badness 2150) in paragraph at lines 42--44
+) [27]
+Underfull \hbox (badness 2150) in paragraph at lines 87--89
 []\T1/lmr/m/n/10.95 time.  []$\T1/lmtt/m/n/10.95 https : / / manpages . debian 
 . org / stretch / time / time . 1 . en . html$[]\T1/lmr/m/n/10.95 ,
  []
 
-) [25] (thesis_name.aux)
+) [28] (thesis_name.aux)
 Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31662 strings out of 479334
- 610297 string characters out of 2856609
- 1638585 words of memory out of 3000000
- 48228 multiletter control sequences out of 15000+200000
+ 31697 strings out of 479334
+ 610787 string characters out of 2856609
+ 1681586 words of memory out of 3000000
+ 48240 multiletter control sequences out of 15000+200000
  488670 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,20n,130p,10609b,2093s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 125i,20n,130p,10609b,2673s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
 C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
 /Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
@@ -1442,9 +1438,9 @@ c/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmtt10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (31 pages, 529004 bytes).
+Output written on thesis_name.pdf (34 pages, 550792 bytes).
 PDF statistics:
- 710 PDF objects out of 1000 (max. 8388607)
- 302 named destinations out of 1000 (max. 500000)
- 255 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 767 PDF objects out of 1000 (max. 8388607)
+ 322 named destinations out of 1000 (max. 500000)
+ 271 words of extra memory for PDF output out of 10000 (max. 10000000)
 

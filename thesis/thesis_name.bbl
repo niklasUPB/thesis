@@ -1,15 +1,46 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{LWN{\etalchar{+}}15}
 
+\bibitem[ACC{\etalchar{+}}21]{aly2021scale}
+Abdelrahaman Aly, K~Cong, D~Cozzo, M~Keller, E~Orsini, D~Rotaru, O~Scherer,
+  P~Scholl, N~Smart, T~Tanguy, et~al.
+\newblock Scale--mamba v1. 12: Documentation, 2021.
+
+\bibitem[AGJ{\etalchar{+}}21]{cryptoeprint:2021:576}
+Surya Addanki, Kevin Garbe, Eli Jaffe, Rafail Ostrovsky, and Antigoni
+  Polychroniadou.
+\newblock Prio+: Privacy preserving aggregate statistics via boolean shares.
+\newblock Cryptology ePrint Archive, Report 2021/576, 2021.
+\newblock \url{https://ia.cr/2021/576}.
+
 \bibitem[BEE{\etalchar{+}}16]{bater}
 Johes Bater, Gregory Elliott, Craig Eggen, Satyender Goel, Abel Kho, and Jennie
   Rogers.
 \newblock Smcql: Secure querying for federated databases.
 \newblock {\em arXiv preprint arXiv:1606.06808}, 2016.
 
+\bibitem[CGB17]{201553}
+Henry Corrigan-Gibbs and Dan Boneh.
+\newblock Prio: Private, robust, and scalable computation of aggregate
+  statistics.
+\newblock In {\em 14th USENIX Symposium on Networked Systems Design and
+  Implementation (NSDI 17)}, pages 259--282, Boston, MA, March 2017. USENIX
+  Association.
+
+\bibitem[Cos21]{Cosmian}
+Cosmian.
+\newblock Ciphercompute.
+\newblock \url{https://github.com/Cosmian/CipherCompute}, 2021.
+
 \bibitem[cPr21]{cProfile}
 The python profilers.
 \newblock \url{https://docs.python.org/3/library/profile.html}, 2021.
+
+\bibitem[DPSZ11]{SPDZ}
+I.~Damgard, V.~Pastro, N.~P. Smart, and S.~Zakarias.
+\newblock Multiparty computation from somewhat homomorphic encryption.
+\newblock Cryptology ePrint Archive, Paper 2011/535, 2011.
+\newblock \url{https://eprint.iacr.org/2011/535}.
 
 \bibitem[JNS17]{johnson2017practical}
 Noah~M Johnson, Joseph~P Near, and Dawn~Xiaodong Song.
@@ -22,6 +53,20 @@ Chang Liu, Xiao~Shaun Wang, Kartik Nayak, Yan Huang, and Elaine Shi.
 \newblock Oblivm: A programming framework for secure computation.
 \newblock In {\em 2015 IEEE Symposium on Security and Privacy}, pages 359--376.
   IEEE, 2015.
+
+\bibitem[PSZ14]{pinkas2014faster}
+Benny Pinkas, Thomas Schneider, and Michael Zohner.
+\newblock Faster private set intersection based on $\{$OT$\}$ extension.
+\newblock In {\em 23rd USENIX Security Symposium (USENIX Security 14)}, pages
+  797--812, 2014.
+
+\bibitem[RAB{\etalchar{+}}22]{rogers2022vaultdb}
+Jennie Rogers, Elizabeth Adetoro, Johes Bater, Talia Canter, Dong Fu, Andrew
+  Hamilton, Amro Hassan, Ashley Martinez, Erick Michalski, Vesna Mitrovic,
+  et~al.
+\newblock Vaultdb: A real-world pilot of secure multi-party computation within
+  a clinical research network.
+\newblock {\em arXiv preprint arXiv:2203.00146}, 2022.
 
 \bibitem[Ran21]{cryotoTools}
 Peter Randal.
@@ -44,7 +89,7 @@ time.
 
 \bibitem[tim21b]{time}
 timeit.
-\newblock \url{https://docs.python.org/3/library/timeit.htmll}, 2021.
+\newblock \url{https://docs.python.org/3/library/timeit.html}, 2021.
 
 \bibitem[VSG{\etalchar{+}}19]{10.1145/3302424.3303982}
 Nikolaj Volgushev, Malte Schwarzkopf, Ben Getchell, Mayank Varia, Andrei
@@ -52,5 +97,14 @@ Nikolaj Volgushev, Malte Schwarzkopf, Ben Getchell, Mayank Varia, Andrei
 \newblock Conclave: Secure multi-party computation on big data.
 \newblock In {\em Proceedings of the Fourteenth EuroSys Conference 2019},
   EuroSys '19, New York, NY, USA, 2019. Association for Computing Machinery.
+
+\bibitem[wir21]{wireshark}
+wireshark.
+\newblock \url{https://www.wireshark.org/l}, 2021.
+
+\bibitem[WMK16]{emp-toolkit}
+Xiao Wang, Alex~J. Malozemoff, and Jonathan Katz.
+\newblock {EMP-toolkit: Efficient MultiParty computation toolkit}.
+\newblock \url{https://github.com/emp-toolkit}, 2016.
 
 \end{thebibliography}

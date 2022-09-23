@@ -1,7 +1,10 @@
 \section{SMCQL}
-SMCQL \cite{bater} is an MPC based framework for relational database operations that is based on an already existing MPC framework, namely ObliVM \cite{liu2015oblivm} . With SMCQL one can specify a query and SMCQL automatically generates secure code for evaluating the query. 
+SMCQL \cite{bater} is an MPC based framework for relational database operations that is based on an already existing MPC framework, namely ObliVM \cite{liu2015oblivm}. With SMCQL one can specify a query and SMCQL automatically generates secure code for evaluating the query. 
 \paragraph{functionality}
 SMCQL realizes a private data network. A private data network is a union of many mutually distrusting databases that can be queried like a single engine that holds all data of every party. From the user's perspective, a private data network functions exactly like one monolithic database. With SMCQL one can specify queries in a semantic very similar to SQL and SMCQL translates these queries into a sequence of MPC operations. Therefore SMCQL allows using MPC without having detailed knowledge of the underlying system. With this approach, SMCQL wants to increase the accessibility of MPC. SMCQL supports a variety of SQL operators, these include selection, projection, aggregation, equi-joins, theta joins, and cross products. With its SQL like Syntax SMCQL can evaluate every query consisting of a combination of these operators that would be a valid query in plain-standard SQL.  
+
+
+\paragraph{Documentation}
 
 %- minimal subtree  
 %-shard schema for all parties
@@ -10,12 +13,12 @@ SMCQL realizes a private data network. A private data network is a union of many
 %- tuple-at-a-time
 %- multi tuple 
 
+
+
 \paragraph{underlying MPC technology}
 SMCQL currently works in a two-party setting and provides security against a semi-honest, threshold adversary that can corrupt at most one party.  So, it essentially resides in a honest majority setting. The two parties are aided by an honest broker a neutral third party that plans the execution of the protocol. Besides the honest booker planning the execution of the protocol, he is not involved in its actual execution. For this reason every MPC based operation does always include only the party's that are providing the data.
-The honest broker also functions as an access point for the user 
-and receives his query. 
-Once the honest broker receives the query it parses the query into a directed acyclic graph of operators. Each node in the graph represents one operation and an edge between two notes annotates that the incoming node consumes the output data of the outgoing node. 
-With the operator graph, the honest broker is able to analyze the flow of data through the query and decide which of Smcql's different optimizations are applicable to each node. 
+The honest broker also functions as an access point for the user and receives his query. 
+Once the honest broker receives the query it parses the query into a directed acyclic graph of operators. Each node in the graph represents one operation and an edge between two notes annotates that the incoming node consumes the output data of the outgoing node. With the operator graph, the honest broker is able to analyze the flow of data through the query and decide which of SMCQL's different optimizations are applicable to each node. 
 A detailed description of these optimization can found in \hyperref[sec:Optimizations_smcql]{Section 4.3.4}. Once all optimizations a planed the honest broker generates secure MPC based code and provides it to the parties. For its secure computations SMCQL uses the already existing ObliVM framework.
 \paragraph{ObliVM}
 TODO hier beschreibung von ObliVM und ORAM 
@@ -34,9 +37,9 @@ A public column may always be revealed to any party including the honest broker.
 SMCQL implements various techniques that speed up query evaluation and help it scale. 
 \paragraph{Slicing}
 One such optimization is slicing. When SMCQL identifies an operator as sliceable, it partitions the input data into smaller units of computation. The partitioning of the input tuples is done horizontally. Small units of computation are easier to evaluate compared to a large monolithic operator, they allow for less complex secure code and in some cases, the evaluation of the units can be parallelized. Projections and filters are particularly easy to slice, as they can be evaluated working one tuple at a time.
-\paragraph{Split Operators}
-Another optimization that helps SMCQL scale are its split operators. A split operator splits the evaluation of a high operator that requires MPC in two phases. First, a phase of local plaintext computation that is followed by a second phase of MPC computation. The intuition behind this is that the MPC computation in the second phase is cheaper than the evaluation of the entire operator with MPC would be. Most aggregate functions can be spilt, in the first phase each party local aggregates over its own columns, and in the second phase, MPC is used to compute the correct aggregate out of these intermediate aggregates. The evaluation of a count(*) operator, for example, can be split, in the first phase each party locally counts its own input data and in the second phase these intermediate results are added up with the help of MPC. % SMCQL also feature's split for filters.
+\paragraph{Split Operators} % high
+Another optimization that helps SMCQL scale are its split operators. A split operator splits the evaluation of a operator that requires MPC in two phases. First, a phase of local plaintext computation that is followed by a second phase of MPC computation. The intuition behind this is that the MPC computation in the second phase is cheaper than the evaluation of the entire operator with MPC would be. Most aggregate functions can be spilt, in the first phase each party local aggregates over its own columns, and in the second phase, MPC is used to compute the correct aggregate out of these intermediate aggregates. The evaluation of a count(*) operator, for example, can be split, in the first phase each party locally counts its own input data and in the second phase these intermediate results are added up with the help of MPC. % SMCQL also feature's split for filters.
 
-
+\subsection{Comparison between SMCQL and Conclave}
 
 %Just like Prio+ and contrary to conclave and aby3, smcql is not a framework for developing MPC solutions, but rather an already complete MPC system. Unlike in the case if Prio+ the lack of flexibility that come with this is not problem. As the intended use for smcql perfectly fits our requirements. Smcql ...
