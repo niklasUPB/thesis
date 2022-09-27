@@ -13,7 +13,7 @@ ABY3 demonstrates that it provides the states with  the tools needed to detect s
 
 \paragraph{Documentation} 
 An important characteristics of every software is its documentation. 
-Probably the common form of documentation for any software are comments within the code, in this aspect ABY3 has plenty room to improve, as one hand it feature classes that are very well documented, while on the other hand there are important classes that have barely any comments in them. 
+Probably the most common form of documentation for any software are comments within the code, in this aspect ABY3 provides some documentation but has plenty room to improve, as on on hand it features classes that are very well commented, while on the other hand there are important classes that have barely any comments in them. 
 ABY3's documentation also features a quick start guide that demonstrates some of its core capability's like setting up three parties and performing basic integer operations.
 For external documentation ABY3 comes with a description of how aggregate functions like MAX, SUM, COUNT can be realized when utilizing ABY3. For example, the maximum operator can be evaluated with a recursive algorithm that computes the maximum of the first and second half of the rows. Yet these descriptions focus an high level concepts and many important details remain unspecified. ABY3's pre implemented prototype implementations contribute also to its documentation, as they demonstrated how some of its more complex functions are supposed to be utilised.
 
@@ -35,7 +35,7 @@ ABY3s key feature are its new protocols for joins based on a MPC based cuckoo ha
 
 \paragraph{ Cuckoo Hashing }
 ABY3's version of cuckoo hashing is a special variant of a hash table. The table is based on a vector T that has m slots that can hold items. We address the i-th slot of T with T[i] for any i with 1 $\leq$ i $ \leq $ m. For a given keyspace X the hash table utilises two hash functions $ h_0 $ , $ h_1 $: X $ \mapsto $   $ \{ 1,....,m \} $. A hash function can be practically any function and is used to map the data to its storage location, as the size of the keyspace is normally larger then m, the hash functions cannot be injective.
-To insert any x $ \in $ X into the hash table x is inserted into T[$h_i(x)$] where i $ \in $ $ \{ 1,2 \} $ is decided with a coin toss. If T[$h_i(x)$] contains already an element the element is removed from the hash table and the reinserted. This approche yields a important invariant(1): For any x it always hold that x is located in T[$h_0(x)$] or T[$h_1(x)$]. Therefore cuckoo hash tables have O(1) worst case lookup time, as a lookup only needs to check two possible positions in the table. 
+To insert any x $ \in $ X into the hash table x is inserted into T[$h_i(x)$] where i $ \in $ $ \{ 1,2 \} $ is decided with a coin toss. If T[$h_i(x)$] contains already an element the element is removed from the hash table and afterwards reinserted. This approche yields a important invariant(1): For any x it always hold that x is located in T[$h_0(x)$] or T[$h_1(x)$]. Therefore cuckoo hash tables have O(1) worst case lookup time, as a lookup only needs to check two possible positions in the table. 
 % - key based data structure
 %As the size of the keyspace is larger then m, the hash functions cannot be injective. Therefore the event of two value
 \paragraph{Computing Joins}

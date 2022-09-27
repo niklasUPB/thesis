@@ -1,4 +1,8 @@
 \section{Implementation}
+In this section we provide a description of notable details of the implementation of our use-cases. 
+
+\paragraph{Use Case One}
+TODO
 \begin{lstlisting}[caption={ The Python protocol of Conclave for our first use-case    }]
 	def protocol():
 	# define the schema for the input tables 
@@ -97,3 +101,34 @@
 	t1.join();
 }
 \end{lstlisting}
+\paragraph{Use-Case Two}
+For our second use-case we do not implement the query directly. Instead we implement another query that has an identical output. To obtain the desired result Alice and Bob compute two  intermediate results, the union of these intermediate results will then yield our final result, an equivalent SQL statement is listened \hyperref[use_case2_alternative_sql]{ in Listing 6.5}.
+In a first step Alice and Bob filter their input once so that it contains only entries with the value false in its boolean column. Afterwards they can compute the join of these two filtered tables. The Result of this join is the first important intermediate result, as each of its entries is also part of the final result. The second important intermediate result can be obtained the by the same procedure when filtering the input for entries that contain true.
+The union of these two intermediate results is our final result. 
+
+We have chosen to implement the use-case in this indirect way for two reasons. First Conclave cannot evaluate the query directly, as Conclave's current prototype implementation can apply a WHERE filter exclusivity to a table that is either direct input of a party, or the output of unary operator, that has only one table as input. Additionally our indirect implementation has a significant better performance compared to the direct implementation, for a detail analysis see   \hyperref[evaluation]{ Evaluation}.  
+
+
+\phantomsection
+\label{use_case2_alternative_sql}
+\begin{lstlisting}[caption={  Functional equivalent SQL statement for our implementation of use-case two }]
+SELECT PimaryKey, AliceBool, BobBool FROM
+(SELECT PrimaryKey, AliceBool FROM AliceTable WHERE AliceBool == false) 
+NATURAL JOIN	
+(SELECT PrimaryKey, BobBool FROM AliceTable WHERE BobBool == false)	
+UNION
+SELECT PimaryKey, AliceBool, BobBool FROM
+(SELECT PrimaryKey, AliceBool FROM AliceTable WHERE AliceBool == true) 
+NATURAL JOIN	
+(SELECT PrimaryKey, BobBool FROM BobTable WHERE AliceBool == true)
+\end{lstlisting}
+
+\paragraph{Correctness}
+Despite it not being obvious, our procedure indeed yields the correct result, as each join generates only entries, that have a primary key that is included in Bob's and Alice's inputs and have identical boolean values. Therefore every entry that is part of our result is also part of the correct result.
+
+If any entry is not part of our result, it cannot be part of either intermediate result. Any entry that is not part of either intermediate result , feature a primary key that is either not represented in both inputs or contains two boolean values that are not equal.
+Therefore the entry cannot be part of the correct result. Consequently each entry that is not part of our result, cannot be part of the correct result. Which is the contraposition and therefore equivalent, to the fact that each entry of the correct result is part of our result. 
+As our result contains every entry of the correct result and the correct result contains every entry of our result, our result and the correct result are identical. Therefore our procedure is indent correct.
+
+
+

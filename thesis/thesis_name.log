@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  23 SEP 2022 16:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  27 SEP 2022 06:50
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1357,10 +1357,9 @@ chapter 5.
 [17
 
 
-]
+] [18]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 32.
- [18]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
 4.
  (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
@@ -1379,12 +1378,24 @@ chapter 6.
 [21
 
 
-]) (code.tex [22] [23]) (evaluation.tex [24]
+]) (code.tex [22] [23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+
+Class scrbook Warning: `\caption' outside float.
+(scrbook)              Seems you are using `\caption' outside a float.
+(scrbook)              Maybe you are using a package that uses `\@makecaption'
+(scrbook)              without setting `\@captype' before.
+(scrbook)              Because I cannot detect the caption type, I'm using
+(scrbook)              the empty one. on input line 124.
+
+) (evaluation.tex [25] [26
+
+
+]
 chapter 7.
-) (thesis_name.bbl [25
-
-
-] [26
+) (thesis_name.bbl [27] [28
 
 
 ]
@@ -1393,24 +1404,24 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
 4.
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [27]
+) [29]
 Underfull \hbox (badness 2150) in paragraph at lines 87--89
 []\T1/lmr/m/n/10.95 time.  []$\T1/lmtt/m/n/10.95 https : / / manpages . debian 
 . org / stretch / time / time . 1 . en . html$[]\T1/lmr/m/n/10.95 ,
  []
 
-) [28] (thesis_name.aux)
+) [30] (thesis_name.aux)
 Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31697 strings out of 479334
- 610787 string characters out of 2856609
- 1681586 words of memory out of 3000000
- 48240 multiletter control sequences out of 15000+200000
+ 31729 strings out of 479334
+ 611227 string characters out of 2856609
+ 1688585 words of memory out of 3000000
+ 48251 multiletter control sequences out of 15000+200000
  488670 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,20n,130p,10609b,2673s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 125i,20n,130p,10609b,2092s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
 C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
 /Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
@@ -1438,9 +1449,9 @@ c/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmtt10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (34 pages, 550792 bytes).
+Output written on thesis_name.pdf (36 pages, 561388 bytes).
 PDF statistics:
- 767 PDF objects out of 1000 (max. 8388607)
- 322 named destinations out of 1000 (max. 500000)
- 271 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 806 PDF objects out of 1000 (max. 8388607)
+ 343 named destinations out of 1000 (max. 500000)
+ 279 words of extra memory for PDF output out of 10000 (max. 10000000)
 

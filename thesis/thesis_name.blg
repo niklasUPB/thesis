@@ -11,7 +11,7 @@ Warning--to sort, need author or key in time_sh
 Warning--to sort, need author or key in wireshark
 You've used 19 entries,
             2543 wiz_defined-function locations,
-            657 strings with 7631 characters,
+            657 strings with 7630 characters,
 and the built_in function-call counts, 7444 in all, are:
 = -- 713
 > -- 441

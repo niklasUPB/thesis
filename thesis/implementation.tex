@@ -1,10 +1,9 @@
 \chapter{Benchmarking}
-For benchmarking performance there is often a variety of different metrics that are relevant and require to be measured with great care, as flawed or unclean measuring may deteriorate the value of the results. In this chapter, we describe the different metrics we want to benchmark and the different tools we use to achieve clean results.
+For benchmarking performance there is often a variety of different metrics that are relevant and require to be measured with great care, as flawed or unclean measuring may deteriorate the value of the results. In this chapter, we describe the different metrics we want to benchmark and the different tools we use to achieve clean results. 
 
 \section{Measuring Runtime}
 A basic metric of how well a program functions, is its runtime. Time is often measured in either wall-clock time or process time. Wall-clock time references, as the name implies, the passing of time on a wall-clock while the program runs. 
-Process time resembles the actual time a CPU was used by the program. If for example the program blocks for a longer period of time its wall-clock and process execution time may largely differ.   One needs to be careful what time is measured and that it is measured precisely. Otherwise one may obtain flawed or unfairly biased results. We have decided to measure both wall-clock and process execution time, as this will 
-In order to do so, tool-aided measuring is required.
+Process time resembles the actual time a CPU was used by the program. If for example the program blocks for a longer period of time its wall-clock and process execution time may largely differ.    One needs to be careful what time is measured and that it is measured precisely. Otherwise one may obtain flawed or unfairly biased results. We measure both wall-clock and process execution time, as this allows us a far a more detailed analysis. In particular, this approach enables us the evaluate the difference between process time and wall-clock time, which indicates how long a process was blocked. In order to do so, tool-aided measuring is required.
 
 \paragraph{Conclave}
  For python3 the two primary candidates are timeit \cite{time} and the python profiler \cite{cProfile},
@@ -17,15 +16,16 @@ TODO time \cite{time_sh}
 \section{Networking}
 In our standard setup all parties run on the same machine and communicate through localhost. This simulates a practically perfect LAN connection with very low latency and high throughput. It is also of interest how well the frameworks function in less ideal conditions. Therefore we are also simulate a suboptimal wide area network(WAN) connection with high latency and limited bandwidth.
 
-In order to do so we require a proxy server. Instead of connecting the parties to one another we connect them to the proxy server and the proxy server forwards the incoming messages to the addressed parties. To simulate a slow connection with high latency the proxy server needs to do is delaying incoming messages. Setting up such a proxy server is non trivial task, one challenge in particular is mapping the various connections to one another, in a correct way. This task is made more difficult by the fact that the different frameworks handle their connections in various different ways. In ABY3 for example, each party holds one direct connection to every other party. One the other hand in Conclave, every party is connected to a Node.js server that forwards the messages. In order handle these various approaches correctly, an analysis of the communication patterns is required. Checking implementation details and source code is a target-oriented approach for such an analysis , another tool that helped understanding the communication patterns is Wireshark.      
+In order to do so we require a proxy server. Instead of connecting the parties to one another we connect them to the proxy server and the proxy server forwards the incoming messages to the addressed parties. To simulate a slow connection with high latency the proxy server needs to do is delaying incoming messages. Setting up such a proxy server is non trivial task, one challenge in particular is mapping the various connections to one another, in a correct way. This task is made more difficult by the fact that the different frameworks handle their connections in various different ways. In ABY3 for example, each party holds one direct connection to every other party. One the other hand in Conclave, every party is connected to a Node.js server that forwards the messages. In order handle these various approaches correctly, an analysis of the communication patterns is required. Checking implementation details and source code is a target-oriented approach for such an analysis , another tool that helped us to understand the communication patterns is Wireshark.      
 \paragraph{Wireshark}
-Wireshark \cite{wireshark}  is      
-- netztwerk analysieren
+Wireshark \cite{wireshark} is an open source packet sniffer that allows to capture network traffic and safe it for a detailed analysis.      
+
 - überprüfen ob proxy correct arbeitet
-- sniffing
+
  \paragraph{Toxiproxy}
  Both ABY3 and SMCQL implement communication between parties based on a plain standard socket. In the case of ABY3 it is the standard C++ socket and for SMCQL it is the standard java socket. Both of these are TCP based and can be proxied with a standard TCP proxy. For this purpose we use Shopify's Toxiproxy \cite{toxiproxy}. Toxiproxy is a Go framework that allows to simulate different hazardous network conditions. These include a connection that delays it messages to simulate a high latency setup. Once the proxy server is setup it can be configured over the command line interface (CLI) or alternatively over an HTTP(hypertext transfer protocol) interface, Toxiproxy provides multiple different dedicated HTTP clients for this purpose. The clients differ in that they offer an interface in different programming language . We have chosen to use the provided Ruby client as it is the one that provides the  . 
- A simplified example how to use Toxiproxy to simulate latency can be found in \hyperref[the_label]{Listing 5.1}. 
+ A simplified example how to use Toxiproxy to simulate latency can be found in \hyperref[the_label]{Listing 5.1}. In order to use Toxiproxy on first needs to set up the proxy so it starts to accept new connections. This is done by calling Toxiproxy populate and specifying to address the proxy listens to and the address the messages get forwarded to.
+ By default Toxiproxy does not add any network hazards to a connection. In our example we apply two hazards, to simulate a latency of 1000ms. The first hazard is applied to the "upstream" direction. Therefore it affects every message that is send towards the server from the address the server listens to. The second hazard is allied to the "downstream". Therefore it affects every response that comes from the address the server listens to.    
  
    \phantomsection
  \label{Toxi_label}				
@@ -47,12 +47,14 @@ Wireshark \cite{wireshark}  is
  \end{lstlisting}
  \paragraph{Node-Http-Proxy}
  Conclave's communication is based partially on websockets and partially on plain standard HTTP.
- Websockets are implemented on top of TCP. In particular, Websockets use a single TCP socket for bidirectional communication. Therefore proxying Conclave cannot be done with a simple TCP proxy. Instead we use node-http-proxy a library for proxying HTTP that also supports websockets. Node-http-proxy is based on JavaScript and relies heavily on a event driven programming paradigm. A simplified example how to use node-http-proxy can be found in \hyperref[the_label]{Listing 5.2}. With node-http-proxy we are able to delay massages to simulate high latency. It is also possible to measure the amount of data send and received over a connection.
- 
+ Websockets are implemented on top of TCP. In particular, websockets use a single TCP socket for bidirectional communication. Therefore proxying Conclave cannot be done with a simple TCP proxy. Instead we use node-http-proxy a library for proxying HTTP that also supports websockets. With node-http-proxy we are able to delay massages to simulate high latency. It is also possible to measure the amount of data send and received over a connection.
+ Node-http-proxy is based on JavaScript and relies heavily on a event driven programming paradigm. A simplified example how to use node-http-proxy can be found in \hyperref[the_label]{Listing 5.2}. In our example we first create a proxy server and specify the address it forwards to. In a second step we create a a HTTP server that delays every incoming messages for 500 milliseconds and the send it to the proxy server. Subsequently we demonstrate how Node-Http-Proxy make use of the event driven programming paradigm. In the third step we subscribe to the "proxyReqWs" event. The "proxyReqWs" event is raised by the proxy each time an outgoing websocket message is received. The event is raised before the message is transmitted to its destination and we can submit a anonymous function as event handler. The event handler is executed for each message before the message is transmitted. We could for example use this mechanism to modify responses or for various other practical use cases. In our concrete example
+ we provide a function that waits 500 milliseconds to simulate latency. In the fourth step we subscribe to the "close" event. The "close" event is raised each time a websocket is closed. We use our event handler so safe the amount of bytes transmitted though the websocket. This is a showcase example, how a proxy can help to measure important metrics that would be non trivial to  measure otherwise.
   \phantomsection
   \label{the_label}				
  \begin{lstlisting}[caption={Setting up a proxy that simulates latency with node-http-proxy}]
-  TODO hier mehr kommentare einfuegen
+	#create proxy server and specify the adress it forwards to
+	#with the ws:true parameter we enable support for websockets
  	var proxy = new httpProxy.createProxyServer({
  		target: {
  			host: 'localhost',
@@ -76,5 +78,7 @@ Wireshark \cite{wireshark}  is
  		received  = socket.bytesWritten;
  	});
  \end{lstlisting}
+
+\section{Measuring Space}
 
  

@@ -61,13 +61,17 @@
 \contentsline {paragraph}{\nonumberline Wireshark}{18}{paragraph*.75}%
 \contentsline {paragraph}{\nonumberline Toxiproxy}{18}{paragraph*.77}%
 \contentsline {paragraph}{\nonumberline Node-Http-Proxy}{19}{paragraph*.80}%
+\contentsline {section}{\numberline {5.3}Measuring Space}{20}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Use-Cases}{21}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Use-Case Description}{21}{section.6.1}%
-\contentsline {paragraph}{\nonumberline Use-Case 1}{21}{paragraph*.83}%
-\contentsline {paragraph}{\nonumberline Use-Case 2}{21}{paragraph*.87}%
-\contentsline {paragraph}{\nonumberline Use-Case 3}{22}{paragraph*.89}%
-\contentsline {paragraph}{\nonumberline Use-Case 4}{22}{paragraph*.91}%
+\contentsline {paragraph}{\nonumberline Use-Case One}{21}{paragraph*.83}%
+\contentsline {paragraph}{\nonumberline Use-Case Two}{22}{paragraph*.87}%
+\contentsline {paragraph}{\nonumberline Use-Case Three}{22}{paragraph*.89}%
+\contentsline {paragraph}{\nonumberline Use-Case Four}{22}{paragraph*.91}%
 \contentsline {section}{\numberline {6.2}Implementation}{22}{section.6.2}%
-\contentsline {chapter}{\numberline {7}evaluation}{25}{chapter.7}%
-\contentsline {chapter}{\nonumberline Bibliography}{27}{chapter*.92}%
+\contentsline {paragraph}{\nonumberline Use Case One}{22}{paragraph*.93}%
+\contentsline {paragraph}{\nonumberline Use-Case Two}{25}{paragraph*.95}%
+\contentsline {paragraph}{\nonumberline Correctness}{25}{paragraph*.98}%
+\contentsline {chapter}{\numberline {7}Evaluation}{27}{chapter.7}%
+\contentsline {chapter}{\nonumberline Bibliography}{29}{chapter*.99}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
