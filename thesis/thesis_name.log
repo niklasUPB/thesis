@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  27 SEP 2022 06:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  2 OCT 2022 08:12
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1047,7 +1047,7 @@ Package: listings 2020/03/24 1.8d (Carsten Heinz)
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 41
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 42
 .
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1055,27 +1055,27 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 (thesis_name.aux)
 \openout1 = `thesis_name.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 41.
-LaTeX Font Info:    ... okay on input line 41.
-Package scrbase Info: activating english \contentsname on input line 41.
-Package scrbase Info: activating english \listfigurename on input line 41.
-Package scrbase Info: activating english \listtablename on input line 41.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
+LaTeX Font Info:    ... okay on input line 42.
+Package scrbase Info: activating english \contentsname on input line 42.
+Package scrbase Info: activating english \listfigurename on input line 42.
+Package scrbase Info: activating english \listtablename on input line 42.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1133,7 +1133,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring OFF on input line 41.
+Package hyperref Info: Link coloring OFF on input line 42.
 
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1147,9 +1147,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count326
 )
-LaTeX Info: Redefining \ref on input line 41.
-LaTeX Info: Redefining \pageref on input line 41.
-LaTeX Info: Redefining \nameref on input line 41.
+LaTeX Info: Redefining \ref on input line 42.
+LaTeX Info: Redefining \pageref on input line 42.
+LaTeX Info: Redefining \nameref on input line 42.
  (thesis_name.out) (thesis_name.out)
 \@outlinefile=\write5
 \openout5 = `thesis_name.out'.
@@ -1161,7 +1161,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 41.
+(scrbook)           before \begin{document} on input line 42.
 
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1336,18 +1336,18 @@ nario there are n par-ties $\OML/lmm/m/it/10.95 p[]; [] ; p[]$\T1/lmr/m/n/10.95
 
 Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
 ine 16.
-[5] [6]) (framework_description.tex [7] [8
+[5] [6]) (framework_description.tex [7] [8]
+chapter 4.
+) (conclave.tex [9
 
 
 ]
-chapter 4.
-) (conclave.tex [9]
-Underfull \hbox (badness 10000) in paragraph at lines 17--20
+Underfull \hbox (badness 10000) in paragraph at lines 20--23
 
  []
 
 [10]) (aby3.tex
-Underfull \hbox (badness 10000) in paragraph at lines 33--1
+Underfull \hbox (badness 10000) in paragraph at lines 36--1
 
  []
 
@@ -1359,9 +1359,9 @@ chapter 5.
 
 ] [18]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 32.
+nput line 36.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
-4.
+8.
  (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
@@ -1371,17 +1371,24 @@ Class scrbook Warning: `\caption' outside float.
 (scrbook)              Maybe you are using a package that uses `\@makecaption'
 (scrbook)              without setting `\@captype' before.
 (scrbook)              Because I cannot detect the caption type, I'm using
-(scrbook)              the empty one. on input line 47.
+(scrbook)              the empty one. on input line 51.
 
-[19]) (Use-Cases.tex [20]
+[19] [20]) (Use-Cases.tex [21] [22
+
+
+]
 chapter 6.
-[21
+[23]) (code.tex [24]
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
+.
 
+(C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
 
-]) (code.tex [22] [23]
-Underfull \vbox (badness 10000) has occurred while \output is active []
+LaTeX Warning: Citation `ColumnInfos' on page 25 undefined on input line 38.
 
- [24]
+[25] [26] [27]
 
 Class scrbook Warning: `\caption' outside float.
 (scrbook)              Seems you are using `\caption' outside a float.
@@ -1390,38 +1397,41 @@ Class scrbook Warning: `\caption' outside float.
 (scrbook)              Because I cannot detect the caption type, I'm using
 (scrbook)              the empty one. on input line 124.
 
-) (evaluation.tex [25] [26
+[28] [29]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [30])
+(evaluation.tex [31] [32
 
 
 ]
 chapter 7.
-) (thesis_name.bbl [27] [28
+) (thesis_name.bbl [33] [34
 
 
 ]
 chapter without number
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-4.
-(C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [29]
+[35]
 Underfull \hbox (badness 2150) in paragraph at lines 87--89
 []\T1/lmr/m/n/10.95 time.  []$\T1/lmtt/m/n/10.95 https : / / manpages . debian 
 . org / stretch / time / time . 1 . en . html$[]\T1/lmr/m/n/10.95 ,
  []
 
-) [30] (thesis_name.aux)
+) [36] (thesis_name.aux)
+
+LaTeX Warning: There were undefined references.
+
 Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 31729 strings out of 479334
- 611227 string characters out of 2856609
- 1688585 words of memory out of 3000000
- 48251 multiletter control sequences out of 15000+200000
- 488670 words of font info for 83 fonts, out of 3000000 for 9000
+ 31854 strings out of 479334
+ 613287 string characters out of 2856609
+ 1687592 words of memory out of 3000000
+ 48264 multiletter control sequences out of 15000+200000
+ 491665 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,20n,130p,10609b,2092s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 125i,20n,130p,10609b,2093s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
 C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
 /Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Us
@@ -1429,29 +1439,30 @@ ers/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/U
 sers/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/
 Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}<C:
 /Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymr10.
-pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12
-.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc
-10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmc
-sco10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmex10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmmi10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmmi8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmr10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmr12.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmr6.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmr8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmr9.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mri10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
-lmro10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmss10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
-m/lmssbx10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmtt10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (36 pages, 561388 bytes).
+pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10
+.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
+2.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcs
+c10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+csco10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmex10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmmi10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmmi8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmr10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmr12.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmr6.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmr8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmr9.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmri10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmro10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmss10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+lm/lmssbx10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmtt10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
+blic/amsfonts/symbols/msam10.pfb>
+Output written on thesis_name.pdf (42 pages, 622534 bytes).
 PDF statistics:
- 806 PDF objects out of 1000 (max. 8388607)
- 343 named destinations out of 1000 (max. 500000)
- 279 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 964 PDF objects out of 1000 (max. 8388607)
+ 455 named destinations out of 1000 (max. 500000)
+ 271 words of extra memory for PDF output out of 10000 (max. 10000000)
 

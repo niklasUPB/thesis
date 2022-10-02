@@ -1,6 +1,6 @@
 \chapter{Preliminary}
-In this chapter we describe 
-
+In this chapter we establish important vocabulary for our work. At first we provide an overview over the topic of Secure Multiparty Computation. That is followed by an brief explanation of some general techniques, on which the frameworks we benchmark are based on. 
+Lastly we describe the semantics of different database operations, that are of importance for our benchmarks.  
 \section{Secure Multiparty Computation}
 In the an secure multiparty computation(short MPC) scenario there are n parties 
 $ p_0,\dots,p_{n-1} $. They want to compute an agreed upon functionality F($ x_0,\dots,x_{n-1} $). A functionality is a function that is allowed to have internal randomness, so its not function in the strict mathematically sense of the word. 
@@ -41,7 +41,7 @@ $ Z = \{ Z_1, \dots, Z_l  \} $. Where $ Z_i $ can be any set of parties. The gen
 Another important distinction is the distinction between static and adaptive adversary's. A static adversary is bound to choose which parties he wants to corrupt before the execution of $ \pi $ starts. An adaptive adversary can corrupt a party during the execution of the protocol. This makes the adaptive adversary much more powerful. As he can try to identify "weak links" based on the information he gets during the execution of the protocol and then choose corrupt those.   
 
 
-\subsection{Additional Properties}
+\subsection{General Techniques}
 \paragraph{binary secret sharing} 
 \paragraph{garbled circuits}
 

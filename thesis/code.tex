@@ -1,46 +1,50 @@
 \section{Implementation}
+   \phantomsection
+\label{Implemetation}	
 In this section we provide a description of notable details of the implementation of our use-cases. 
-
+The descriptions are ordered from the least complex to the most complex use-case. Since SMCQL only requires the query to be specified in a valid SQL syntax and does the rest of the implementation automatically, we focus here on Conclave and ABY3 as their implementation is more complex.    
 \paragraph{Use Case One}
-TODO
+As our first use-case is the least complex one, we use it for a full demonstration how ABY3's and Conclave's basic workflow functions. 
+\paragraph{Conclave} 
+The first step in Conclave is always the definition of the relation scheme of the input. Accordingly, we first define two lists of columns, one for Alice and one for Bob. Each column is defined with a name, a data type, and an integer that indicates its owner. The owner is used to annotate trust and apply optimizations, as described in our framework description of \hyperref[Trust_label]{Conclave}. In our first use-case each party trust itself and only itself. Once the relation scheme is defined we can populate it by using the \code{create} function. Create loads the data from a .CSV(Comma-Separated-Values ) file that we generated previously. Once the tables are populated we can compute the join. In order to, compute a join in conclave we need to parse the two tables of the join, a name for the result, and the two columns that are used as key columns for the join. 
+Lastly, we can reveal the output of our computation using the \code{collect} function. The \code{collect} function requires two parameters, one that specifies which table is revealed and a second one that specifies to whom it is revealed.
 \begin{lstlisting}[caption={ The Python protocol of Conclave for our first use-case    }]
-	def protocol():
+def protocol():
 	# define the schema for the input tables 
-	columns_in_party1 = [
+	AliceColumns = [
 	defCol("primary_key", "INTEGER", [1]),
 	defCol("user_data1_Alice", "INTEGER", [1]),
 	defCol("user_data2_Alice", "INTEGER", [1]),
 	defCol("user_data3_Alice", "INTEGER", [1]),
 	]
-	# the content of the tables is loaded from a pregenerated .csv
-	input_1 = create("input_1", columns_in_party1, {1})
-	
-	columns_in_party2 = [
+	BobColumns = [
 	defCol("primary_key", "INTEGER", [2]),
 	defCol("user_data1_Bob", "INTEGER", [2]),
 	defCol("user_data2_Bob", "INTEGER", [2]),
 	defCol("user_data3_Bob", "INTEGER", [2])
 	]
-	input_2 = create("input_2", columns_in_party2, {2})
+	# the content of the tables is loaded from a pregenerated .CSV
+	AliceTable = create("AliceTable", AliceColumns, {1})
+	BobTable = create("BobTable", BobClumns, {2})
 	# calculate the join over the two tables 
-	join_result = join(input_1, input_2, 'join_result', ['primary_key'], ['primary_key'])
+	JOIN = join(AliceTable, BobTable, 'JOIN', ['primary_key'], ['primary_key'])
 	# reveal the output of the join to Alice
-	collect(join_result, 1)
-	# reveal the output of the join  to Bob
-	collect(join_result, 2)
-	
-	if __name__ == "__main__":
-	with open(sys.argv[1], "r") as config:
-	# load the configuration data
-	config = json.load(config)
-	# tell Conclave to generate secure code for the protocol an execute it
-	workflow.run(protocol, c, mpc_framework="jiff", apply_optimisations=True)
+	collect(JOIN, 1)
+	# reveal the output of the join to Bob
+	collect(JOIN, 2)
 \end{lstlisting}
+
+\paragraph{ABY3}
+Before the actual execution of the protocol starts ABY3 requires some setup. Similar to Conclave, the first step in ABY3 is also the definition of the relation scheme. Hence we start with the definition of two lists of \cite{ColumnInfos}. Each column is described by a name, a data type, and some data type-dependent information. In our case, we use integers and annotate that we use 32-bit integers. After the relation scheme is defined we create local tables and populate them. One last step that needs to be done before the execution of the protocol starts is the initialization of a message server that manages the communication between the parties.
+Once the execution of the protocol starts we need to convert our local input into a table that is secret shared between the parties. 
+Before we can compute the join of the shared tables we need to define which columns of the shared tables we want to select. Therefore we define a list of references to the shared columns. In order to to obtain the desired semantic, the list needs to contain each unique column and one reference to each column that is a duplicate in both tables. 
+In our use-case the columns containing the user data are unique and the key columns are duplicates because they have identical naming and data types. Therefore our list contains seven columns. In the next step we compute the join by providing the join function with one reference to each key column and a list of columns we want to select. The output of the join is still a shared table. To obtain the plaintext values of our result we need to explicitly convert the shared table.  
+
+
 \begin{lstlisting}[caption={Simpifiyed Protocol for our first use-case in ABY3}]
-	
-	std::vector<ColumnInfo> AliceCols = { ColumnInfo{ "key", TypeID::IntID, keyBitCount } };
-	std::vector<ColumnInfo> BobCols = { ColumnInfo{ "key", TypeID::IntID, keyBitCount } };
-	
+void use_case_two(u32 rows, u32 cols ){
+	std::vector<ColumnInfo> AliceCols = { ColumnInfo{ "key", TypeID::IntID, 32}};
+	std::vector<ColumnInfo> BobCols = { ColumnInfo{ "key", TypeID::IntID, 32}};
 	for (u32 i = 1; i < cols; ++i)
 	{
 		AliceCols.emplace_back("Alice" + std::to_string(i), TypeID::IntID, 32);
@@ -49,16 +53,14 @@ TODO
 	# Create tables for Alice and Bob and fill them with content
 	Table AliceTable(rows, AliceCols);
 	Table BobTable(rows, BobCols);
-	# Fill the primary columns 
+	u32 intersectionsize = rows * 0.5;
+	# Fill the primary columns such that 50% of all entries match the join criteria 
 	for (u64 i = 0; i < rows; ++i)
 	{
 		# if out is false then the entry will be included in the join
 		auto out = (i >= intersectionsize);
-		for (u64 j = 0; j < 2; ++j)
-		{
-			AliceTable.mColumns[0].mData(i, j) = i + 1;
-			BobTable.mColumns[0].mData(i, j) = i + 1 + (rows * out);
-		}
+		AliceTable.mColumns[0].mData(i,0) = i + 1;
+		BobTable.mColumns[0].mData(i, 0) = i + 1 + (rows * out);
 	}
 	# Fill the other columns with random integers
 	for (u64 i = 1;  i < cols; ++i){
@@ -67,51 +69,49 @@ TODO
 			BobTable.mColumns[i].mData(j, 0) = rand();	
 		}
 	}
-	# instanciate Timer for benchmarking
-	Timer t;
-	# Alice and Bob each run their own thread 
-	auto routine = [&](int i) { setThreadName("t0");
-		t.setTimePoint("start");
-		# 
-		auto A = (i == 0) ? srvs[i].localInput(AliceTable) : srvs[i].remoteInput(0);
-		auto B = (i == 0) ? srvs[i].localInput(BobTable) : srvs[i].remoteInput(0);
-		
-		if (i == 0) t.setTimePoint("inputs");
-		if (i == 0) srvs[i].setTimer(t);
-		std::vector<SharedTable::ColRef>  First_Select_collumns;		
+	# Instanciate server that handels communication
+	DBServer server[3]; 
+	...
+	# Here the exectution of the protocoll starts.
+	auto protocoll = [&](int i) {
+		# create a secret shared verion of the input
+		SharedTable AliceSharedTable = (i == 0) ? 
+		server[i].localInput(AliceTable) : server[i].remoteInput(0);
+		SharedTable BobSharedTable = (i == 1) ?
+		server[i].localInput(BobTable) : server[i].remoteInput(1);
+		# define a list of clumns we want to select
+		std::vector<SharedTable::ColRef>  Select_columns;		
 		for (u64 i = 0;  i < cols; ++i){
-			First_Select_collumns.emplace_back(SharedTable::ColRef(B,B.mColumns[i]) );
+			Select_columns.emplace_back(SharedTable::ColRef(BobSharedTable,BobSharedTable.mColumns[i]));
 		}
 		for (u64 i = 1;  i < cols; ++i){
-			First_Select_collumns.emplace_back(SharedTable::ColRef(A,A.mColumns[i]) );
+			Select_columns.emplace_back(SharedTable::ColRef(AliceSharedTable,AliceSharedTable.mColumns[i]));
 		}
-		auto result =srvs[i].join( SharedTable::ColRef(A,A.mColumns[0]) , SharedTable::ColRef(B,B.mColumns[0]), First_Select_collumns);
-		if (i == 0) t.setTimePoint("intersect");
-		for (u64 index = 0; index < result.mColumns.size(); ++index)
-		{
-			aby3::i64Matrix reveal(result.mColumns[index].rows(),  result.mColumns[index].i64Cols());
-			server[i].mEnc.revealAll(server[i].mRt.mComm, T.mColumns[index], reveal);
-			if (i == 0) std:: cout << reveal << std::endl;	
-		}
+		# compute the join
+		SharedTable JOIN =srvs[i].join( SharedTable::ColRef(AliceSharedTable,AliceSharedTable.mColumns[0]), SharedTable::ColRef(BobSharedTable,BobSharedTable.mColumns[0]), First_Select_columns);
+		# reveal the plaintext values of the result
+		aby3::i32Matrix result = RevealAll(server[i], JOIN); 
 	};
 	
-	auto t0 = std::thread(routine, 0);
-	auto t1 = std::thread(routine, 1);
-	t0.join();
-	t1.join();
+	auto AliceThread = std::thread(protocol, 0); start Alice's thread
+	auto BobThread = std::thread(protocol, 1); start Bob's thread
+	thread(protocol, 2); # start the assisting third party
+	t0.join(); # wait for Alice to finish
+	t1.join(); # wait for Bob to finish
 }
+
 \end{lstlisting}
 \paragraph{Use-Case Two}
-For our second use-case we do not implement the query directly. Instead we implement another query that has an identical output. To obtain the desired result Alice and Bob compute two  intermediate results, the union of these intermediate results will then yield our final result, an equivalent SQL statement is listened \hyperref[use_case2_alternative_sql]{ in Listing 6.5}.
-In a first step Alice and Bob filter their input once so that it contains only entries with the value false in its boolean column. Afterwards they can compute the join of these two filtered tables. The Result of this join is the first important intermediate result, as each of its entries is also part of the final result. The second important intermediate result can be obtained the by the same procedure when filtering the input for entries that contain true.
+For our second use-case, we do not implement the query directly. Instead, we apply an optimized query that has an identical output. To obtain the desired result Alice and Bob compute two intermediate results, the union of these intermediate results will then yield our final result, an equivalent SQL statement is listened \hyperref[use_case2_alternative_sql]{ in Listing 6.5}.
+In the first step, Alice and Bob filter their input once so that it contains only entries with the value false in its boolean column. Afterward, they can compute the join of these two filtered tables. The result of this join is the first important intermediate result, as each of its entries is also part of the final result. The second important intermediate result can be obtained by the same procedure when filtering the input for entries that contain true.
 The union of these two intermediate results is our final result. 
 
-We have chosen to implement the use-case in this indirect way for two reasons. First Conclave cannot evaluate the query directly, as Conclave's current prototype implementation can apply a WHERE filter exclusivity to a table that is either direct input of a party, or the output of unary operator, that has only one table as input. Additionally our indirect implementation has a significant better performance compared to the direct implementation, for a detail analysis see   \hyperref[evaluation]{ Evaluation}.  
+We have chosen to implement the use-case in this indirect way for two reasons. First Conclave cannot evaluate the query directly, as Conclave's current prototype implementation can apply a WHERE filter exclusivity to a table that is either the direct input of a party or the output of a unary operator, that has only one table as input. Additionally, our indirect implementation has a significantly better performance compared to the direct implementation, for a detailed analysis see our evaluation in \hyperref[evaluation]{Chapter 7}.   
 
 
 \phantomsection
 \label{use_case2_alternative_sql}
-\begin{lstlisting}[caption={  Functional equivalent SQL statement for our implementation of use-case two }]
+\begin{lstlisting}[caption={Functional equivalent SQL statement for our optimitized implementation of our second use-case}]
 SELECT PimaryKey, AliceBool, BobBool FROM
 (SELECT PrimaryKey, AliceBool FROM AliceTable WHERE AliceBool == false) 
 NATURAL JOIN	
@@ -126,9 +126,135 @@ NATURAL JOIN
 \paragraph{Correctness}
 Despite it not being obvious, our procedure indeed yields the correct result, as each join generates only entries, that have a primary key that is included in Bob's and Alice's inputs and have identical boolean values. Therefore every entry that is part of our result is also part of the correct result.
 
-If any entry is not part of our result, it cannot be part of either intermediate result. Any entry that is not part of either intermediate result , feature a primary key that is either not represented in both inputs or contains two boolean values that are not equal.
-Therefore the entry cannot be part of the correct result. Consequently each entry that is not part of our result, cannot be part of the correct result. Which is the contraposition and therefore equivalent, to the fact that each entry of the correct result is part of our result. 
-As our result contains every entry of the correct result and the correct result contains every entry of our result, our result and the correct result are identical. Therefore our procedure is indent correct.
+If any entry is not part of our result, it cannot be part of either intermediate result. Any entry that is not part of either intermediate result, features a primary key that is either not represented in both inputs or contains two boolean values that are not equal.
+Therefore the entry cannot be part of the correct result. Consequently, each entry that is not part of our result, cannot be part of the correct result. Which is the contraposition and therefore equivalent, to the fact that each entry of the correct result is part of our result. 
+As our result contains every entry of the correct result and the correct result contains every entry of our result, our result, and the correct result are identical. Therefore our procedure is indeed correct.
+
+\paragraph{Conclave}
+In order to implement our second use-case in Conclave, we start with the import of the input. Therefore we annotate the layout of each table. Conclave does not support a dedicated data type for boolean values, consequently, we use integers for every column. In the second step, we generate four new tables by applying the filters to the input. These filters are a showcase example of how Conclave can speed up computation by applying optimizations.
+A naive approach for applying the filters would be to share the input tables and then filter the shared tables using an MPC algorithm. This is an approach Conclave is in theory capable of. But Conclave is able to utilize the fact, that each filter has only a single input that is known to one party in the clear. In Consequence, the parties can apply the filter to their input locally without the use of an MPC algorithm. After they have applied the filters the parties can then create shared tables of the filtered input. In the next step compute the two intermediate results by joining the shared filter input of Alice and Bob. Here Conclave demonstrates how it supports composability, as the output of the filter function is used as input for the join function.  
+Finally, we compute the row-wise concatenation of the two intermediate results and publish the final result to Alice and Bob.   
+\begin{lstlisting}[caption={Simpifiyed Protocol for our second use-case in Conclave}]
+def protocol():
+	AliceColumns = [
+	defCol("primary_key", "INTEGER", [1]),
+	defCol("AliceBool", "INTEGER", [1])
+	]
+	AliceTable = create("AliceTable", AliceColumns, {1})
+	BobColumns = [
+	defCol("primary_key", "INTEGER", [2]),
+	defCol("BobBool", "INTEGER", [2])
+	]
+	BobTable = create("input_2", AliceColumns, {2})
+	AliceFilterFalse = cc_filter(AliceTable, "AliceFilterFalse", "AliceBool", "==", scalar=0)
+	BobFilterFalse = cc_filter(BobTable, "AliceFilterFalse", "BobBool", "==", scalar=0)
+	AliceFilterTrue = cc_filter(AliceTable, "BobFilterTrue", "AliceBool", "==", scalar=1)
+	BobFilterFalse = cc_filter(BobTable, "BobFilterTrue", "BobBool", "==", scalar=1)
+	intermediateFalse = join(AliceFilterFalse, BobFilterFalse, 'intermediateFalse', ['primary_key'], ['primary_key'])
+	intermedidateTrue = join(AliceFilterTrue, BobFilterTrue , 'join_result1', ['primary_key'], ['primary_key'])
+	final_result = concat([ intermediateFalse , intermediateTure ], "final_result" )
+	collect(final_result, 1)
+	collect(final_result, 2)
+\end{lstlisting}
+
+
+
+\paragraph{ABY3}
+Our second use-case is also a showcase example of how we use ABY3's integrated benchmarking capability to sample valuable information. With the in ABY3 integrated timer, we are able to set \code{TimePoints} at arbitrary potions of the protocol. After the execution is finished, the timer returns how much time is passed before each individual \code{TimePoints} was reached. For this reason, we obtain detailed information, on how the different parts of the computation compose its total runtime. Since Conclave is able to apply the filter locally, in order to hold the comparison between them fair, we also filter the locally. Therefore Alice and Bob apply the filters to their input using standard C++ before the protocol begins. The majority of the work is done by two functions we present in Listing 6.6. The first Function generates the intermediate results, in order to do so, in the first step we load the input and convert it into a secret shared table. In the next step we calculate the join over the shared tables, to do so we need to pass a reference towards the two key columns, together with a list of the columns we want to select over. Our second function uses the first function to obtain the intermediate results. Once we have obtained those we compute their union.           
+ \begin{lstlisting}[caption={Simpifiyed Protocol for our second use-case in ABY3}]
+	# include the timer and instanciate it
+	include "cryptoTools/Common/Timer.h"
+	Timer t;
+	...
+	# genarte input and apply filter to input locally, omited for reason of simplicty.
+	...
+	# i denotes the party id where i==0 means Alice, i==1 Bob and i==2 denotes the third assisting party
+	auto getIntermediate =[&] (int i, int filter){
+		SharedTable AliceTable;
+		SharedTable BobTable;
+		#  Load the prefilterd input and convert it into a secret share. 
+		if (filter == 1) { 
+			AliceTable = (i == 0) ? srvs[i].localInput(AliceInputFiltertOne): 
+			srvs[i].remoteInput(0); 
+			BobTable = (i == 1) ? srvs[i].localInput(BobInputFiltertOne): 
+			srvs[i].remoteInput(1);
+		}else{
+			AliceTable = (i == 0) ? srvs[i].localInput(AliceInputFiltertZero): 
+			srvs[i].remoteInput(0);
+			BobTable = (i == 1) ? srvs[i].localInput(BobInputFiltertZero): 
+			srvs[i].remoteInput(1);
+		}# Here we annotate that we want to select the first two columns of Alice's Table and the second collumn of Bob's Table
+		std::vector<SharedTable::ColRef>  First_Select_collumns; 
+		Select_columns.emplace_back(SharedTable::ColRef(BobTable, BobTable.mColumns[0]));
+		Select_columns.emplace_back(SharedTable::ColRef(BobTable, BobTable.mColumns[1]));
+		Select_columns.emplace_back(SharedTable::ColRef(AliceTable, AliceTable.mColumns[1]));
+		# We caluclate the join and return it
+		return srvs[i].join( SharedTable::ColRef(AliceTable , AliceTable.mColumns[0]), SharedTable::ColRef( BobTable, BobTable.mColumns[0]), Select_columns);
+		
+	};
+	auto use_case2 = [&](int i, int filter)
+	{
+		t.setTimePoint("start"); 
+		SharedTable IntermediateOne = getIntermediate(i,0);
+		t.setTimePoint("FirstIntermediate"); 
+		SharedTable ItermediateZero = getIntermediate(i,1);
+		t.setTimePoint("SecondIntermediate");
+		SharedTable UNION;
+		# Here we annotate which columns of the first Intermediate 
+		# will part of the UNION
+		std::vector<SharedTable::ColRef>  SelectOnes; 
+		std::vector<SharedTable::ColRef>  SelectZeros; 
+		for(u64 index=0; index <3; ++index)  {
+			# Here we annotate that all columns of both intermediateresults 
+			# will be part of the UNION
+			SelectOnes.emplace_back(SharedTable::ColRef( IntermediateOne , 
+			IntermediateOne.mColumns[index]));
+			SelectZeros.emplace_back(SharedTable::ColRef(IntermediateZero , 
+			IntermediateZero.mColumns[index]));
+		}
+		t.setTimePoint("UNION");
+		# Compute the union of the two intermediate results
+		UNION = srvs[i].rightUnion(SharedTable::ColRef( IntermediateZero, IntermediateZero.mColumns[0]),
+		SharedTable::ColRef( intermediateOne, intermediateOne.mColumns[0]),  SelectZeros,SelectOnes);
+		t.setTimePoint("end");
+		
+	};
+	auto t0 = std::thread(use_case2, 0,1); #Start Alice thread
+	auto t1 = std::thread(use_case2, 1,1); #Start Bob thread
+	use_case2(2,1); # Start the assisting third party
+	t0.join(); # Wait for Alice to finish
+	t1.join(); # Wait for Bob to finish
+	write_to_file(t) # Write timer information to file for further analysis
+\end{lstlisting}
+
+\paragraph{Use-Case Three}
+comming soon sollte aber nicht so viel sein da nicht mit aby3 implmentiert wird
+
+\paragraph{Use-Case Four}
+As our first and fourth use-case a nearly identical their implementation differs only in minor details. Especially for Conclave the implementation is identical besides the fact that we need to use different trust annotations. In order to allow Conclave to apply its public join optimization, we annotate that each party is allowed to learn both of the key columns.
+
+\begin{lstlisting}[caption={ The Python protocol of Conclave for our last use-case    }]
+	def protocol():
+	# define the schema for the input tables 
+	AliceColumns = [
+	# annotate that Alice trust Bob to learn hear key column
+	defCol("primary_key", "INTEGER", [1,2]), #
+	defCol("user_data1_Alice", "INTEGER", [1]),
+	defCol("user_data2_Alice", "INTEGER", [1]),
+	defCol("user_data3_Alice", "INTEGER", [1]),
+	]
+	BobColumns = [
+	# annotate that Bob trust Alice to learn his key column
+	defCol("primary_key", "INTEGER", [1,2]),
+	defCol("user_data1_Bob", "INTEGER", [2]),
+	defCol("user_data2_Bob", "INTEGER", [2]),
+	defCol("user_data3_Bob", "INTEGER", [2])
+	]
+	...
+	...
+	collect(JOIN, 1)
+	collect(JOIN, 2)
+\end{lstlisting}
 
 
 
