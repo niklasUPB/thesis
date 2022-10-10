@@ -13,6 +13,13 @@ Surya Addanki, Kevin Garbe, Eli Jaffe, Rafail Ostrovsky, and Antigoni
 \newblock Cryptology ePrint Archive, Report 2021/576, 2021.
 \newblock \url{https://ia.cr/2021/576}.
 
+\bibitem[AIL{\etalchar{+}}19]{JIFF}
+Kinan~Dak Albab, Rawane Issa, Andrei Lapets, Peter Flockhart, Lucy Qin, and Ira
+  Globus-Harris.
+\newblock Tutorial: Deploying secure multi-party computation on the web using
+  jiff.
+\newblock {\em 2019 IEEE Cybersecurity Development (SecDev)}, pages 3--3, 2019.
+
 \bibitem[BEE{\etalchar{+}}16]{bater}
 Johes Bater, Gregory Elliott, Craig Eggen, Satyender Goel, Abel Kho, and Jennie
   Rogers.
@@ -98,9 +105,9 @@ Nikolaj Volgushev, Malte Schwarzkopf, Ben Getchell, Mayank Varia, Andrei
 \newblock In {\em Proceedings of the Fourteenth EuroSys Conference 2019},
   EuroSys '19, New York, NY, USA, 2019. Association for Computing Machinery.
 
-\bibitem[wir21]{wireshark}
+\bibitem[wir22]{wireshark}
 wireshark.
-\newblock \url{https://www.wireshark.org/}, 2021.
+\newblock \url{lhttps://github.com/multiparty/jiff}, 2022.
 
 \bibitem[WMK16]{emp-toolkit}
 Xiao Wang, Alex~J. Malozemoff, and Jonathan Katz.
