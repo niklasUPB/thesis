@@ -64,8 +64,6 @@ color=orange!50!cyan,smooth,tension=0.7,very thick
 %14496916 + 16821556 + 6677548
 %25940748 + 26352440 + 5739388
 
-\section{Use-Case One}
-For our second use-case we have described 
 
 \begin{filecontents}{space_conclave_1.dat}
 	0 0
@@ -87,8 +85,6 @@ For our second use-case we have described
 	200 37996020
 	250 58032576
 \end{filecontents}
-
-
 
 \begin{tikzpicture}
 	\begin{axis}[
@@ -118,6 +114,8 @@ For our second use-case we have described
 		\addlegendentry{SMCQL}
 	\end{axis}
 \end{tikzpicture}
+\section{Use-Case Two}
+In \hyperref[use-case two]{chapter 5} we have described an optimized way to evaluate the query of our second use-case. In order to see if how large our efficiency gains is in practice, we have implemented this use-case for ABY3 twice. One implementation is optimised as we described, the other implementation is fully unoptimized. TODO  
 
 \begin{tikzpicture}
 	\begin{axis}[
@@ -132,14 +130,19 @@ For our second use-case we have described
 		width = \textwidth,
 		height = 0.5\textwidth,
 		xlabel = { Size of Dataset },
-		ylabel = {Runtime im seconds },]	
+		ylabel = {Runtime im seconds },
+		legend style={at={(0.5,-0.4)},
+		anchor=south, legend columns=1}]
+			
 		
 		\addplot[
-		color=blue!50!cyan,smooth,tension=0.7,very thick
+		color=blue!50!black,smooth,tension=0.7,very thick
 		] file[skip first] {ABY_use_case2_local.dat};
+		\addlegendentry{Naive Implementation}
 		\addplot[
-		color=blue!50!cyan,smooth,tension=0.7,very thick
+		color=green!50!red,smooth,tension=0.7,very thick
 		] file[skip first] {ABY_use_case2_fast_local.dat};
+		\addlegendentry{Optimized Implementation}
 	\end{axis}
 	
 \end{tikzpicture}
