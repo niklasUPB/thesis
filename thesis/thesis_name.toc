@@ -41,51 +41,56 @@
 \contentsline {section}{\numberline {4.3}SMCQL}{13}{section.4.3}%
 \contentsline {paragraph}{\nonumberline Documentation}{14}{paragraph*.50}%
 \contentsline {paragraph}{\nonumberline underlying MPC technology}{14}{paragraph*.52}%
-\contentsline {paragraph}{\nonumberline ObliVM}{14}{paragraph*.54}%
-\contentsline {paragraph}{\nonumberline Access Control}{14}{paragraph*.57}%
-\contentsline {subsection}{\numberline {4.3.1}Optimizations}{15}{subsection.4.3.1}%
-\contentsline {paragraph}{\nonumberline Slicing}{15}{paragraph*.59}%
-\contentsline {paragraph}{\nonumberline Split Operators}{15}{paragraph*.61}%
+\contentsline {paragraph}{\nonumberline Access Control}{14}{paragraph*.55}%
+\contentsline {subsection}{\numberline {4.3.1}Optimizations}{14}{subsection.4.3.1}%
+\contentsline {paragraph}{\nonumberline Slicing}{15}{paragraph*.57}%
+\contentsline {paragraph}{\nonumberline Split Operators}{15}{paragraph*.59}%
 \contentsline {section}{\numberline {4.4}Discussion of Frameworks}{15}{section.4.4}%
-\contentsline {paragraph}{\nonumberline Features}{15}{paragraph*.63}%
-\contentsline {paragraph}{\nonumberline Composability}{15}{paragraph*.65}%
-\contentsline {paragraph}{\nonumberline Documentation}{16}{paragraph*.67}%
-\contentsline {paragraph}{\nonumberline Experimental Software}{16}{paragraph*.69}%
+\contentsline {paragraph}{\nonumberline Features}{15}{paragraph*.61}%
+\contentsline {paragraph}{\nonumberline Composability}{15}{paragraph*.63}%
+\contentsline {paragraph}{\nonumberline Documentation}{16}{paragraph*.65}%
+\contentsline {paragraph}{\nonumberline Experimental Software}{16}{paragraph*.67}%
 \contentsline {section}{\numberline {4.5}Rejected Frameworks}{16}{section.4.5}%
-\contentsline {paragraph}{\nonumberline CipherCompute}{16}{paragraph*.72}%
-\contentsline {paragraph}{\nonumberline Prio+}{17}{paragraph*.74}%
-\contentsline {paragraph}{\nonumberline VaultDB}{17}{paragraph*.76}%
+\contentsline {paragraph}{\nonumberline CipherCompute}{16}{paragraph*.70}%
+\contentsline {paragraph}{\nonumberline Prio+}{16}{paragraph*.72}%
+\contentsline {paragraph}{\nonumberline VaultDB}{17}{paragraph*.74}%
 \contentsline {chapter}{\numberline {5}Benchmarking}{19}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Measuring Runtime}{19}{section.5.1}%
-\contentsline {paragraph}{\nonumberline Measuring Space}{19}{paragraph*.78}%
-\contentsline {paragraph}{\nonumberline Conclave}{19}{paragraph*.80}%
-\contentsline {paragraph}{\nonumberline SMCQL}{20}{paragraph*.82}%
-\contentsline {paragraph}{\nonumberline ABY3}{20}{paragraph*.84}%
+\contentsline {paragraph}{\nonumberline Measuring Space}{19}{paragraph*.76}%
+\contentsline {paragraph}{\nonumberline Conclave}{19}{paragraph*.78}%
+\contentsline {paragraph}{\nonumberline SMCQL}{20}{paragraph*.80}%
+\contentsline {paragraph}{\nonumberline ABY3}{20}{paragraph*.82}%
 \contentsline {section}{\numberline {5.2}Networking}{20}{section.5.2}%
-\contentsline {paragraph}{\nonumberline Wireshark}{20}{paragraph*.86}%
-\contentsline {paragraph}{\nonumberline Toxiproxy}{21}{paragraph*.88}%
-\contentsline {paragraph}{\nonumberline Node-Http-Proxy}{22}{paragraph*.91}%
+\contentsline {paragraph}{\nonumberline Wireshark}{20}{paragraph*.84}%
+\contentsline {paragraph}{\nonumberline Toxiproxy}{21}{paragraph*.86}%
+\contentsline {paragraph}{\nonumberline Node-Http-Proxy}{22}{paragraph*.89}%
 \contentsline {chapter}{\numberline {6}Implementation}{25}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Use-Case Description}{25}{section.6.1}%
-\contentsline {paragraph}{\nonumberline Use-Case One}{25}{paragraph*.94}%
-\contentsline {paragraph}{\nonumberline Use-Case Two}{26}{paragraph*.99}%
-\contentsline {paragraph}{\nonumberline Use-Case Three}{26}{paragraph*.101}%
-\contentsline {paragraph}{\nonumberline Use-Case Four}{26}{paragraph*.103}%
+\contentsline {paragraph}{\nonumberline Use-Case One}{25}{paragraph*.92}%
+\contentsline {paragraph}{\nonumberline Use-Case Two}{26}{paragraph*.97}%
+\contentsline {paragraph}{\nonumberline Use-Case Three}{26}{paragraph*.99}%
+\contentsline {paragraph}{\nonumberline Use-Case Four}{26}{paragraph*.101}%
 \contentsline {section}{\numberline {6.2}Implementation}{27}{section.6.2}%
-\contentsline {paragraph}{\nonumberline Use Case One}{27}{paragraph*.106}%
-\contentsline {paragraph}{\nonumberline Conclave}{27}{paragraph*.108}%
-\contentsline {paragraph}{\nonumberline ABY3}{28}{paragraph*.110}%
-\contentsline {paragraph}{\nonumberline Use-Case Two}{29}{paragraph*.112}%
-\contentsline {paragraph}{\nonumberline Correctness}{30}{paragraph*.115}%
-\contentsline {paragraph}{\nonumberline Conclave}{30}{paragraph*.117}%
-\contentsline {paragraph}{\nonumberline ABY3}{31}{paragraph*.119}%
-\contentsline {paragraph}{\nonumberline Use-Case Three}{33}{paragraph*.121}%
-\contentsline {paragraph}{\nonumberline Use-Case Four}{33}{paragraph*.123}%
+\contentsline {paragraph}{\nonumberline Use Case One}{27}{paragraph*.104}%
+\contentsline {paragraph}{\nonumberline Conclave}{27}{paragraph*.106}%
+\contentsline {paragraph}{\nonumberline ABY3}{28}{paragraph*.108}%
+\contentsline {paragraph}{\nonumberline Use-Case Two}{29}{paragraph*.110}%
+\contentsline {paragraph}{\nonumberline Correctness}{30}{paragraph*.113}%
+\contentsline {paragraph}{\nonumberline Conclave}{30}{paragraph*.115}%
+\contentsline {paragraph}{\nonumberline ABY3}{31}{paragraph*.117}%
+\contentsline {paragraph}{\nonumberline Use-Case Three}{33}{paragraph*.119}%
+\contentsline {paragraph}{\nonumberline Use-Case Four}{33}{paragraph*.121}%
 \contentsline {chapter}{\numberline {7}Evaluation}{35}{chapter.7}%
-\contentsline {paragraph}{\nonumberline Experimental Setup}{35}{paragraph*.125}%
+\contentsline {paragraph}{\nonumberline Experimental Setup}{35}{paragraph*.123}%
 \contentsline {section}{\numberline {7.1}Use-Case One}{35}{section.7.1}%
-\contentsline {paragraph}{\nonumberline Time}{35}{paragraph*.127}%
-\contentsline {paragraph}{\nonumberline Space}{35}{paragraph*.129}%
+\contentsline {paragraph}{\nonumberline Time}{35}{paragraph*.125}%
+\contentsline {paragraph}{\nonumberline Space}{36}{paragraph*.127}%
 \contentsline {section}{\numberline {7.2}Use-Case Two}{36}{section.7.2}%
-\contentsline {chapter}{\nonumberline Bibliography}{39}{chapter*.130}%
+\contentsline {paragraph}{\nonumberline Evaluation of Runtime}{36}{paragraph*.129}%
+\contentsline {paragraph}{\nonumberline Evaluation of Space}{37}{paragraph*.131}%
+\contentsline {paragraph}{\nonumberline Comparison between Conclave and ABY3}{37}{paragraph*.133}%
+\contentsline {section}{\numberline {7.3}Use-Case Four}{39}{section.7.3}%
+\contentsline {paragraph}{\nonumberline Comparison between Use-Case One and Use-Case Four}{39}{paragraph*.135}%
+\contentsline {paragraph}{\nonumberline Comparison between ABY3 and Conclave}{40}{paragraph*.137}%
+\contentsline {chapter}{\nonumberline Bibliography}{43}{chapter*.138}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

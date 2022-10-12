@@ -19,8 +19,7 @@ SMCQL currently works in a two-party setting and provides security against a pas
 The honest broker also functions as an access point for the user and receives his query. 
 Once the honest broker receives the query it parses the query into a directed acyclic graph of operators. Each node in the graph represents one operation and an edge between two notes annotates that the incoming node consumes the output data of the outgoing node. With the operator graph, the honest broker is able to analyze the flow of data through the query and decide which of SMCQL's different optimizations are applicable to each node. 
 A detailed description of these optimization can found in \hyperref[sec:Optimizations_smcql]{Section 4.3.4}. Once all optimizations a planed the honest broker generates secure MPC based code and provides it to the parties. For its secure computations SMCQL uses the already existing ObliVM framework.
-\paragraph{ObliVM}
-TODO hier beschreibung von ObliVM und ORAM 
+
 %-c-style syntax
   \phantomsection
 \label{Accesses_label}	

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  10 OCT 2022 16:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  12 OCT 2022 15:53
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1172,11 +1172,22 @@ Package filecontents Warning: This package is obsolete. Disabling it and
 (filecontents)                passing control to the filecontents environment
 (filecontents)                defined by the LaTeX kernel.
 
-)
+) (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/pgf-pie\pgf-pie.sty
+Package: pgf-pie 2022/06/14 v0.7 Some LaTeX macros for pie chart by using PGF/T
+ikz package.
+
+(C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/pgf-pie\tikzlibrarypie
+.code.tex
+(C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/carlisle\scalefnt.sty)
+\pgfpie@angleEnd=\dimen297
+\pgfpie@explodeLength=\count327
+\pgfpie@colorLength=\count328
+\pgfpie@sliceLength=\count329
+))
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 46
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 48
 .
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1184,27 +1195,27 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 (thesis_name.aux)
 \openout1 = `thesis_name.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 46.
-LaTeX Font Info:    ... okay on input line 46.
-Package scrbase Info: activating english \contentsname on input line 46.
-Package scrbase Info: activating english \listfigurename on input line 46.
-Package scrbase Info: activating english \listtablename on input line 46.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+Package scrbase Info: activating english \contentsname on input line 48.
+Package scrbase Info: activating english \listfigurename on input line 48.
+Package scrbase Info: activating english \listtablename on input line 48.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1244,16 +1255,16 @@ Package scrbase Info: activating english \listtablename on input line 46.
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.m
 kii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count327
-\scratchdimen=\dimen297
+\scratchcounter=\count330
+\scratchdimen=\dimen298
 \scratchbox=\box68
-\nofMPsegments=\count328
-\nofMParguments=\count329
+\nofMPsegments=\count331
+\nofMParguments=\count332
 \everyMPshowfont=\toks49
-\MPscratchCnt=\count330
-\MPscratchDim=\dimen298
-\MPnumerator=\count331
-\makeMPintoPDFobject=\count332
+\MPscratchCnt=\count333
+\MPscratchDim=\dimen299
+\MPnumerator=\count334
+\makeMPintoPDFobject=\count335
 \everyMPtoPDFconversion=\toks50
 )
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-
@@ -1262,7 +1273,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring OFF on input line 46.
+Package hyperref Info: Link coloring OFF on input line 48.
 
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1274,11 +1285,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 tlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count333
+\c@section@level=\count336
 )
-LaTeX Info: Redefining \ref on input line 46.
-LaTeX Info: Redefining \pageref on input line 46.
-LaTeX Info: Redefining \nameref on input line 46.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
  (thesis_name.out) (thesis_name.out)
 \@outlinefile=\write5
 \openout5 = `thesis_name.out'.
@@ -1290,7 +1301,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 46.
+(scrbook)           before \begin{document} on input line 48.
 
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1298,9 +1309,9 @@ Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bkm-pdftex.de
 f
 File: bkm-pdftex.def 2020-11-06 v1.29 bookmark driver for pdfTeX (HO)
-\BKM@id=\count334
+\BKM@id=\count337
 ))
-\c@lstlisting=\count335
+\c@lstlisting=\count338
 
 Package pgfplots notification 'compat/show suggested version=true': document ha
 s been generated with the most recent feature set (\pgfplotsset{compat=1.17}).
@@ -1424,11 +1435,11 @@ Overfull \hbox (5.57303pt too wide) in paragraph at lines 8--8
 f Se-cure Multi- 
  []
 
-)
+[5])
 \tf@toc=\write6
 \openout6 = `thesis_name.toc'.
 
- [5] [6] (abstract.tex
+ [6] (abstract.tex
 chapter 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -1543,15 +1554,16 @@ chapter 7.
 
 
 ]
-Package pgfplots info on input line 43: Using 'lua backend=false' for axis: ymo
+Package pgfplots info on input line 45: Using 'lua backend=false' for axis: ymo
 de=log unsupported (yet).
 PGFPlots: reading {conclave_use_case1_loca.dat}
 
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 PGFPlots: reading {SMCQL_use_case1_local.dat}
+PGFPlots: reading {ABY_use_case1_local.dat}
 
-Overfull \hbox (30.76938pt too wide) in paragraph at lines 58--59
+Overfull \hbox (5.10274pt too wide) in paragraph at lines 64--65
 [][] 
  []
 
@@ -1563,7 +1575,7 @@ LaTeX Warning: File `space_conclave_1.dat' already exists on the system.
 LaTeX Warning: File `space_SMCQL_1.dat' already exists on the system.
                Not generating it from this source.
 
-Package pgfplots info on input line 105: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 112: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {space_conclave_1.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
@@ -1573,31 +1585,122 @@ so unbounded coords=jump).
 PGFPlots: reading {space_SMCQL_1.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
+PGFPlots: reading {space_ABY3_1.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
 
-Overfull \hbox (52.36517pt too wide) in paragraph at lines 116--117
+Overfull \hbox (7.23189pt too wide) in paragraph at lines 127--128
 [][] 
  []
 
 [36]
-PGFPlots: reading {ABY_use_case2_local.dat}
-PGFPlots: reading {ABY_use_case2_fast_local.dat}
 
-Overfull \hbox (5.11429pt too wide) in paragraph at lines 150--151
+Package pgfplots Warning: Ignoring illegal input argument xmin=0: cannot apply 
+log. on input line 154.
+
+ [warning /pgfplots/warning/illegal user argument in log axis]
+
+Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
+log. on input line 154.
+
+ [warning /pgfplots/warning/illegal user argument in log axis]
+Package pgfplots info on input line 154: Using 'lua backend=false' for axis: xm
+ode=log unsupported (yet).
+Package pgfplots info on input line 154: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+PGFPlots: reading {ABY_use_case2_local.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+PGFPlots: reading {ABY_use_case2_fast_local.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+
+Package pgfplots Warning: Ignoring illegal input argument xmin=0: cannot apply 
+log. on input line 192.
+
+ [warning /pgfplots/warning/illegal user argument in log axis]
+
+Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
+log. on input line 192.
+
+ [warning /pgfplots/warning/illegal user argument in log axis]
+Package pgfplots info on input line 192: Using 'lua backend=false' for axis: xm
+ode=log unsupported (yet).
+Package pgfplots info on input line 192: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+PGFPlots: reading {space_ABY3_2.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+PGFPlots: reading {space_ABY3_fast_2.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+
+Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
+log. on input line 229.
+
+ [warning /pgfplots/warning/illegal user argument in log axis]
+Package pgfplots info on input line 229: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+PGFPlots: reading {ABY_use_case2_system_time.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+PGFPlots: reading {conclave_use_case2_loca.dat}
+
+Overfull \hbox (8.7134pt too wide) in paragraph at lines 242--243
 [][] 
  []
 
-) (thesis_name.bbl [37] [38
+[37] [38] [39]
+
+Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
+log. on input line 280.
+
+ [warning /pgfplots/warning/illegal user argument in log axis]
+Package pgfplots info on input line 280: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+PGFPlots: reading {Conclave_use_case1_loca.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+PGFPlots: reading {conclave_use_case4_loca.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+
+Overfull \hbox (8.71187pt too wide) in paragraph at lines 293--294
+[][] 
+ []
+
+
+Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
+log. on input line 314.
+
+ [warning /pgfplots/warning/illegal user argument in log axis]
+Package pgfplots info on input line 314: Using 'lua backend=false' for axis: ym
+ode=log unsupported (yet).
+PGFPlots: reading {space_conclave_1.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+PGFPlots: reading {space_conclave_4.dat}
+NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
+so unbounded coords=jump). 
+
+Overfull \hbox (11.4887pt too wide) in paragraph at lines 327--328
+[][] 
+ []
+
+) (thesis_name.bbl [40] [41] [42
 
 
 ]
 chapter without number
-[39]
+[43]
 Underfull \hbox (badness 2150) in paragraph at lines 94--96
 []\T1/lmr/m/n/10.95 time.  []$\T1/lmtt/m/n/10.95 https : / / manpages . debian 
 . org / stretch / time / time . 1 . en . html$[]\T1/lmr/m/n/10.95 ,
  []
 
-) [40] (thesis_name.aux)
+) [44] (thesis_name.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1605,13 +1708,13 @@ Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42272 strings out of 479334
- 963864 string characters out of 2856609
- 2051016 words of memory out of 3000000
- 58519 multiletter control sequences out of 15000+200000
+ 42505 strings out of 479334
+ 968432 string characters out of 2856609
+ 2055418 words of memory out of 3000000
+ 58712 multiletter control sequences out of 15000+200000
  491665 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,20n,130p,10609b,2133s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 125i,20n,130p,10609b,2193s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
 C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
 /Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
@@ -1640,9 +1743,9 @@ ic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/lm/lmtt10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (46 pages, 650096 bytes).
+Output written on thesis_name.pdf (50 pages, 675297 bytes).
 PDF statistics:
- 1013 PDF objects out of 1200 (max. 8388607)
- 478 named destinations out of 1000 (max. 500000)
- 279 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1053 PDF objects out of 1200 (max. 8388607)
+ 498 named destinations out of 1000 (max. 500000)
+ 287 words of extra memory for PDF output out of 10000 (max. 10000000)
 
