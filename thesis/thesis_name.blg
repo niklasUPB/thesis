@@ -7,11 +7,7 @@ Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
 Warning--entry type for "toxiproxy" isn't style-file defined
 --line 173 of file references.bib
-Repeated entry---line 214 of file references.bib
- : @misc{emp-toolkit
- :                  ,
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 237 of file references.bib
+I was expecting a `,' or a `}'---line 231 of file references.bib
  :  
  :  url = {https://github.com/multiparty/jiff}
 (Error may have been on previous line)
@@ -21,45 +17,45 @@ Warning--to sort, need author or key in time
 Warning--to sort, need author or key in cProfile
 Warning--to sort, need author or key in time_sh
 Warning--to sort, need author or key in wireshark
-You've used 20 entries,
+You've used 23 entries,
             2543 wiz_defined-function locations,
-            664 strings with 7877 characters,
-and the built_in function-call counts, 8004 in all, are:
-= -- 767
-> -- 481
-< -- 8
-+ -- 176
-- -- 174
-* -- 553
-:= -- 1305
-add.period$ -- 60
-call.type$ -- 20
-change.case$ -- 147
-chr.to.int$ -- 19
-cite$ -- 28
-duplicate$ -- 277
-empty$ -- 557
-format.name$ -- 187
-if$ -- 1648
+            682 strings with 8548 characters,
+and the built_in function-call counts, 9735 in all, are:
+= -- 948
+> -- 550
+< -- 12
++ -- 199
+- -- 197
+* -- 662
+:= -- 1554
+add.period$ -- 71
+call.type$ -- 23
+change.case$ -- 166
+chr.to.int$ -- 22
+cite$ -- 31
+duplicate$ -- 358
+empty$ -- 693
+format.name$ -- 214
+if$ -- 2041
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 8
-newline$ -- 101
-num.names$ -- 48
-pop$ -- 195
+missing$ -- 11
+newline$ -- 116
+num.names$ -- 59
+pop$ -- 220
 preamble$ -- 1
-purify$ -- 167
+purify$ -- 189
 quote$ -- 0
-skip$ -- 262
+skip$ -- 336
 stack$ -- 0
-substring$ -- 257
-swap$ -- 54
-text.length$ -- 8
-text.prefix$ -- 4
+substring$ -- 378
+swap$ -- 89
+text.length$ -- 12
+text.prefix$ -- 5
 top$ -- 0
-type$ -- 160
+type$ -- 184
 warning$ -- 4
-while$ -- 56
-width$ -- 24
-write$ -- 246
-(There were 2 error messages)
+while$ -- 73
+width$ -- 28
+write$ -- 287
+(There was 1 error message)

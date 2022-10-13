@@ -49,6 +49,20 @@ I.~Damgard, V.~Pastro, N.~P. Smart, and S.~Zakarias.
 \newblock Cryptology ePrint Archive, Paper 2011/535, 2011.
 \newblock \url{https://eprint.iacr.org/2011/535}.
 
+\bibitem[DW82]{DBLP:conf/crypto/WigdersonD82}
+Danny Dolev and Avi Wigderson.
+\newblock On the security of multi-party protocols in distributed systems.
+\newblock In David Chaum, Ronald~L. Rivest, and Alan~T. Sherman, editors, {\em
+  Advances in Cryptology: Proceedings of {CRYPTO} '82, Santa Barbara,
+  California, USA, August 23-25, 1982}, pages 167--175. Plenum Press, New York,
+  1982.
+
+\bibitem[HHNZ19]{hastings2019sok}
+Marcella Hastings, Brett Hemenway, Daniel Noble, and Steve Zdancewic.
+\newblock Sok: General purpose compilers for secure multi-party computation.
+\newblock In {\em 2019 IEEE symposium on security and privacy (SP)}, pages
+  1220--1237. IEEE, 2019.
+
 \bibitem[JNS17]{johnson2017practical}
 Noah~M Johnson, Joseph~P Near, and Dawn~Xiaodong Song.
 \newblock Practical differential privacy for sql queries using elastic
@@ -75,15 +89,15 @@ Jennie Rogers, Elizabeth Adetoro, Johes Bater, Talia Canter, Dong Fu, Andrew
   a clinical research network.
 \newblock {\em arXiv preprint arXiv:2203.00146}, 2022.
 
-\bibitem[Ran21]{cryotoTools}
-Peter Randal.
-\newblock cryptotools.
-\newblock \url{https://github.com/ladnir/cryptoTools}, 2021.
-
 \bibitem[Rin]{aby3}
 Peter Rindal.
 \newblock {The ABY3 Framework for Machine Learning and Database Operations.}
 \newblock \url{https://github.com/ladnir/aby3}.
+
+\bibitem[Rin21]{cryotoTools}
+Peter Rindal.
+\newblock cryptotools.
+\newblock \url{https://github.com/ladnir/cryptoTools}, 2021.
 
 \bibitem[Sho22]{toxiproxy}
 Shopify.
@@ -113,5 +127,11 @@ wireshark.
 Xiao Wang, Alex~J. Malozemoff, and Jonathan Katz.
 \newblock {EMP-toolkit: Efficient MultiParty computation toolkit}.
 \newblock \url{https://github.com/emp-toolkit}, 2016.
+
+\bibitem[Yao82]{4568388}
+Andrew~C. Yao.
+\newblock Protocols for secure computations.
+\newblock In {\em 23rd Annual Symposium on Foundations of Computer Science
+  (sfcs 1982)}, pages 160--164, 1982.
 
 \end{thebibliography}

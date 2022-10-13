@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  12 OCT 2022 15:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  13 OCT 2022 16:51
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1430,16 +1430,19 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 ]
 (thesis_name.toc
-Overfull \hbox (5.57303pt too wide) in paragraph at lines 8--8
+Overfull \hbox (5.57303pt too wide) in paragraph at lines 5--5
  [][] [][]\T1/lmr/m/n/10.95 From Keys to DatabasesReal-World Ap-pli-ca-tions o
 f Se-cure Multi- 
  []
 
-[5])
+)
 \tf@toc=\write6
 \openout6 = `thesis_name.toc'.
 
- [6] (abstract.tex
+ [5] [6
+
+
+] (introduction.tex
 chapter 1.
 
 Class scrbook Warning: \float@addtolists detected!
@@ -1456,62 +1459,47 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface.
 
-) (introduction.tex [1
-
-
-
-
-] [2
-
-
-]
-chapter 2.
 ) (related_work.tex) (goals.tex) (struktur.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [3])
-(preliminary.tex [4]
-chapter 3.
+ [1
+
+
+])
+(preliminary.tex [2]
+chapter 2.
 
 Overfull \hbox (7.92795pt too wide) in paragraph at lines 5--9
 \T1/lmr/m/n/10.95 In the se-cure mul-ti-party com-pu-ta-tion(short MPC) sce-nar
 io there are n par-ties $\OML/lmm/m/it/10.95 p[]; [] ; p[]$\T1/lmr/m/n/10.95 .
  []
 
-Package hyperref Info: bookmark level for unknown todo defaults to 0 on input l
-ine 16.
-[5
+[3
 
 
-] [6]) (framework_description.tex [7] [8]
+] [4] [5]) (framework_description.tex [6]
+chapter 3.
+) (conclave.tex [7
+
+
+] [8]) (aby3.tex [9] [10]) (smcql.tex [11] [12])
+(old_framework.tex [13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14])
+(implementation.tex [15] [16
+
+
+]
 chapter 4.
-) (conclave.tex [9
-
-
-]
-Underfull \hbox (badness 10000) in paragraph at lines 18--21
-
- []
-
-[10]) (aby3.tex
-Underfull \hbox (badness 10000) in paragraph at lines 31--1
-
- []
-
-[11] [12]) (smcql.tex [13] [14]) (old_framework.tex [15] [16])
-(implementation.tex [17] [18
-
-
-]
-chapter 5.
-[19] [20]
+[17] [18]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 36.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 4
 8.
  (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [21]
+)
 
 Class scrbook Warning: `\caption' outside float.
 (scrbook)              Seems you are using `\caption' outside a float.
@@ -1520,22 +1508,22 @@ Class scrbook Warning: `\caption' outside float.
 (scrbook)              Because I cannot detect the caption type, I'm using
 (scrbook)              the empty one. on input line 51.
 
-[22]) (Use-Cases.tex [23] [24
+[19] [20]) (Use-Cases.tex [21] [22
 
 
 ]
-chapter 6.
-[25]) (code.tex [26]
+chapter 5.
+[23]) (code.tex [24]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 9
 .
 
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [27]
+) [25]
 
-LaTeX Warning: Citation `ColumnInfos' on page 28 undefined on input line 38.
+LaTeX Warning: Citation `ColumnInfos' on page 26 undefined on input line 38.
 
-[28] [29]
+[26] [27]
 
 Class scrbook Warning: `\caption' outside float.
 (scrbook)              Seems you are using `\caption' outside a float.
@@ -1544,17 +1532,17 @@ Class scrbook Warning: `\caption' outside float.
 (scrbook)              Because I cannot detect the caption type, I'm using
 (scrbook)              the empty one. on input line 124.
 
-[30] [31]
+[28] [29]
 Underfull \vbox (badness 1237) has occurred while \output is active []
 
- [32]
-[33]) (evaluation.tex [34]
-chapter 7.
-[35
+ [30]
+[31]) (evaluation.tex [32]
+chapter 6.
+[33
 
 
 ]
-Package pgfplots info on input line 45: Using 'lua backend=false' for axis: ymo
+Package pgfplots info on input line 44: Using 'lua backend=false' for axis: ymo
 de=log unsupported (yet).
 PGFPlots: reading {conclave_use_case1_loca.dat}
 
@@ -1563,7 +1551,7 @@ so unbounded coords=jump).
 PGFPlots: reading {SMCQL_use_case1_local.dat}
 PGFPlots: reading {ABY_use_case1_local.dat}
 
-Overfull \hbox (5.10274pt too wide) in paragraph at lines 64--65
+Overfull \hbox (5.10274pt too wide) in paragraph at lines 63--64
 [][] 
  []
 
@@ -1575,7 +1563,7 @@ LaTeX Warning: File `space_conclave_1.dat' already exists on the system.
 LaTeX Warning: File `space_SMCQL_1.dat' already exists on the system.
                Not generating it from this source.
 
-Package pgfplots info on input line 112: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 111: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {space_conclave_1.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
@@ -1589,24 +1577,27 @@ PGFPlots: reading {space_ABY3_1.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 
-Overfull \hbox (7.23189pt too wide) in paragraph at lines 127--128
+Overfull \hbox (7.23189pt too wide) in paragraph at lines 126--127
 [][] 
  []
 
-[36]
+
+Underfull \vbox (badness 5345) has occurred while \output is active []
+
+ [34]
 
 Package pgfplots Warning: Ignoring illegal input argument xmin=0: cannot apply 
-log. on input line 154.
+log. on input line 153.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
 
 Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
-log. on input line 154.
+log. on input line 153.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
-Package pgfplots info on input line 154: Using 'lua backend=false' for axis: xm
+Package pgfplots info on input line 153: Using 'lua backend=false' for axis: xm
 ode=log unsupported (yet).
-Package pgfplots info on input line 154: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 153: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {ABY_use_case2_local.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
@@ -1616,17 +1607,17 @@ NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 
 Package pgfplots Warning: Ignoring illegal input argument xmin=0: cannot apply 
-log. on input line 192.
+log. on input line 191.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
 
 Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
-log. on input line 192.
+log. on input line 191.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
-Package pgfplots info on input line 192: Using 'lua backend=false' for axis: xm
+Package pgfplots info on input line 191: Using 'lua backend=false' for axis: xm
 ode=log unsupported (yet).
-Package pgfplots info on input line 192: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 191: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {space_ABY3_2.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
@@ -1635,28 +1626,33 @@ PGFPlots: reading {space_ABY3_fast_2.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 
+Underfull \vbox (badness 4120) has occurred while \output is active []
+
+ [35]
+[36]
+
 Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
-log. on input line 229.
+log. on input line 228.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
-Package pgfplots info on input line 229: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 228: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {ABY_use_case2_system_time.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 PGFPlots: reading {conclave_use_case2_loca.dat}
 
-Overfull \hbox (8.7134pt too wide) in paragraph at lines 242--243
+Overfull \hbox (8.7134pt too wide) in paragraph at lines 241--242
 [][] 
  []
 
-[37] [38] [39]
+[37]
 
 Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
-log. on input line 280.
+log. on input line 279.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
-Package pgfplots info on input line 280: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 279: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {Conclave_use_case1_loca.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
@@ -1665,16 +1661,16 @@ PGFPlots: reading {conclave_use_case4_loca.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 
-Overfull \hbox (8.71187pt too wide) in paragraph at lines 293--294
+Overfull \hbox (8.71187pt too wide) in paragraph at lines 292--293
 [][] 
  []
 
 
 Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
-log. on input line 314.
+log. on input line 313.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
-Package pgfplots info on input line 314: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 313: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {space_conclave_1.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
@@ -1685,22 +1681,22 @@ PGFPlots: reading {space_conclave_4.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 
-Overfull \hbox (11.4887pt too wide) in paragraph at lines 327--328
+Overfull \hbox (11.4887pt too wide) in paragraph at lines 326--327
 [][] 
  []
 
-) (thesis_name.bbl [40] [41] [42
+) (thesis_name.bbl [38] [39] [40
 
 
 ]
 chapter without number
-[43]
-Underfull \hbox (badness 2150) in paragraph at lines 94--96
+[41]
+Underfull \hbox (badness 2150) in paragraph at lines 108--110
 []\T1/lmr/m/n/10.95 time.  []$\T1/lmtt/m/n/10.95 https : / / manpages . debian 
 . org / stretch / time / time . 1 . en . html$[]\T1/lmr/m/n/10.95 ,
  []
 
-) [44] (thesis_name.aux)
+) [42] (thesis_name.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1708,19 +1704,19 @@ Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42505 strings out of 479334
- 968432 string characters out of 2856609
- 2055418 words of memory out of 3000000
- 58712 multiletter control sequences out of 15000+200000
+ 42420 strings out of 479334
+ 966743 string characters out of 2856609
+ 2054418 words of memory out of 3000000
+ 58636 multiletter control sequences out of 15000+200000
  491665 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,20n,130p,10609b,2193s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 125i,20n,130p,10609b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
 C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
 /Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
-:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{
+:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}{
 C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/
-Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}<C:
+Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}<C:
 /Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/eurosym/feymr10.
 pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10
 .pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx1
@@ -1743,9 +1739,9 @@ ic/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/lm/lmtt10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pu
 blic/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (50 pages, 675297 bytes).
+Output written on thesis_name.pdf (48 pages, 673218 bytes).
 PDF statistics:
- 1053 PDF objects out of 1200 (max. 8388607)
- 498 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1035 PDF objects out of 1200 (max. 8388607)
+ 492 named destinations out of 1000 (max. 500000)
+ 271 words of extra memory for PDF output out of 10000 (max. 10000000)
 
