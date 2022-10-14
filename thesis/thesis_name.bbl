@@ -1,6 +1,13 @@
 \newcommand{\etalchar}[1]{$^{#1}$}
 \begin{thebibliography}{LWN{\etalchar{+}}15}
 
+\bibitem[ABL{\etalchar{+}}18]{Archer2018FromKT}
+David~W. Archer, Dan Bogdanov, Yehuda Lindell, Liina Kamm, Kurt Nielsen,
+  Jakob~Illeborg Pagter, Nigel~P. Smart, and Rebecca~N. Wright.
+\newblock From keys to databases - real-world applications of secure
+  multi-party computation.
+\newblock {\em Comput. J.}, 61:1749--1771, 2018.
+
 \bibitem[ACC{\etalchar{+}}21]{aly2021scale}
 Abdelrahaman Aly, K~Cong, D~Cozzo, M~Keller, E~Orsini, D~Rotaru, O~Scherer,
   P~Scholl, N~Smart, T~Tanguy, et~al.
@@ -25,6 +32,13 @@ Johes Bater, Gregory Elliott, Craig Eggen, Satyender Goel, Abel Kho, and Jennie
   Rogers.
 \newblock Smcql: Secure querying for federated databases.
 \newblock {\em arXiv preprint arXiv:1606.06808}, 2016.
+
+\bibitem[BJSV15]{bogdanov2015estonian}
+Dan Bogdanov, Marko J{\~o}emets, Sander Siim, and Meril Vaht.
+\newblock How the estonian tax and customs board evaluated a tax fraud
+  detection system based on secure multi-party computation.
+\newblock In {\em International conference on financial cryptography and data
+  security}, pages 227--234. Springer, 2015.
 
 \bibitem[CGB17]{201553}
 Henry Corrigan-Gibbs and Dan Boneh.

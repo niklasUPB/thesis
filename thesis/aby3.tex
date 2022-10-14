@@ -3,7 +3,7 @@
 ABY3 is a 3-party MPC framework that allows to compute queries on relational database tables. It focuses on computing various SQL-like join operations as efficiently as possible. Therefore it features a large range of different join operations. These include but are not limited to left join, right join, set union, set minus, and also full joins.  
 Besides joins it is also possible to query a single table with query's that have a comparable semantic to the ''SELECT ... FROM ... WHERE'' statement in SQL. For example a selection like ''select X1 from X  where X2 > X1'' can be done with relative ease using the implemented features of ABY3. In theory, ABY3 is able to compute any polynomial time function of a table, in practice, the efficiency may differ between functions and may not always be sufficient. For executing its MPC operations ABY3 relies mainly on secret sharing. 
 One of ABY3 great strengths is its composability. 
-Each operation done on one or more tables produces as output also a table, which is a valid input for another query. This allows to build larger complex applications out of many small ones, very similar like one would do with a pipes-and-filters architecture. Which is best now from the Linux command line interface(CLI) 
+Each operation done on one or more tables produces as output also a table, which is a valid input for another query. This allows to build larger complex applications out of many small ones, very similar like one would do with a pipes-and-filters architecture. Which is best now from the Linux command line interface(CLI). 
 
 
 \paragraph{Prototype Implementations}

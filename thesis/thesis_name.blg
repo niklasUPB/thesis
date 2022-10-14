@@ -17,45 +17,45 @@ Warning--to sort, need author or key in time
 Warning--to sort, need author or key in cProfile
 Warning--to sort, need author or key in time_sh
 Warning--to sort, need author or key in wireshark
-You've used 23 entries,
+You've used 25 entries,
             2543 wiz_defined-function locations,
-            682 strings with 8548 characters,
-and the built_in function-call counts, 9735 in all, are:
-= -- 948
-> -- 550
-< -- 12
-+ -- 199
-- -- 197
-* -- 662
-:= -- 1554
-add.period$ -- 71
-call.type$ -- 23
-change.case$ -- 166
-chr.to.int$ -- 22
-cite$ -- 31
-duplicate$ -- 358
-empty$ -- 693
-format.name$ -- 214
-if$ -- 2041
+            696 strings with 9127 characters,
+and the built_in function-call counts, 10971 in all, are:
+= -- 1070
+> -- 631
+< -- 13
++ -- 230
+- -- 228
+* -- 763
+:= -- 1755
+add.period$ -- 78
+call.type$ -- 25
+change.case$ -- 186
+chr.to.int$ -- 24
+cite$ -- 33
+duplicate$ -- 398
+empty$ -- 768
+format.name$ -- 246
+if$ -- 2295
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 11
-newline$ -- 116
-num.names$ -- 59
-pop$ -- 220
+missing$ -- 13
+newline$ -- 126
+num.names$ -- 65
+pop$ -- 239
 preamble$ -- 1
-purify$ -- 189
+purify$ -- 211
 quote$ -- 0
-skip$ -- 336
+skip$ -- 370
 stack$ -- 0
-substring$ -- 378
-swap$ -- 89
-text.length$ -- 12
+substring$ -- 451
+swap$ -- 101
+text.length$ -- 13
 text.prefix$ -- 5
 top$ -- 0
-type$ -- 184
+type$ -- 200
 warning$ -- 4
-while$ -- 73
-width$ -- 28
-write$ -- 287
+while$ -- 83
+width$ -- 30
+write$ -- 314
 (There was 1 error message)
