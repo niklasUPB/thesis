@@ -40,6 +40,11 @@ Dan Bogdanov, Marko J{\~o}emets, Sander Siim, and Meril Vaht.
 \newblock In {\em International conference on financial cryptography and data
   security}, pages 227--234. Springer, 2015.
 
+\bibitem[CD05]{cramer2005multiparty}
+Ronald Cramer and Ivan Damg{\aa}rd.
+\newblock Multiparty computation, an introduction.
+\newblock In {\em Contemporary cryptology}, pages 41--87. Springer, 2005.
+
 \bibitem[CGB17]{201553}
 Henry Corrigan-Gibbs and Dan Boneh.
 \newblock Prio: Private, robust, and scalable computation of aggregate
@@ -82,6 +87,12 @@ Noah~M Johnson, Joseph~P Near, and Dawn~Xiaodong Song.
 \newblock Practical differential privacy for sql queries using elastic
   sensitivity.
 \newblock {\em CoRR, abs/1706.09479}, 2017.
+
+\bibitem[Lin17]{lindell2017simulate}
+Yehuda Lindell.
+\newblock How to simulate it--a tutorial on the simulation proof technique.
+\newblock {\em Tutorials on the Foundations of Cryptography}, pages 277--346,
+  2017.
 
 \bibitem[LWN{\etalchar{+}}15]{liu2015oblivm}
 Chang Liu, Xiao~Shaun Wang, Kartik Nayak, Yan Huang, and Elaine Shi.

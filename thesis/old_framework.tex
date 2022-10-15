@@ -8,7 +8,7 @@ When comparing the implemented features of the frameworks there is no
 It is notable that the only two features that implemented in every frameworks are the Equi-join and the UNION operators. 
 Both Conclave and SMCQL feature a range of pre-implemented aggregate functions.  
 \paragraph{Composability}
-One notable aspect of each frameworks is their approach towards composability. Both Conclave and ABY3 lay huge emphasis on it and ensure all of their operators are composable. During our work with the frameworks this mechanism has saved us a lot of time and effort, because it significantly simplified the implementation of our more complex use-cases.
+One notable aspect of each frameworks is their approach towards composability. Both Conclave and ABY3 lay huge emphasis on it and ensure all of their operators are composable. During our work with the frameworks this mechanism has saved us a lot of time and effort, because it significantly simplified the implementation of our more complex use cases.
 SMCQL does not achieve full composability. On example where SMCQL fails to archive composability are select statements. As the majority of SMCQL's select statements cannot be subject to another select statement afterwards. During our work with SMCQL its limited composability has proven to impractical. 
 \paragraph{Documentation}
 Comparing documentations is 
