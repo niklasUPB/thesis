@@ -12,50 +12,49 @@ I was expecting a `,' or a `}'---line 231 of file references.bib
  :  url = {https://github.com/multiparty/jiff}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "ColumnInfos"
+Warning--to sort, need author or key in time_sh
 Warning--to sort, need author or key in time
 Warning--to sort, need author or key in cProfile
-Warning--to sort, need author or key in time_sh
 Warning--to sort, need author or key in wireshark
-You've used 27 entries,
+You've used 32 entries,
             2543 wiz_defined-function locations,
-            707 strings with 9405 characters,
-and the built_in function-call counts, 11927 in all, are:
-= -- 1176
-> -- 658
-< -- 16
-+ -- 238
-- -- 236
-* -- 817
-:= -- 1892
-add.period$ -- 85
-call.type$ -- 27
-change.case$ -- 197
-chr.to.int$ -- 26
-cite$ -- 35
-duplicate$ -- 447
-empty$ -- 844
-format.name$ -- 257
-if$ -- 2512
+            730 strings with 10327 characters,
+and the built_in function-call counts, 14531 in all, are:
+= -- 1437
+> -- 803
+< -- 19
++ -- 291
+- -- 289
+* -- 996
+:= -- 2302
+add.period$ -- 101
+call.type$ -- 32
+change.case$ -- 236
+chr.to.int$ -- 31
+cite$ -- 40
+duplicate$ -- 553
+empty$ -- 1019
+format.name$ -- 314
+if$ -- 3065
 int.to.chr$ -- 2
 int.to.str$ -- 0
-missing$ -- 15
-newline$ -- 136
-num.names$ -- 71
-pop$ -- 252
+missing$ -- 20
+newline$ -- 161
+num.names$ -- 86
+pop$ -- 295
 preamble$ -- 1
-purify$ -- 224
+purify$ -- 268
 quote$ -- 0
-skip$ -- 414
+skip$ -- 513
 stack$ -- 0
-substring$ -- 521
-swap$ -- 119
-text.length$ -- 16
+substring$ -- 656
+swap$ -- 156
+text.length$ -- 19
 text.prefix$ -- 6
 top$ -- 0
-type$ -- 216
+type$ -- 256
 warning$ -- 4
-while$ -- 94
-width$ -- 32
-write$ -- 341
+while$ -- 117
+width$ -- 38
+write$ -- 405
 (There was 1 error message)

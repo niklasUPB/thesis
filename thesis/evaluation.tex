@@ -1,7 +1,9 @@
 \chapter{Evaluation}
-In this chapter we discus the results of our benchmarks. We provide figures for the individual performance of the frameworks and highlight notable details. We evaluate the result of each use case individually, ordered from least complex to most complex. At the end of the chapter we discuss our results and provide our final conclusion.
+\phantomsection
+\label{Evaluation}	
+In this chapter we discuss the results of our benchmarks. We provide figures for the individual performance of the frameworks and highlight notable details. We evaluate the result of each use case individually, ordered from least complex to most complex. At the end of the chapter we discuss our results and provide our final conclusion.
 \paragraph{Experimental Setup}
-All our benchmarks are conducted on a single machine that hosts all parties. Our machine runs on a 64 bit Linux operations system, more precisely we use Debian 11 with the Linux Kernel version 5.10.0-18.amd64. The system features 4 CPUs that each run at 2,3 GHz and 128 GB of RAM. In order to fit the results of different frameworks into shared figures, we use for the axis of our figures a logarithmic scaling to base 10. We always annotate the total amount of input-rows included in a computation. For example if a computation involves two parties that each provide an input of 100 rows, we will annotate that as 200 rows of input. To obtain more reliable measurements, we perform each measurement three times, wherever possible, and select the median of our measurements as final result.
+All our benchmarks are conducted on a single machine that hosts all parties. Our machine runs on a 64 bit Linux operations system, more precisely we use Debian 11 with the Linux Kernel version 5.10.0-18.amd64. The system features 4 CPUs that each run at 2,3 GHz and 128 GB of RAM. In order to fit the results of different frameworks into shared figures, we use a logarithmic scaling to base 10 for our figures. We always annotate the total amount of input-rows included in a computation. For example, if a computation involves two parties that each provide an input of 100 rows, we will annotate that as 200 rows of input. To obtain more reliable measurements, we perform each measurement three times, wherever possible, and select the median of our measurements as final result.
 \section{use case One}
 For our first evaluation we are inspecting the result of our first use case in the localhost setting. We have visualised a comparison of runtime and space consumption in Figure 6.1 and 6.2.
 
@@ -9,7 +11,7 @@ For our first evaluation we are inspecting the result of our first use case in t
 For SMCQL we have been able to evaluate the query for up to 140 input-rows. In order to compute the query with 140 input-rows SMCQL took about 10 hours. For Conclave we have been able to scale up to 500 input-rows, with 500 row taking about 8 hours.
 We have observed that the difference in speed between SMCQL and Conclave grows significantly larger with increasing input size. For an input of size 20, Conclave is 5 times faster then SMCQL, for an input of size 100 Conclave already is more then 50 times faster and for an input of size 140, Conclave is more then 75 times faster then SMCQL. In the first use case ABY3 is by far the best scaling framework. ABY3 is able to compute the query with 140 and 500 input columns in less then a second. ABY3 runtimes does not increase in any significant way before its input reaches the mark of 128000 input-rows, for which it requires 1107 milliseconds. We have been able to evaluate the query with 16.000.000 input-rows in one minute and 46 seconds. 
 \paragraph{Space}
-Its notable that for large input sizes SMCQL is more space efficient then Conclave, while for small input input sizes Conclave is more space efficient then Conclave. They break even at by an input size of 60 rows, for which they both require about 870 MB of space. For input larger then 60 rows SMCQL scales significantly better then Conclave. For an input of size 140 rows SMCQL only needs about 1300MB while Conclave more then 4 times that much. As the space consumption of SMCQL grows in a very linear fashion and the space consumption of Conclave doubles in relatively short intervals, we can only assumes that this trend would continuo for large datasets. Similar to the case of the runtime, ABY3 also performs significantly better then Conclave and SMCQL. For input size 140, ABY3 only allocates 28MB of space and therefore is over 46 times more efficient then SMCQL. For input size 500, ABY3 allocates about 32 MB of space and is therefore 1800 times more efficient then Conclave, which requires over 58 GB of space.          
+Its notable that for large input sizes SMCQL is more space efficient then Conclave, while for small input input sizes Conclave is more space efficient then SMCQL. They break even at an input size of 60 rows, for which they both require about 870 MB of space. For input larger then 60 rows SMCQL scales significantly better then Conclave. For an input of size 140 rows SMCQL only needs about 1300MB while Conclave needs more than 4 times as much. As the space consumption of SMCQL grows in a very linear fashion and the space consumption of Conclave doubles in relatively short intervals, we can only assumes that this trend would continue for large datasets. Similar to the case of the runtime, ABY3 also performs significantly better than Conclave and SMCQL. For input size 140, ABY3 only allocates 28MB of space and therefore is over 46 times more efficient then SMCQL. For input size 500, ABY3 allocates about 32 MB of space and is therefore 1800 times more efficient then Conclave, which requires over 58 GB of space.          
  
 \label{evaluation}
 %10 6:17
@@ -61,7 +63,7 @@ Its notable that for large input sizes SMCQL is more space efficient then Concla
 	\end{axis}
 	
 \end{tikzpicture}
-	\caption{Runtime of ABY3, Conclave and SMCQL for our first use case}
+	\caption{Runtime of ABY3, Conclave and SMCQL for in our first use case}
 \end{figure}
 %1466320 + 1419280 + 335772
 %2300692 + 2470452 + 780664
@@ -124,12 +126,12 @@ Its notable that for large input sizes SMCQL is more space efficient then Concla
 		\addlegendentry{ABY3}
 	\end{axis}
 \end{tikzpicture}
-	\caption{Memory usage of ABY3, Conclave and SMCQL for our first use case}
+	\caption{Memory usage of ABY3, Conclave and SMCQL in our first use case}
 \end{figure}
 \section{use case Two} 
-In \hyperref[use case two]{chapter 5} we have described an optimized way to evaluate the query of our second use case. In order to see if how large our efficiency gain is in practice, we have implemented this use case for ABY3 twice. One implementation is optimised as we described, the other implementation is fully unoptimized. . TODO naive implementation im appendix wenn zeit
+In \hyperref[Use Case two]{chapter 5} we have described an optimized way to evaluate the query of our second use case. In order to see if how large our efficiency gain is in practice, we have implemented this use case for ABY3 twice. One implementation is optimised as we described, the other implementation is fully unoptimized. . TODO naive implementation im appendix wenn zeit
 \paragraph{Evaluation of Runtime}
-Our measurement shows that for small input sizes the unoptimised implementation is faster, while for larger input sizes the optimized implementation is faster. For a visualisation of our comparison see Figure 6.3. For input size 2000, the unoptimised implementation runs within 182 milliseconds, which is 1,5 times faster then our optimised implementation, that needs 276 milliseconds. With increasing input size the difference between their performances becomes less significant, for input size 8000 the unoptimized implementation is less then 1,4 times faster. For an input of size 64000 the two implementation have very similar runtime and both need about 500 milliseconds. From there on onwards, our optimization starts to pay of and is constantly about 1,5 times then the not optimised version. 
+Our measurement shows that for small input sizes the unoptimised implementation is faster, while for larger input sizes the optimized implementation is faster. For a visualisation of our comparison see Figure 6.3. For input size 2000, the unoptimised implementation runs within 182 milliseconds, which is 1,5 times faster then our optimised implementation, that needs 276 milliseconds. With increasing input size, the difference between their performances becomes less significant, for input size 8000 the unoptimized implementation is less then 1,4 times faster. For an input of size 64000 the two implementation have very similar runtime and both need about 500 milliseconds. From there on onwards, our optimization starts to pay of and is constantly about 1,5 times then the unoptimised version. 
 TODO ursache erklären warum erst langsamer dann schneller
 
 \begin{figure}
@@ -164,12 +166,12 @@ TODO ursache erklären warum erst langsamer dann schneller
 	\end{axis}
 	
 \end{tikzpicture}
-\caption{Runtime of our two implementations of ABY3 of use case two}
+\caption{Runtime of our two implementations of ABY3  use case two}
 \end{figure}
 \paragraph{Evaluation of Space}
 From the perspective of memory consumption our optimization is a strict improvement over the unoptimized implementation.
-The optimized implementation is strict better, as for every single input size we have tested, it requires less memory. We visualise the memory requirements of our two implementations in Figure 6.4.
-It is notable how similar both implementations scale. As, for large inputs, they both very reliable double their memory consumption each time their input is doubled and the optimized implementation consistently takes half the memory of the unoptimised implementation. This trend start with input of size 64000 where our optimization needs about 300MB and the naive implementation about 150MB and contentious from thereon.
+The optimized implementation is strictly better, as for every single input size we have tested, it requires less memory. We visualise the memory requirements of our two implementations in Figure 6.4.
+It is notable how similar both implementations scale. As, for large inputs, they both very reliable double their memory consumption each time their input is doubled and the optimized implementation consistently takes half the memory of the unoptimised implementation. This trend start with input of size 64000 where our optimization needs about 300MB and the naive implementation about 150MB and continues from there on.
 \begin{figure}
 	\begin{tikzpicture}
 		\begin{axis}[
@@ -202,10 +204,10 @@ It is notable how similar both implementations scale. As, for large inputs, they
 		\end{axis}
 		
 	\end{tikzpicture}
-	\caption{Space requirement of our two implementations of ABY3 of use case two}
+	\caption{Space requirement of our two implementations using ABY3 in use case two}
 \end{figure}
 \paragraph{Comparison between Conclave and ABY3}
-In our second use case Conclave scales better than in the first one. For a visualisation of its results see figure 6.5. We have been able to obtain a result for 1000 input columns in 6 hours and 32 minutes. Compared to the 500 input columns in 8 hours from the first use case, Conclave has been able to handle an input twice as large in less time. Yet despite these better results Conclave is still unable, to compete with the results of our two ABY3 implementations for the second use case results, that both have been able to compute the result for 1000 input-rows in less then a second.
+In our second use case Conclave scales better than in the first one. For a visualisation of its results see figure 6.5. We have been able to obtain a result for 1000 input columns in 6 hours and 32 minutes. Compared to the 500 input columns in 8 hours from the first use case, Conclave has been able to handle an input twice as large in less time. Yet despite these better results Conclave is still unable to compete with the results of our two ABY3 implementations for the second use case results, that both have been able to compute the result for 1000 input-rows in less then a second.
 
 \begin{figure}
 	\begin{tikzpicture}
@@ -239,7 +241,7 @@ In our second use case Conclave scales better than in the first one. For a visua
 		\end{axis}
 		
 	\end{tikzpicture}
-	\caption{Comparison between Conclave and ABY3 implementation of our second use case}
+	\caption{Comparison between Conclave and ABY3 implementation in our second use case}
 \end{figure}
 
 %\begin{tikzpicture}
@@ -252,10 +254,10 @@ In our second use case Conclave scales better than in the first one. For a visua
 \section{use case Four}
 As we described in Section 6.1 our fourth use case has an identical semantic to our first use case but we make use of Conclave's trust annotations, that allow the leakage of some of the input data, which allows Conclave to apply optimizations that speed up the Computation. Therefore we focus on a comparison between the performance of Conclave in the first and forth use case. A visualisation of  our comparison can found in Figure 6.6 and 6.7. 
 \paragraph{Comparison between use case One and use case Four }
-With the usage of trust annotation we have observed an significant improvement in speed and efficiency. We have been able to evaluate the query for input-sizes of up to 3000 rows, which are 6 times larger then in use case one. For input-sizes larger then 3000 Conclave tends to crash because of internal errors that are outside of our control. Therefore we are unable to obtain result for larger inputs.  For an input of size 500 in use case four, Conclave needs less then 5 minutes which more then 80 times faster then the 8 hours required in use case one. For an input of size 3000 Conclave is able to compute the correct result in less then 25 minutes. From the perspective of memory requirement the picture is very similar. As Conclave requires less memory in use case four then in use case one, for all input-sizes we observed. 
+With the usage of trust annotation we have observed an significant improvement in speed and efficiency. We have been able to evaluate the query for input-sizes of up to 3000 rows, which are 6 times larger then in use case one. For input-sizes larger then 3000 Conclave tends to crash because of internal errors that are outside of our control. Therefore we are unable to obtain result for larger inputs.  For an input of size 500 in use case four, Conclave needs less then 5 minutes which more then 80 times faster then the 8 hours required in use case one. For an input of size 3000, Conclave is able to compute the correct result in less then 25 minutes. From the perspective of memory requirement, the picture is very similar, as Conclave requires less memory in use case four then in use case one, for all input-sizes we observed. 
 
 \paragraph{Comparison between ABY3 and Conclave}
-It is notable that even with the unfair advantage of leaking some input data, Conclave is not able to yield similar performance to ABY3. As our implementation of use case one with ABY3, that has no such advantage, still is multiple orders of magnitude faster then Conclave in use case four and also requires significant less memory. As one average it is more then 360 times faster. The difference in speed becomes ever more significant with larger input-sizes, in the extreme case of input-size 3000 ABY3 is more then 1300 times faster then Conclave. 
+It is notable that even with the unfair advantage of leaking some input data, Conclave is not able to yield similar performance to ABY3. The implementation of use case one with ABY3, which has no such advantage, is still multiple orders of magnitude faster then Conclave in use case four and also requires significantly less memory. On average ABY3 is more then 360 times faster. The difference in speed becomes more significant with larger input-sizes, in the extreme case of input-size 3000 ABY3 is more then 1300 times faster then Conclave. 
 
 
 \begin{figure}

@@ -1,6 +1,7 @@
+\phantomsection
+\label{Preliminary}	
 \chapter{Preliminary}
-In this chapter we establish important vocabulary for our work. At first we provide an overview over the topic of Secure Multiparty Computation. That is followed by a brief explanation of some general techniques, on which the frameworks we benchmark are based on. 
-Lastly we describe the semantics of different database operations, that are of importance for our benchmarks.  
+In this chapter we establish important vocabulary for our work. At first we provide an overview over the topic of Secure Multiparty Computation. That is followed a description of the semantics of different database operations, that are of importance for our benchmarks.  
 \section{Secure Multiparty Computation}
 In the secure multiparty computation(short MPC) scenario there are n parties 
 $ p_0,\dots,p_{n-1} $. They want to compute an agreed upon functionality F($ x_0,\dots,x_{n-1} $). A functionality is a function that is allowed to have internal randomness. 
@@ -20,15 +21,15 @@ In the ideal world the parties can rely on a trusted, incorruptible third party 
 Given a real-world adversary A, a secure multiparty computation protocol $\pi $, and a functionality F for $\pi $ to be secure we require the existence of a so called simulator S.
 S is an ideal world adversary for F that has to indistinguishably simulate views the real world attacker A obtains in a protocol execution. To achieve this, S is only allowed to perform corruptions consistently with A's behaviour. This means that S and A corrupt the same parties and if A is an active adversary, then S is allowed to change the inputs of its corrupted parties. After S has performed its attack, S computes and  outputs a real world view. Protocol $\pi $ is secure against A, if the view S outputs is indistinguishable from a view of A. This means that the real world attacker A cannot learn more than the ideal world attacker S, despite the very limited abilities S has compared to A. Finally, we say $\pi $ is secure, if, for all A, $\pi $ is secure against A. 
 
-\section{Adversarial Models}
+\subsection{Adversarial Models}
 \label{sec:Adversarial Models}
 There are multiple models and categorizations of adversaries and their capabilities. These distinctions have significant impact on feasibility and difficulty of secure multiparty computation. In the following we will outline the models and assumptions that are of importance for our benchmarks. 
 
 \paragraph{Passive Adversary vs Active Adversary}
-A passive adversary cannot force a corrupted party to deviate from the protocol in any way. One could think of a passive adversary as a ''read-only'' adversary, as a passive adversary is only able to read the messages his corrupted parties receive or send. An active adversary is allowed to do everything a passive adversary is allowed, more precisely the set of all ability's an active adversary has, is a super set of the set of all abilities an passive adversary has. He has the additional power to force a corrupted party to deviate from the protocol in an arbitrary way. So if for example, the protocol would at some point require that each party choses an integer between 1 and n uniformly at random ,then a passive adversary would have no choice but to choose the integer between 1 and n uniformly at random. 
+A passive adversary cannot force a corrupted party to deviate from the protocol in any way. One could think of a passive adversary as a ''read-only'' adversary, as a passive adversary is only able to read the messages his corrupted parties receive or send. An active adversary is allowed to do everything a passive adversary is allowed, in other words, the set of all ability's an active adversary has, is a super set of the set of all abilities an passive adversary has. He has the additional power to force a corrupted party to deviate from the protocol in an arbitrary way. So if for example, the protocol would at some point require that each party choses an integer between 1 and n uniformly at random ,then a passive adversary would have no choice but to choose the integer between 1 and n uniformly at random. 
 On the contrary, an active adversary would be able to force a corrupted party to chose the value 42 or any other value that the adversary considers to be advantageous for him. In the ideal world a passive adversary is bound to forward the real input values. A active adversary can choose to ignore the real input and forward any value instead. 
+A passive adversary is an apt modelling for scenarios in which an attacker manages to take over a party after the execution of the protocol. This is for example conceivable if the attacker takes over a party after the protocol has already been executed but all important information is still in memory.  In such a scenario it is impossible for the attacker to influence the behaviour of the corrupted party. In such a scenario, security against a passive adversary guarantees that the attacker cannot gain any valuable information. Furthermore, due to the additional capabilities of an active adversary, protection against such an adversary is often associated with high performance losses and therefore not always desirable in practical applications.
 
-TODO motivation see 10 05
 
 
 
@@ -40,13 +41,48 @@ In the threshold setting each party is a legitimate target for corruption and th
 $ Z = \{ Z_1, \dots, Z_l  \} $. Where $ Z_i $ can be any set of parties. The general adversary must only corrupt a set of parties  $ P $ such that there exists an $ X \in Z $ that holds $ P \subset X $. This allows for a flexible way to formalise assumptions. If, for example, in a protocol there are two parties that hold a very vital role and one wants to assume that no adversary can corrupt both of these parties, that can be formalised by using a general adversary and defining $ Z $ so that no element in  $Z $ contains both of these two parties.  
  
 \paragraph{Static vs Dynamic Corruptions}
-Another important distinction is the distinction between static and adaptive adversaries. A static adversary is forced to choose which parties he wants to corrupt before the execution of $ \pi $ starts. An adaptive adversary can corrupt a party during the execution of the protocol. This makes the adaptive adversary much more powerful. He can try to identify ''weak links'' based on the information he gets during the execution of the protocol and then choose corrupt those. Because adaptive adversaries is more powerful then a static adversary, it is harder to achieve a protocol that is secure against such an adversary. Therefore protocols that are secure against adaptive adversaries are typically significantly slower, then protocols that are only secure in the presence of a static adversary.
+Another important distinction is the distinction between static and adaptive adversaries. A static adversary is forced to choose which parties he wants to corrupt before the execution of $ \pi $ starts. An adaptive adversary can corrupt a party during the execution of the protocol. This makes the adaptive adversary much more powerful. He can try to identify ``weak links'' based on the information he gets during the execution of the protocol and then choose corrupt those. Because adaptive adversaries is more powerful then a static adversary, it is harder to achieve a protocol that is secure against such an adversary. Therefore protocols that are secure against adaptive adversaries are typically significantly slower, then protocols that are only secure in the presence of a static adversary.
 
-
-\subsection{General Techniques}
-\paragraph{binary secret sharing} 
-\paragraph{garbled circuits}
 
 \section{Databases}
 \label{Databases}
-coming soon
+%A relational database is a collection of tables that are a collection of columns and rows that contain data.
+Relational database are not the only popular type of database that can be secured using multiparty computation, as for example Cui at al. \cite{cui2020secure} describe an approach to use secure multiparty computation to secure a graph database. Yet relational databases are in the focus of our work as they ``continue to be the dominant data management system'' \cite{Archer2018FromKT}.  In this section we describe the semantic of different relational database operations that are important of our use cases. %For each operator we also provide an example, our examples use as input two tables AliceTable and BobTable which can found listing 2.1.
+
+%\begin{table}[H]
+%	\begin{tabular}{|l|l|}
+%		\hline
+%		Key & Alice Secret Value \\ \hline
+%		1   & 1                  \\ \hline
+%		2   & 15                 \\ \hline
+%		3   & 2                  \\ \hline
+%		4   & 9                  \\ \hline
+%	\end{tabular}
+%	\begin{tabular}{|l|l|}
+%		\hline
+%		Key & Bob Secret Value \\ \hline
+%		1   & 1                  \\ \hline
+%		2   & 11                 \\ \hline
+%		5   & 2                  \\ \hline
+%		7   & 1                  \\ \hline
+%	\end{tabular}
+%\end{table}
+
+\paragraph{Select, From, Where}
+The select,from,where operator consist of three parts and takes as input a single table. The second part, the \code{from} part specifies the input table of which the operator selects. The first part, the \code{select} part specifies a subset of the columns of input table, which are the columns of the output.
+The third part, the \code{where} part, defines a boolean constraint and each row of the input that does fulfil the constraint is removed from the output. 
+\paragraph{Projection}
+The Projection operator takes as input a single table. The table is allowed have an kind of layout. The output tables is also a single table. The output table is created by using the input table and removing the specified columns. If two rows differ only in one column that was removed, the resulting duplicate is also removed. 
+\paragraph{Equi-Join}
+The equi join takes as input two tables and outputs a single table. In a first step the cartesian product of to input tables is formed. The cartesian product of two tables consist of all columns of the first table followed by all columns of the second table and is filled with all possible combinations of row of the two input tables. In a second step a set of equalities over the columns is defined and each row of the cartesian product that does not fulfil the equalities is removed. The remaining row that fulfil the equalities from the final result.
+\paragraph{Natural Join}
+The natural join is special case of the equi-join instead of defining a set of equalities that are used for the join, the natural join automatically uses the condition that columns with incidental name need to have identical values otherwise they are removed. 
+
+\paragraph{UNION}
+The union operator takes as input two tables and outputs a single table. In order for the two tables to be eligible they need to have the same amount of columns and their columns need to have matching types. This means both tables need to have n columns and forall i, with  1 $\leq$ i $\leq$ n, the i-th column of the first table needs to have the same type as the i-th column from the second table. The output is a table that has an identical layout as the input tables.
+The output table contains each row of first table followed by each row of the second table and duplicates row are removed. We will sometime refer to union as row wise concatenation.
+
+\paragraph{Left Join/Right Join}
+A left join is an extension of the equi-join. The left join takes an equi join and adds to the output table, each row of the left input table that was not included in the original equi-join. In these rows the columns of the right input table are filled with null values.
+The right join work accordingly. It takes the output of an equi-join and adds the row of the right input table and fills the missing columns of the left table with null values.
+

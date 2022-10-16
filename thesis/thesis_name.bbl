@@ -40,6 +40,17 @@ Dan Bogdanov, Marko J{\~o}emets, Sander Siim, and Meril Vaht.
 \newblock In {\em International conference on financial cryptography and data
   security}, pages 227--234. Springer, 2015.
 
+\bibitem[BLW08]{bogdanov2008sharemind}
+Dan Bogdanov, Sven Laur, and Jan Willemson.
+\newblock Sharemind: A framework for fast privacy-preserving computations.
+\newblock In {\em European Symposium on Research in Computer Security}, pages
+  192--206. Springer, 2008.
+
+\bibitem[CCLW20]{cui2020secure}
+Jamie Cui, Chaochao Chen, Alex~X Liu, and Li~Wang.
+\newblock Secure graph database search with oblivious filter.
+\newblock {\em Cryptology ePrint Archive}, 2020.
+
 \bibitem[CD05]{cramer2005multiparty}
 Ronald Cramer and Ivan Damg{\aa}rd.
 \newblock Multiparty computation, an introduction.
@@ -88,6 +99,13 @@ Noah~M Johnson, Joseph~P Near, and Dawn~Xiaodong Song.
   sensitivity.
 \newblock {\em CoRR, abs/1706.09479}, 2017.
 
+\bibitem[KKJ{\etalchar{+}}13]{rainbow}
+Himanshu Kumar, Sudhanshu Kumar, Remya Joseph, Dhananjay Kumar, Sunil~Kumar
+  Shrinarayan~Singh, Ajay Kumar, and Praveen Kumar.
+\newblock Rainbow table to crack password using md5 hashing algorithm.
+\newblock In {\em 2013 IEEE Conference on Information & Communication
+  Technologies}, pages 433--439, 2013.
+
 \bibitem[Lin17]{lindell2017simulate}
 Yehuda Lindell.
 \newblock How to simulate it--a tutorial on the simulation proof technique.
@@ -99,6 +117,12 @@ Chang Liu, Xiao~Shaun Wang, Kartik Nayak, Yan Huang, and Elaine Shi.
 \newblock Oblivm: A programming framework for secure computation.
 \newblock In {\em 2015 IEEE Symposium on Security and Privacy}, pages 359--376.
   IEEE, 2015.
+
+\bibitem[MRR20]{mohassel2020fast}
+Payman Mohassel, Peter Rindal, and Mike Rosulek.
+\newblock Fast database joins and psi for secret shared data.
+\newblock In {\em Proceedings of the 2020 ACM SIGSAC Conference on Computer and
+  Communications Security}, pages 1271--1287, 2020.
 
 \bibitem[PSZ14]{pinkas2014faster}
 Benny Pinkas, Thomas Schneider, and Michael Zohner.
@@ -146,7 +170,7 @@ Nikolaj Volgushev, Malte Schwarzkopf, Ben Getchell, Mayank Varia, Andrei
 
 \bibitem[wir22]{wireshark}
 wireshark.
-\newblock \url{lhttps://github.com/multiparty/jiff}, 2022.
+\newblock \url{https://www.wireshark.org}, 2022.
 
 \bibitem[WMK16]{emp-toolkit}
 Xiao Wang, Alex~J. Malozemoff, and Jonathan Katz.
@@ -158,5 +182,10 @@ Andrew~C. Yao.
 \newblock Protocols for secure computations.
 \newblock In {\em 23rd Annual Symposium on Foundations of Computer Science
   (sfcs 1982)}, pages 160--164, 1982.
+
+\bibitem[ZE15]{zahur2015obliv}
+Samee Zahur and David Evans.
+\newblock Obliv-c: A language for extensible data-oblivious computation.
+\newblock {\em Cryptology ePrint Archive}, 2015.
 
 \end{thebibliography}

@@ -1,10 +1,12 @@
 \section{SMCQL}
-SMCQL \cite{bater} is an MPC based framework for relational database operations that is based on an already existing MPC framework, namely ObliVM \cite{liu2015oblivm}. With SMCQL one can specify a query and SMCQL automatically generates secure code for evaluating the query. 
+SMCQL \cite{bater} is secure multiparty computation framework that is based on JAVA 8 and designed to execute database queries that are very similar so SQL. SMCQL currently only supports two parties. 
+\subsection{Features}
+SMCQL is an MPC based framework for relational database operations that is based on an already existing MPC framework, namely ObliVM \cite{liu2015oblivm}. With SMCQL one can specify a query and SMCQL automatically generates secure code for evaluating the query. 
 SMCQL realizes a private data network. A private data network is a union of many mutually distrusting databases that can be queried like a single engine that holds all data of every party. From the user's perspective, a private data network functions exactly like one monolithic database. With SMCQL one can specify queries in a semantic very similar to SQL and SMCQL translates these queries into a sequence of MPC operations. Therefore SMCQL allows using MPC without having detailed knowledge of the underlying system. With this approach, SMCQL wants to increase the accessibility of MPC. SMCQL supports a variety of SQL operators, these include selection, projection, aggregation, equi-joins, theta joins, and cross products. 
 
 
-\paragraph{Documentation}
-
+\subsection{Documentation and Usability}
+In terms of documentation, a strength of SMCQL are the three showcase applications that are already pre-implemented. Especially since they document the entire process from its start to the finished result. They start with pre-generated input and demonstrate how input should be formatted. They also provide a script that loads the input into the SMCQL database system and demonstrates this process. Furthermore, they provide formatted queries and show how to pass them to SMCQL so that SMCQL evaluates them. A disadvantage of SMCQL is the complete lack of external documentation. Thus, for a complete overview of which operations SMCQL supports, we had to search extensively in SMCQL's source code.
 %- minimal subtree  
 %-shard schema for all parties
 %- prototype for 2 parties can be expanded for more parties
@@ -14,25 +16,27 @@ SMCQL realizes a private data network. A private data network is a union of many
 
 
 
-\paragraph{underlying MPC technology}
+\subsection{Underlying MPC Technology}
 SMCQL currently works in a two-party setting and provides security against a passive, threshold adversary that can corrupt at most one party.  So, it essentially resides in a honest majority setting. The two parties are aided by an honest broker a neutral third party that plans the execution of the protocol. Besides the honest booker planning the execution of the protocol, he is not involved in its actual execution. For this reason every MPC based operation does always include only the party's that are providing the data.
 The honest broker also functions as an access point for the user and receives his query. 
-Once the honest broker receives the query it parses the query into a directed acyclic graph of operators. Each node in the graph represents one operation and an edge between two notes annotates that the incoming node consumes the output data of the outgoing node. With the operator graph, the honest broker is able to analyze the flow of data through the query and decide which of SMCQL's different optimizations are applicable to each node. 
-A detailed description of these optimization can found in \hyperref[sec:Optimizations_smcql]{Section 4.3.4}. Once all optimizations a planed the honest broker generates secure MPC based code and provides it to the parties. For its secure computations SMCQL uses the already existing ObliVM framework.
+Once the honest broker receives the query it parses the query into a directed acyclic graph of operators. Each node in the graph represents one operation and an edge between two notes annotates that the incoming node consumes the output data of the outgoing node. With the operator graph, the honest broker is able to analyse the flow of data through the query and decide which of SMCQL's different optimizations are applicable to each node. 
+A detailed description of these optimization can found in \hyperref[sec:Optimizations_smcql]{Section 3.3.4}. Once all optimizations a planed the honest broker generates secure MPC based code and provides it to the parties. For its secure computations SMCQL uses the already existing ObliVM framework.
 
 %-c-style syntax
-  \phantomsection
-\label{Accesses_label}	
-\paragraph{Access Control}
-SMCQL features an accesses control system that enables the data owners to adequately model the sensitivity of their data. 
-The accesses control is column based and each column is either public, protected, or private. 
-A public column may always be revealed to any party including the honest broker. A protected column may be revealed if the query is k-anonymous. A query is k-anonymous if for each queried tuple it holds that the projection onto its protected attributes is indistinguishable from at least k-1 other tuples. A private column is under no circumstances revealed to any party. With these accesses control mechanisms, SMCQL is able to speed up querie evaluation by applying various optimizations. If for example an operator only works with public columns it can be evaluated without using expansive MPC operations.
+	
+
 % usecase ?
 
 
 \label{sec:Optimizations_smcql}
 \subsection{Optimizations}
 SMCQL implements various techniques that speed up query evaluation and help it scale. 
+  \phantomsection
+\label{Accesses_label}
+\paragraph{Access Control}
+SMCQL features an accesses control system that enables the data owners to adequately model the sensitivity of their data. 
+The accesses control is column based and each column is either public, protected, or private. 
+A public column may always be revealed to any party including the honest broker. A protected column may be revealed if the query is k-anonymous. A query is k-anonymous if for each queried tuple it holds that the projection onto its protected attributes is indistinguishable from at least k-1 other tuples. A private column is under no circumstances revealed to any party. With these accesses control mechanisms, SMCQL is able to speed up querie evaluation by applying various optimizations. If for example an operator only works with public columns it can be evaluated without using expansive MPC operations.
 \paragraph{Slicing}
 One such optimization is slicing. When SMCQL identifies an operator as sliceable, it partitions the input data into smaller units of computation. The partitioning of the input tuples is done horizontally. Small units of computation are easier to evaluate compared to a large monolithic operator, they allow for less complex secure code and in some cases, the evaluation of the units can be parallelized. Projections and filters are particularly easy to slice, as they can be evaluated working one tuple at a time.
 \paragraph{Split Operators} % high

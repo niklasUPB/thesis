@@ -1,12 +1,10 @@
 \section{Implementation}
-   \phantomsection
-\label{Implemetation}	
 In this section we provide a description of notable details of the implementation of our use cases. 
 The descriptions are ordered from the least complex to the most complex use case. Since SMCQL only requires the query to be specified in a valid SQL syntax and does the rest of the implementation automatically, we focus here on Conclave and ABY3 as their implementation is more complex.    
 \paragraph{Use Case One}
-As our first use case is the least complex one, we use it for a full demonstration how ABY3's and Conclave's basic workflow functions. 
+As our first use case is the least complex one, we use it for a full demonstration how ABY3's and Conclave's basic workflow functions. Our first use case consist of a very simple join the equivalent SQL query can be found in \hyperref[SQL1_label]{ in Listing 5.1}.
 \paragraph{Conclave} 
-The first step in Conclave is always the definition of the relation scheme of the input. Accordingly, we first define two lists of columns, one for Alice and one for Bob. Each column is defined with a name, a data type, and an integer that indicates its owner. The owner is used to annotate trust and apply optimizations, as described in our framework description of \hyperref[Trust_label]{Conclave}. In our first use case each party trust itself and only itself. Once the relation scheme is defined we can populate it by using the \code{create} function. Create loads the data from a .CSV(Comma-Separated-Values ) file that we generated previously. Once the tables are populated we can compute the join. In order to, compute a join in conclave we need to parse the two tables of the join, a name for the result, and the two columns that are used as key columns for the join. 
+In the first step we define the relation scheme of the input. Accordingly, we first define two lists of columns, one for Alice and one for Bob. Each column is defined with a name, a data type, and an integer that indicates its owner. The owner is used to annotate trust and apply optimizations, as described in our framework description of \hyperref[Trust_label]{Conclave}. In our first use case each party trust itself and only itself. Once the relation scheme is defined we can populate it by using the \code{create} function. Create loads the data from a  Comma-Separated-Values file(.CSV) that we generated previously. Once the tables are populated we can compute the join. In order to, compute a join in Conclave we need to parse the two tables of the join, a name for the result, and the two columns that are used as key columns for the join. 
 Lastly, we can reveal the output of our computation using the \code{collect} function. The \code{collect} function requires two parameters, one that specifies which table is revealed and a second one that specifies to whom it is revealed.
 \begin{lstlisting}[caption={ The Python protocol of Conclave for our first use case    }]
 def protocol():
@@ -35,13 +33,14 @@ def protocol():
 \end{lstlisting}
 
 \paragraph{ABY3}
-Before the actual execution of the protocol starts ABY3 requires some setup. Similar to Conclave, the first step in ABY3 is also the definition of the relation scheme. Hence we start with the definition of two lists of \cite{ColumnInfos}. Each column is described by a name, a data type, and some data type-dependent information. In our case, we use integers and annotate that we use 32-bit integers. After the relation scheme is defined we create local tables and populate them. One last step that needs to be done before the execution of the protocol starts is the initialization of a message server that manages the communication between the parties.
-Once the execution of the protocol starts we need to convert our local input into a table that is secret shared between the parties. 
+Before the actual execution of the protocol starts ABY3 requires some setup. Similar to Conclave, the first step in ABY3 is also the definition of the relation scheme. Hence we start with the definition of two lists of \code{ColumnInfos}. Each column is described by a name, a data type, and some data type-dependent information. In our case, we use integers and annotate that we use 32-bit integers. After the relation scheme is defined we create local tables and populate them. One last step that needs to be done before the execution of the protocol starts is the initialization of a message server that manages the communication between the parties.
+Once the execution of the protocol starts we convert the local input into a table that is secret shared between the parties. 
+This is done by joint effort of parties, the parties providing the input call the \code{localInput} function to populate the table and the other parties assist them by calling the \code{remoteInput} function. 
 Before we can compute the join of the shared tables we need to define which columns of the shared tables we want to select. Therefore we define a list of references to the shared columns. In order to to obtain the desired semantic, the list needs to contain each unique column and one reference to each column that is a duplicate in both tables. 
 In our use case the columns containing the user data are unique and the key columns are duplicates because they have identical naming and data types. Therefore our list contains seven columns. In the next step we compute the join by providing the join function with one reference to each key column and a list of columns we want to select. The output of the join is still a shared table. To obtain the plaintext values of our result we need to explicitly convert the shared table.  
 
 
-\begin{lstlisting}[caption={Simpifiyed Protocol for our first use case in ABY3}]
+\begin{lstlisting}[caption={Implementation of use case one using ABY3}]
 void use_case_two(u32 rows, u32 cols ){
 	std::vector<ColumnInfo> AliceCols = { ColumnInfo{ "key", TypeID::IntID, 32}};
 	std::vector<ColumnInfo> BobCols = { ColumnInfo{ "key", TypeID::IntID, 32}};
@@ -72,6 +71,7 @@ void use_case_two(u32 rows, u32 cols ){
 	# Instanciate server that handels communication
 	DBServer server[3]; 
 	...
+
 	# Here the exectution of the protocoll starts.
 	auto protocoll = [&](int i) {
 		# create a secret shared verion of the input
@@ -92,17 +92,15 @@ void use_case_two(u32 rows, u32 cols ){
 		# reveal the plaintext values of the result
 		aby3::i32Matrix result = RevealAll(server[i], JOIN); 
 	};
-	
 	auto AliceThread = std::thread(protocol, 0); start Alice's thread
 	auto BobThread = std::thread(protocol, 1); start Bob's thread
 	thread(protocol, 2); # start the assisting third party
 	t0.join(); # wait for Alice to finish
 	t1.join(); # wait for Bob to finish
 }
-
 \end{lstlisting}
 \paragraph{use case Two}
-For our second use case, we do not implement the query directly. Instead, we apply an optimized query that has an identical output. To obtain the desired result Alice and Bob compute two intermediate results, the union of these intermediate results will then yield our final result, an equivalent SQL statement is listened \hyperref[use_case2_alternative_sql]{ in Listing 6.5}.
+For our second use case, we do not implement the query directly, as described in \hyperref[SQL2_label]{Listing 5.2}  Instead, we apply an optimized query that has an identical output. To obtain the desired result Alice and Bob compute two intermediate results, the union of these intermediate results will then yield our final result, an equivalent SQL statement is listened \hyperref[use_case2_alternative_sql]{ in Listing 6.5}.
 In the first step, Alice and Bob filter their input once so that it contains only entries with the value false in its boolean column. Afterward, they can compute the join of these two filtered tables. The result of this join is the first important intermediate result, as each of its entries is also part of the final result. The second important intermediate result can be obtained by the same procedure when filtering the input for entries that contain true.
 The union of these two intermediate results is our final result. 
 
@@ -160,8 +158,10 @@ def protocol():
 
 
 \paragraph{ABY3}
-Our second use case is also a showcase example of how we use ABY3's integrated benchmarking capability to sample valuable information. With the in ABY3 integrated timer, we are able to set \code{TimePoints} at arbitrary potions of the protocol. After the execution is finished, the timer returns how much time is passed before each individual \code{TimePoints} was reached. For this reason, we obtain detailed information, on how the different parts of the computation compose its total runtime. Since Conclave is able to apply the filter locally, in order to hold the comparison between them fair, we also filter the locally. Therefore Alice and Bob apply the filters to their input using standard C++ before the protocol begins. The majority of the work is done by two functions we present in Listing 6.6. The first Function generates the intermediate results, in order to do so, in the first step we load the input and convert it into a secret shared table. In the next step we calculate the join over the shared tables, to do so we need to pass a reference towards the two key columns, together with a list of the columns we want to select over. Our second function uses the first function to obtain the intermediate results. Once we have obtained those we compute their union.           
- \begin{lstlisting}[caption={Simpifiyed Protocol for our second use case in ABY3}]
+Our second use case is also a showcase example of how we use ABY3's integrated benchmarking capability to sample valuable information. With the in ABY3 integrated timer, we are able to set \code{TimePoints} at arbitrary potions of the protocol. After the execution is finished, the timer returns how much time is passed before each individual \code{TimePoints} was reached. For this reason, we obtain detailed information, on how the different parts of the computation compose its total runtime. Since Conclave is able to apply the filter locally, in order to hold the comparison between them fair, we also filter the locally. Therefore Alice and Bob apply the filters to their input using standard C++ before the protocol begins. The majority of the work is done by two functions we present in \hyperref[Listing 5.6]{Listing 5.6} and \hyperref[Listing 5.7]{Listing 5.7}. The first Function generates the intermediate results, in order to do so, in the first step we load the input and convert it into a secret shared table. In the next step we calculate the \code{join} over the shared tables, to do so we need to pass a reference towards the two key columns, together with a list of the columns we want to select over. Our second function uses the first function to obtain the intermediate results. Once we have obtained those we compute their union.       
+\phantomsection
+\label{Listing 5.6}    
+ \begin{lstlisting}[caption={Function for our second use case that generates an intermediate result}]
 	# include the timer and instanciate it
 	include "cryptoTools/Common/Timer.h"
 	Timer t;
@@ -192,6 +192,10 @@ Our second use case is also a showcase example of how we use ABY3's integrated b
 		return srvs[i].join( SharedTable::ColRef(AliceTable , AliceTable.mColumns[0]), SharedTable::ColRef( BobTable, BobTable.mColumns[0]), Select_columns);
 		
 	};
+\end{lstlisting}
+\phantomsection
+\label{Listing 5.7}   
+\begin{lstlisting}[caption={Simpifiyed Protocol for our second use case in ABY3}]
 	auto use_case2 = [&](int i, int filter)
 	{
 		t.setTimePoint("start"); 
