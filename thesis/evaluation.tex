@@ -4,7 +4,7 @@
 In this chapter we discuss the results of our benchmarks. We provide figures for the individual performance of the frameworks and highlight notable details. We evaluate the result of each use case individually, ordered from least complex to most complex. At the end of the chapter we discuss our results and provide our final conclusion.
 \paragraph{Experimental Setup}
 All our benchmarks are conducted on a single machine that hosts all parties. Our machine runs on a 64 bit Linux operations system, more precisely we use Debian 11 with the Linux Kernel version 5.10.0-18.amd64. The system features 4 CPUs that each run at 2,3 GHz and 128 GB of RAM. In order to fit the results of different frameworks into shared figures, we use a logarithmic scaling to base 10 for our figures. We always annotate the total amount of input-rows included in a computation. For example, if a computation involves two parties that each provide an input of 100 rows, we will annotate that as 200 rows of input. To obtain more reliable measurements, we perform each measurement three times, wherever possible, and select the median of our measurements as final result.
-\section{use case One}
+\section{Use case One}
 For our first evaluation we are inspecting the result of our first use case in the localhost setting. We have visualised a comparison of runtime and space consumption in Figure 6.1 and 6.2.
 
 \paragraph{Time}
@@ -128,7 +128,7 @@ Its notable that for large input sizes SMCQL is more space efficient then Concla
 \end{tikzpicture}
 	\caption{Memory usage of ABY3, Conclave and SMCQL in our first use case}
 \end{figure}
-\section{use case Two} 
+\section{Use Case Two} 
 In \hyperref[Use Case two]{chapter 5} we have described an optimized way to evaluate the query of our second use case. In order to see if how large our efficiency gain is in practice, we have implemented this use case for ABY3 twice. One implementation is optimised as we described, the other implementation is fully unoptimized. . TODO naive implementation im appendix wenn zeit
 \paragraph{Evaluation of Runtime}
 Our measurement shows that for small input sizes the unoptimised implementation is faster, while for larger input sizes the optimized implementation is faster. For a visualisation of our comparison see Figure 6.3. For input size 2000, the unoptimised implementation runs within 182 milliseconds, which is 1,5 times faster then our optimised implementation, that needs 276 milliseconds. With increasing input size, the difference between their performances becomes less significant, for input size 8000 the unoptimized implementation is less then 1,4 times faster. For an input of size 64000 the two implementation have very similar runtime and both need about 500 milliseconds. From there on onwards, our optimization starts to pay of and is constantly about 1,5 times then the unoptimised version. 
@@ -251,7 +251,7 @@ In our second use case Conclave scales better than in the first one. For a visua
 %\end{tikzpicture}
 
 
-\section{use case Four}
+\section{Use Case Four}
 As we described in Section 6.1 our fourth use case has an identical semantic to our first use case but we make use of Conclave's trust annotations, that allow the leakage of some of the input data, which allows Conclave to apply optimizations that speed up the Computation. Therefore we focus on a comparison between the performance of Conclave in the first and forth use case. A visualisation of  our comparison can found in Figure 6.6 and 6.7. 
 \paragraph{Comparison between use case One and use case Four }
 With the usage of trust annotation we have observed an significant improvement in speed and efficiency. We have been able to evaluate the query for input-sizes of up to 3000 rows, which are 6 times larger then in use case one. For input-sizes larger then 3000 Conclave tends to crash because of internal errors that are outside of our control. Therefore we are unable to obtain result for larger inputs.  For an input of size 500 in use case four, Conclave needs less then 5 minutes which more then 80 times faster then the 8 hours required in use case one. For an input of size 3000, Conclave is able to compute the correct result in less then 25 minutes. From the perspective of memory requirement, the picture is very similar, as Conclave requires less memory in use case four then in use case one, for all input-sizes we observed. 

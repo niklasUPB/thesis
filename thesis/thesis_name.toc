@@ -45,7 +45,7 @@
 \contentsline {subsection}{\numberline {3.2.2}Documentation and Usability}{13}{subsection.3.2.2}%
 \contentsline {paragraph}{\nonumberline Documentation}{13}{paragraph*.61}%
 \contentsline {paragraph}{\nonumberline Prototype Implementations}{14}{paragraph*.63}%
-\contentsline {subsection}{\numberline {3.2.3}underlying MPC technology}{14}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.3}Underlying MPC technology}{14}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Optimizations}{15}{subsection.3.2.4}%
 \contentsline {paragraph}{\nonumberline Cuckoo Hashing}{15}{paragraph*.65}%
 \contentsline {paragraph}{\nonumberline Computing Joins}{15}{paragraph*.67}%
@@ -94,14 +94,14 @@
 \contentsline {paragraph}{\nonumberline use case Four}{35}{paragraph*.139}%
 \contentsline {chapter}{\numberline {6}Evaluation}{37}{chapter.6}%
 \contentsline {paragraph}{\nonumberline Experimental Setup}{37}{paragraph*.142}%
-\contentsline {section}{\numberline {6.1}use case One}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.1}Use case One}{37}{section.6.1}%
 \contentsline {paragraph}{\nonumberline Time}{37}{paragraph*.144}%
 \contentsline {paragraph}{\nonumberline Space}{38}{paragraph*.146}%
-\contentsline {section}{\numberline {6.2}use case Two}{38}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Use Case Two}{38}{section.6.2}%
 \contentsline {paragraph}{\nonumberline Evaluation of Runtime}{39}{paragraph*.148}%
 \contentsline {paragraph}{\nonumberline Evaluation of Space}{39}{paragraph*.150}%
 \contentsline {paragraph}{\nonumberline Comparison between Conclave and ABY3}{41}{paragraph*.152}%
-\contentsline {section}{\numberline {6.3}use case Four}{41}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Use Case Four}{41}{section.6.3}%
 \contentsline {paragraph}{\nonumberline Comparison between use case One and use case Four}{41}{paragraph*.154}%
 \contentsline {paragraph}{\nonumberline Comparison between ABY3 and Conclave}{42}{paragraph*.156}%
 \contentsline {chapter}{\nonumberline Bibliography}{45}{chapter*.157}%

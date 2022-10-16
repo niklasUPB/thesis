@@ -10,6 +10,7 @@ One notable aspect of each frameworks is their approach towards composability. B
 SMCQL does not achieve full composability. On example where SMCQL fails to archive composability are select statements. As the majority of SMCQL's select statements cannot be subject to another select statement afterwards. During our work with SMCQL its limited composability has proven to impractical. 
 \paragraph{Documentation}
 It is not a trivial task to compare documentations objectively. There are hardly any measurable metrics that provide information about the quality of a documentation. However, one such metric is the amount of comments in the source code. We have found that SMCQL has the least amount of comments, in SMCQL there is about one comment for every 20 lines of code. ABY3 contains significantly more comments, the code of ABY3 contains one comment for every 10 lines of code. Conclave contains the most comments because Conclave contains one comment for every 5 lines of code. This measurement is consistent with the experience we have gained while working with the frameworks. In particular, we have observed Conclave's comments to be significantly more useful than those of ABY3. 
+
 \paragraph{Experimental Software}
 One shared property of ABY3, Conclave and SMCQL, is their implementations are experimental software that primarily serves a proof of concept. This manifest especially as the existence of numerous bugs and undesirable behaviour that are part of every framework. Conclave for example features a failure detector that is supposed, to detect, if a party crashed because of an  internal error and than abort the computation. This failure detector itself is extremely error-prone and tends to produce a significant amount of false positives, i.e. it aborts the execution of the protocol, despite no party actually being crashed. Such a false positive may for example be caused, by a party that is fully occupied with a computation and does not respond to messages of the failure detector in time. For some queries this problem is more significant then for others, in extreme cases we observed more then 50\% of all executions being aborted without justification. %Another example is SMCQL's exception handling. SMCQL  
 
@@ -24,7 +25,7 @@ Especially for Conclave and SMCQL the instructions are often vague or incomplete
 	\phantomsection
 	\label{Summary}	
 	\centering
-	\caption{Summary ...}
+	\caption{Summary of important properties of the framework}
 	\begin{tabular}{|l|l|l|l|} 
 		\hline
 		& ABY3                 & Conclave             & SMCQL                 \\ 
