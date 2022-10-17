@@ -104,5 +104,6 @@
 \contentsline {section}{\numberline {6.3}Use Case Four}{44}{section.6.3}%
 \contentsline {paragraph}{\nonumberline Comparison between use case One and use case Four}{44}{paragraph*.156}%
 \contentsline {paragraph}{\nonumberline Comparison between ABY3 and Conclave}{45}{paragraph*.158}%
+\contentsline {section}{\numberline {6.4}Conclusion}{46}{section.6.4}%
 \contentsline {chapter}{\nonumberline Bibliography}{47}{chapter*.159}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
