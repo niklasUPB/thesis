@@ -47,7 +47,7 @@ Another important distinction is the distinction between static and adaptive adv
 \section{Databases}
 \label{Databases}
 %A relational database is a collection of tables that are a collection of columns and rows that contain data.
-Relational database are not the only popular type of database that can be secured using multiparty computation, as for example Cui at al. \cite{cui2020secure} describe an approach to use secure multiparty computation to secure a graph database. Yet relational databases are in the focus of our work as they ``continue to be the dominant data management system'' \cite{Archer2018FromKT}.  In this section we describe the semantic of different relational database operations that are important of our use cases. %For each operator we also provide an example, our examples use as input two tables AliceTable and BobTable which can found listing 2.1.
+Relational database are not the only popular type of database that can be secured using multiparty computation, as for example Cui at al. \cite{cui2020secure} describe an approach to use secure multiparty computation to secure a graph database. Yet relational databases are in the focus of our work as they ``continue to be the dominant data management system'' \cite{Archer2018FromKT}.  In this section we describe the semantics of different relational database operations that are important in our use cases. %For each operator we also provide an example, our examples use as input two tables AliceTable and BobTable which can found listing 2.1.
 
 %\begin{table}[H]
 %	\begin{tabular}{|l|l|}
@@ -69,20 +69,20 @@ Relational database are not the only popular type of database that can be secure
 %\end{table}
 
 \paragraph{Select, From, Where}
-The select,from,where operator consist of three parts and takes as input a single table. The second part, the \code{from} part specifies the input table of which the operator selects. The first part, the \code{select} part specifies a subset of the columns of input table, which are the columns of the output.
-The third part, the \code{where} part, defines a boolean constraint and each row of the input that does fulfil the constraint is removed from the output. 
+The select,from,where operator consists of three parts and takes a single table as input. The \code{from} part specifies the input table from which the operator selects. The \code{select} part specifies a subset of the columns of the input table, which are the columns of the output.
+The \code{where} part, defines a boolean constraint and each row of the input that does not fulfil the constraint is removed from the output. 
 \paragraph{Projection}
-The Projection operator takes as input a single table. The table is allowed have an kind of layout. The output tables is also a single table. The output table is created by using the input table and removing the specified columns. If two rows differ only in one column that was removed, the resulting duplicate is also removed. 
+The Projection operator takes as input a single table. The table is allowed to have any kind of layout. The output is also a single table. The output table is created by using the input table and removing the specified columns. If two rows differ only in one column that was removed, the resulting duplicate is also removed. 
 \paragraph{Equi-Join}
-The equi join takes as input two tables and outputs a single table. In a first step the cartesian product of to input tables is formed. The cartesian product of two tables consist of all columns of the first table followed by all columns of the second table and is filled with all possible combinations of row of the two input tables. In a second step a set of equalities over the columns is defined and each row of the cartesian product that does not fulfil the equalities is removed. The remaining row that fulfil the equalities from the final result.
+The equi join takes two tables as input and outputs a single table. In a first step the cartesian product of the input tables is formed. The cartesian product of two tables consist of all columns of the first table followed by all columns of the second table and is filled with all possible combinations of row of the two input tables. In a second step a set of equality clauses over the columns is defined and each row of the cartesian product that does not fulfil the equalities is removed. The remaining rows that fulfil these conditions form the final result.
 \paragraph{Natural Join}
 The natural join is special case of the equi-join instead of defining a set of equalities that are used for the join, the natural join automatically uses the condition that columns with incidental name need to have identical values otherwise they are removed. 
 
 \paragraph{UNION}
-The union operator takes as input two tables and outputs a single table. In order for the two tables to be eligible they need to have the same amount of columns and their columns need to have matching types. This means both tables need to have n columns and forall i, with  1 $\leq$ i $\leq$ n, the i-th column of the first table needs to have the same type as the i-th column from the second table. The output is a table that has an identical layout as the input tables.
-The output table contains each row of first table followed by each row of the second table and duplicates row are removed. We will sometime refer to union as row wise concatenation.
+The union operator takes two tables as input and outputs a single table. In order for the two tables to be eligible they need to have the same amount of columns and their columns need to have matching types. This means both tables need to have n columns and forall i, with  1 $\leq$ i $\leq$ n, the i-th column of the first table needs to have the same type as the i-th column from the second table. The output is a table that has an identical layout as the input tables.
+The output table contains each row of the first table followed by each row of the second table. Duplicates row are removed. We will sometimes refer to union as row wise concatenation.
 
 \paragraph{Left Join/Right Join}
-A left join is an extension of the equi-join. The left join takes an equi join and adds to the output table, each row of the left input table that was not included in the original equi-join. In these rows the columns of the right input table are filled with null values.
-The right join work accordingly. It takes the output of an equi-join and adds the row of the right input table and fills the missing columns of the left table with null values.
+A left join is an extension of the equi-join. The left join takes an equi join and adds each row of the left input table that was not included in the original equi-join to the output table . In these rows the columns of the right input table are filled with null values.
+The right join works accordingly. It takes the output of an equi-join and adds the rows of the right input table and fills the missing columns of the left table with null values.
 

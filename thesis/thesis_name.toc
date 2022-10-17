@@ -62,47 +62,47 @@
 \contentsline {paragraph}{\nonumberline Composability}{18}{paragraph*.78}%
 \contentsline {paragraph}{\nonumberline Documentation}{18}{paragraph*.80}%
 \contentsline {paragraph}{\nonumberline Experimental Software}{19}{paragraph*.82}%
-\contentsline {section}{\numberline {3.5}Rejected Frameworks}{19}{section.3.5}%
-\contentsline {paragraph}{\nonumberline CipherCompute}{19}{paragraph*.85}%
-\contentsline {paragraph}{\nonumberline Prio+}{19}{paragraph*.87}%
-\contentsline {paragraph}{\nonumberline VaultDB}{20}{paragraph*.89}%
-\contentsline {chapter}{\numberline {4}Benchmarking}{21}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Measuring Runtime}{21}{section.4.1}%
-\contentsline {paragraph}{\nonumberline SMCQL}{21}{paragraph*.93}%
-\contentsline {paragraph}{\nonumberline Conclave}{21}{paragraph*.95}%
-\contentsline {paragraph}{\nonumberline ABY3}{22}{paragraph*.97}%
-\contentsline {section}{\numberline {4.2}Networking}{22}{section.4.2}%
-\contentsline {paragraph}{\nonumberline Wireshark}{23}{paragraph*.99}%
-\contentsline {paragraph}{\nonumberline Toxiproxy}{23}{paragraph*.101}%
-\contentsline {paragraph}{\nonumberline Node-Http-Proxy}{24}{paragraph*.104}%
-\contentsline {section}{\numberline {4.3}Measuring Memory Consumption}{25}{section.4.3}%
-\contentsline {chapter}{\numberline {5}Implementation}{27}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Use Case Description}{27}{section.5.1}%
-\contentsline {paragraph}{\nonumberline Use Case One}{27}{paragraph*.108}%
-\contentsline {paragraph}{\nonumberline Use Case Two}{28}{paragraph*.113}%
-\contentsline {paragraph}{\nonumberline Use Case Three}{28}{paragraph*.116}%
-\contentsline {paragraph}{\nonumberline Use Case Four}{28}{paragraph*.118}%
-\contentsline {section}{\numberline {5.2}Implementation}{29}{section.5.2}%
-\contentsline {paragraph}{\nonumberline Use Case One}{29}{paragraph*.120}%
-\contentsline {paragraph}{\nonumberline Conclave}{29}{paragraph*.122}%
-\contentsline {paragraph}{\nonumberline ABY3}{30}{paragraph*.124}%
-\contentsline {paragraph}{\nonumberline use case Two}{31}{paragraph*.126}%
-\contentsline {paragraph}{\nonumberline Correctness}{32}{paragraph*.129}%
-\contentsline {paragraph}{\nonumberline Conclave}{32}{paragraph*.131}%
-\contentsline {paragraph}{\nonumberline ABY3}{33}{paragraph*.133}%
-\contentsline {paragraph}{\nonumberline use case Three}{35}{paragraph*.137}%
-\contentsline {paragraph}{\nonumberline use case Four}{35}{paragraph*.139}%
-\contentsline {chapter}{\numberline {6}Evaluation}{37}{chapter.6}%
-\contentsline {paragraph}{\nonumberline Experimental Setup}{37}{paragraph*.142}%
-\contentsline {section}{\numberline {6.1}Use case One}{37}{section.6.1}%
-\contentsline {paragraph}{\nonumberline Time}{37}{paragraph*.144}%
-\contentsline {paragraph}{\nonumberline Space}{38}{paragraph*.146}%
-\contentsline {section}{\numberline {6.2}Use Case Two}{38}{section.6.2}%
-\contentsline {paragraph}{\nonumberline Evaluation of Runtime}{39}{paragraph*.148}%
-\contentsline {paragraph}{\nonumberline Evaluation of Space}{39}{paragraph*.150}%
-\contentsline {paragraph}{\nonumberline Comparison between Conclave and ABY3}{41}{paragraph*.152}%
-\contentsline {section}{\numberline {6.3}Use Case Four}{41}{section.6.3}%
-\contentsline {paragraph}{\nonumberline Comparison between use case One and use case Four}{41}{paragraph*.154}%
-\contentsline {paragraph}{\nonumberline Comparison between ABY3 and Conclave}{42}{paragraph*.156}%
-\contentsline {chapter}{\nonumberline Bibliography}{45}{chapter*.157}%
+\contentsline {section}{\numberline {3.5}Rejected Frameworks}{20}{section.3.5}%
+\contentsline {paragraph}{\nonumberline CipherCompute}{20}{paragraph*.85}%
+\contentsline {paragraph}{\nonumberline Prio+}{20}{paragraph*.87}%
+\contentsline {paragraph}{\nonumberline VaultDB}{21}{paragraph*.89}%
+\contentsline {chapter}{\numberline {4}Benchmarking}{23}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Measuring Runtime}{23}{section.4.1}%
+\contentsline {paragraph}{\nonumberline SMCQL}{23}{paragraph*.93}%
+\contentsline {paragraph}{\nonumberline Conclave}{23}{paragraph*.95}%
+\contentsline {paragraph}{\nonumberline ABY3}{24}{paragraph*.97}%
+\contentsline {section}{\numberline {4.2}Networking}{24}{section.4.2}%
+\contentsline {paragraph}{\nonumberline Wireshark}{25}{paragraph*.99}%
+\contentsline {paragraph}{\nonumberline Toxiproxy}{25}{paragraph*.101}%
+\contentsline {paragraph}{\nonumberline Node-Http-Proxy}{26}{paragraph*.104}%
+\contentsline {section}{\numberline {4.3}Measuring Memory Consumption}{27}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Implementation}{29}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Use Case Description}{29}{section.5.1}%
+\contentsline {paragraph}{\nonumberline Use Case One}{29}{paragraph*.109}%
+\contentsline {paragraph}{\nonumberline Use Case Two}{30}{paragraph*.114}%
+\contentsline {paragraph}{\nonumberline Use Case Three}{30}{paragraph*.117}%
+\contentsline {paragraph}{\nonumberline Use Case Four}{30}{paragraph*.119}%
+\contentsline {section}{\numberline {5.2}Implementation}{31}{section.5.2}%
+\contentsline {paragraph}{\nonumberline Use Case One}{31}{paragraph*.121}%
+\contentsline {paragraph}{\nonumberline Conclave}{31}{paragraph*.123}%
+\contentsline {paragraph}{\nonumberline ABY3}{32}{paragraph*.125}%
+\contentsline {paragraph}{\nonumberline use case Two}{33}{section*.128}%
+\contentsline {paragraph}{\nonumberline Correctness}{34}{paragraph*.131}%
+\contentsline {paragraph}{\nonumberline Conclave}{34}{paragraph*.133}%
+\contentsline {paragraph}{\nonumberline ABY3}{35}{paragraph*.135}%
+\contentsline {paragraph}{\nonumberline use case Three}{37}{paragraph*.139}%
+\contentsline {paragraph}{\nonumberline use case Four}{37}{paragraph*.141}%
+\contentsline {chapter}{\numberline {6}Evaluation}{39}{chapter.6}%
+\contentsline {paragraph}{\nonumberline Experimental Setup}{39}{paragraph*.144}%
+\contentsline {section}{\numberline {6.1}Use case One}{39}{section.6.1}%
+\contentsline {paragraph}{\nonumberline Required Runtime}{39}{paragraph*.146}%
+\contentsline {paragraph}{\nonumberline Evaluation of used Space}{40}{paragraph*.148}%
+\contentsline {section}{\numberline {6.2}Use Case Two}{41}{section.6.2}%
+\contentsline {paragraph}{\nonumberline Evaluation of Runtime}{41}{paragraph*.150}%
+\contentsline {paragraph}{\nonumberline Evaluation of Space}{42}{paragraph*.152}%
+\contentsline {paragraph}{\nonumberline Comparison between Conclave and ABY3}{43}{paragraph*.154}%
+\contentsline {section}{\numberline {6.3}Use Case Four}{44}{section.6.3}%
+\contentsline {paragraph}{\nonumberline Comparison between use case One and use case Four}{44}{paragraph*.156}%
+\contentsline {paragraph}{\nonumberline Comparison between ABY3 and Conclave}{45}{paragraph*.158}%
+\contentsline {chapter}{\nonumberline Bibliography}{47}{chapter*.159}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

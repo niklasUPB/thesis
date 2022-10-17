@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  16 OCT 2022 21:27
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  17 OCT 2022 01:00
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1494,21 +1494,24 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ]
 chapter 3.
 ) (conclave.tex [11] [12]) (aby3.tex [13] [14]) (smcql.tex [15] [16])
-(old_framework.tex [17] [18] [19]) (implementation.tex [20pdfTeX warning (ext4)
-: destination with the same identifier (name{table.3.1}) has been already used,
- duplicate ignored
+(old_framework.tex [17] [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+[20pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}
+) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.2 \chapter
-            {Benchmarking}]
+l.75 
+     ]) (implementation.tex [21] [22
+
+
+]
 chapter 4.
-[21
-
-
-] [22]
+[23] [24]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 42.
- [23]
+ [25]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
 4.
 
@@ -1523,23 +1526,23 @@ Class scrbook Warning: `\caption' outside float.
 (scrbook)              Because I cannot detect the caption type, I'm using
 (scrbook)              the empty one. on input line 57.
 
-[24]) (Use-Cases.tex [25] [26
+[26]) (Use-Cases.tex [27] [28
 
 
 ]
 chapter 5.
-[27]) (code.tex [28] [29] [30] [31]
+[29]) (code.tex [30] [31] [32] [33]
 
 Class scrbook Warning: `\caption' outside float.
 (scrbook)              Seems you are using `\caption' outside a float.
 (scrbook)              Maybe you are using a package that uses `\@makecaption'
 (scrbook)              without setting `\@captype' before.
 (scrbook)              Because I cannot detect the caption type, I'm using
-(scrbook)              the empty one. on input line 122.
+(scrbook)              the empty one. on input line 124.
 
-[32] [33] [34] [35]) (evaluation.tex [36]
+[34] [35] [36] [37]) (evaluation.tex [38]
 chapter 6.
-[37
+[39
 
 
 ]
@@ -1583,14 +1586,14 @@ Overfull \hbox (7.23189pt too wide) in paragraph at lines 128--129
  []
 
 
-Underfull \vbox (badness 5345) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+ [40pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
 1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.136 
-      ]
+l.131 \section
+              {Use Case Two}]
 
 Package pgfplots Warning: Ignoring illegal input argument xmin=0: cannot apply 
 log. on input line 155.
@@ -1611,6 +1614,12 @@ so unbounded coords=jump).
 PGFPlots: reading {ABY_use_case2_fast_local.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
+[41pdfTeX warning (ext4): destination with the same identifier (name{figure.6.2
+}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.171 \paragraph
+                {Evaluation of Space}]
 
 Package pgfplots Warning: Ignoring illegal input argument xmin=0: cannot apply 
 log. on input line 193.
@@ -1631,22 +1640,15 @@ so unbounded coords=jump).
 PGFPlots: reading {space_ABY3_fast_2.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
-[39pdfTeX warning (ext4): destination with the same identifier (name{figure.6.2
-}) has been already used, duplicate ignored
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [42pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+3}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.211 
-      ] [40pdfTeX warning (ext4): destination with the same identifier (name{fi
-gure.6.3}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.211 
-      pdfTeX warning (ext4): destination with the same identifier (name{figure.
-6.4}) has been already used, duplicate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.211 
-      ]
+l.209 \paragraph
+                {Comparison between Conclave and ABY3}]
 
 Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
 log. on input line 230.
@@ -1663,18 +1665,26 @@ Overfull \hbox (8.7134pt too wide) in paragraph at lines 243--244
 [][]
  []
 
-[41pdfTeX warning (ext4): destination with the same identifier (name{figure.6.5
-}) has been already used, duplicate ignored
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [43pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+4}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.258 
-      ]
+l.246 
+      ] [44pdfTeX warning (ext4): destination with the same identifier (name{fi
+gure.6.5}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.260 \paragraph
+                {Comparison between ABY3 and Conclave}]
 
 Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
-log. on input line 281.
+log. on input line 282.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
-Package pgfplots info on input line 281: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 282: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {Conclave_use_case1_loca.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
@@ -1683,16 +1693,16 @@ PGFPlots: reading {conclave_use_case4_loca.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 
-Overfull \hbox (8.71187pt too wide) in paragraph at lines 294--295
+Overfull \hbox (8.71187pt too wide) in paragraph at lines 295--296
 [][]
  []
 
 
 Package pgfplots Warning: Ignoring illegal input argument ymin=0: cannot apply 
-log. on input line 315.
+log. on input line 316.
 
  [warning /pgfplots/warning/illegal user argument in log axis]
-Package pgfplots info on input line 315: Using 'lua backend=false' for axis: ym
+Package pgfplots info on input line 316: Using 'lua backend=false' for axis: ym
 ode=log unsupported (yet).
 PGFPlots: reading {space_conclave_1.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
@@ -1703,27 +1713,29 @@ PGFPlots: reading {space_conclave_4.dat}
 NOTE: coordinate (0,0) has been dropped because it is unbounded (in y). (see al
 so unbounded coords=jump). 
 
-Overfull \hbox (11.4887pt too wide) in paragraph at lines 328--329
+Overfull \hbox (11.4887pt too wide) in paragraph at lines 329--330
 [][]
  []
 
-) (thesis_name.bbl [42pdfTeX warning (ext4): destination with the same identifi
-er (name{figure.6.6}) has been already used, duplicate ignored
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [45pdfTeX warning (ext4): destination with the same identifier (name{figure.6.
+6}) has been already used, duplicate ignored
+<argument> ...shipout:D \box_use:N \l_shipout_box 
+                                                  
+l.332 
+      ]) (thesis_name.bbl [46pdfTeX warning (ext4): destination with the same i
+dentifier (name{figure.6.7}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.2 \begin{thebibliography}{LWN{\etalchar{+}}15}
-                                                ] [43pdfTeX warning (ext4): des
-tination with the same identifier (name{figure.6.7}) has been already used, dup
-licate ignored
-<argument> ...shipout:D \box_use:N \l_shipout_box 
-                                                  
-l.2 \begin{thebibliography}{LWN{\etalchar{+}}15}
-                                                ] [44
+                                                ]
+chapter without number
+[47
 
 
 ]
-chapter without number
-[45]
 ! Misplaced alignment tab character &.
 l.106 ...\em 2013 IEEE Conference on Information &
                                                    Communication
@@ -1734,21 +1746,21 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[46]
+[48]
 Underfull \hbox (badness 2150) in paragraph at lines 157--159
 []\T1/lmr/m/n/10.95 time.  []$\T1/lmtt/m/n/10.95 https : / / manpages . debian 
 . org / stretch / time / time . 1 . en . html$[]\T1/lmr/m/n/10.95 ,
  []
 
-) [47] (thesis_name.aux)
+) [49] (thesis_name.aux)
 Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42549 strings out of 479334
- 968597 string characters out of 2856609
- 2019691 words of memory out of 3000000
- 58715 multiletter control sequences out of 15000+200000
+ 42559 strings out of 479334
+ 968706 string characters out of 2856609
+ 2020690 words of memory out of 3000000
+ 58721 multiletter control sequences out of 15000+200000
  488670 words of font info for 83 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  125i,20n,130p,10609b,2674s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1779,9 +1791,9 @@ c/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmtt10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (53 pages, 693959 bytes).
+Output written on thesis_name.pdf (55 pages, 698749 bytes).
 PDF statistics:
- 1165 PDF objects out of 1200 (max. 8388607)
- 539 named destinations out of 1000 (max. 500000)
+ 1179 PDF objects out of 1200 (max. 8388607)
+ 543 named destinations out of 1000 (max. 500000)
  335 words of extra memory for PDF output out of 10000 (max. 10000000)
 
