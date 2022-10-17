@@ -1,5 +1,5 @@
 \section{Conclave}
-Conclave \cite{10.1145/3302424.3303982} is secure multiparty computation framework which is optimised to implement relational database operations. Conclave based on Python 3.5 and is able to work with either 2 or 3 parties.
+Conclave \cite{10.1145/3302424.3303982} is secure multiparty computation framework which is optimised to implement relational database operations. Conclave based on Python 3.5 and is able to work with either 2 or 3 parties. Conclave was released in 2019.
 \subsection{Features}
  Conclave \cite{10.1145/3302424.3303982} allows to perform MPC analytics on "big data". Conclave aims provide a high-level interface that abstracts internal MPC details away from the user. Through this high abstraction level Conclave aims to make MPC more accessible for those who are not experts in this field.  Every operation done with Conclave is composable, that means that the output of every query can be the input of another query. This mechanism makes it possible to construct very complex queries out of multiple relative simple queries.  With Conclave one can join tables using the equivalent of an equi-join or an union operator. Conclave also supports a range of aggregate functions these include sum, mean, standard deviation. 
 \subsection{Documentation and Usability}
@@ -9,19 +9,20 @@ The part of Conclave's documentation where it shines the most are its comments. 
 
 \subsection{Underlying MPC Technology}
 Conclave utilises existing MPC frameworks for its backend to perform its underlying MPC operations. Therefore Conclave inherits most security guarantees and assumptions from these frameworks. The concrete frameworks of use are Sharemind \cite{bogdanov2008sharemind} and Obliv-C \cite{zahur2015obliv}. As both of these frameworks are designed to withstand passive adversary's and do not support more then 3 parties. Conclave also assumes a passive adversary and supports up to 3 parties.
-Since Obliv-C is based on garbled circuits and Sharemind on secret sharing, Conclave uses both(TODO). Conclave interacts with its backend through a generic interface ,therefore it is theoretically feasible to integrate another framework to add support for more then 3 parties. Conclave assumes a passive threshold adversary that corrupts statically and is bound by an honest majority.
+Since Obliv-C is based on garbled circuits and Sharemind on secret sharing, Conclave uses both switches between them internally. Conclave interacts with its backend through a generic interface ,therefore it is theoretically feasible to integrate another framework to add support for more then 3 parties. Conclave assumes a passive threshold adversary that corrupts statically and is bound by an honest majority.
 
 
 %Another important metric how well a framework is documented, is the quantity of comments. We have measured that Conclave contains about 6000 lines of code that are accompanied by over 1600 comments. Which yields a ratio of 3,75 lines of code per comment.      6000 1600 
 
 
-\subsection{Optimizations} TODO Optimisation besser beschreiben 
-MPC techniques are multiple orders of magnitude slower then cleartext processing. Its Conclave key principle to archive better performance by avoiding the use of MPC techniques where possible. Instead of exclusively using MPC operations, Conclave evaluates queries with a combination of local cleartext processing and MPC operations. When Conclave compiles a query it applies various optimizations to it, one such optimization is conclave's query rewriting 
-\paragraph{Query Rewriting} TODO
+\subsection{Optimizations}
+MPC techniques are multiple orders of magnitude slower then cleartext processing. Its Conclave key principle to archive better performance by avoiding the use of unnecessary MPC operations where possible. Instead of exclusively using MPC operations, Conclave evaluates queries with a combination of local cleartext processing and MPC operations. When Conclave compiles a query it applies various optimizations to it, one such optimization is conclave's query rewriting 
+\paragraph{Query Rewriting}
+If all input data of an operator belongs to one party, this party can evaluate the operator locally without having to rely on expensive secure multiparty computation operations, because it has all data necessary for the computation locally available. In this mechanism lies potential to optimise many queries, as the order of operation decides which operations can be evaluated locally and which not. 
+For example, if a projection is applied to an input table for a query in a first step and then in a second step a join is computed, Conclave can compute the projection locally. In this particular example, the order of the operations is crucial, if one would first calculate the join and then apply the projection, one would get an identical result, but would be forced to calculate the projection with an expensive MPC algorithm. Conclaves query rewriting analyses queries and automatically swaps operations so that as few operators as possible have to be calculated with MPC operations and as much as possible locally. Another example would be a query in which two tables are concatenated and then a filter is applied to the concatenation. In this example, one obtain an incidental result if one first applies the filter local to each table and then concatenates the filtered tables with an MPC algorithm. Conclave is able to automatically apply this optimization and thus minimize the required MPC operations.
 %- moving operations outside of MPC to maximise performance\\
 %- maintaining same end-to-end security as "pure" MPC     \\
 %- contrary to conventional sql operations that aims to minimize the total amount of work e.g. filters before join \\
-
 \phantomsection
 \label{Trust_label}	
 \paragraph{Trust Annotations and Hybrid Operations}
@@ -29,8 +30,8 @@ Conclave features optional trust annotations that allow for trade-off between se
 \paragraph{Sorts and Shuffles}
 Many of Conclave's high-level operators include ``sub-protocols'' like sorts and shuffles. These sorts and shuffles are MPC operations. As such they are highly expansive operations. Yet not all of these sorts and shuffles are always necessary. If for example a operator produces a sorted intermediate result like for example an \code{ order by} operation would do, it is redundant to sort again as part of the next operator. Conclave is able to identify such redundant sorts and shuffles and eliminates them where possible. The ability to skip such expansive MPC operations provides significant performance gains.
 
-%- published in 2019,\\
-%- compares to "SMCQL most similar existing system"\\
+
+
 %- jiff dependency \\
 %- requires python 3.5 \\
 %- ... 

@@ -26,40 +26,40 @@ Especially for Conclave and SMCQL the instructions are often vague or incomplete
 	\phantomsection
 	\label{Summary}	
 	\centering
-	\caption{Summary of important properties of the framework}
+	\caption{Summary of important properties of the frameworks}
 	\begin{tabular}{|l|l|l|l|} 
 		\hline
 		& ABY3                 & Conclave             & SMCQL                 \\ 
 		\hline
-		2 Parties            & No                   & Yes                  & Yes                   \\ 
+		2 Parties            & \xmark                 & \bluecheck                 & \bluecheck                  \\ 
 		\hline
-		3 Parties            & Yes                  & Yes                  & No                    \\ 
+		3 Parties            & \bluecheck                  & \bluecheck                 & \xmark                    \\ 
 		\hline
-		Passive Adversary    & Yes                  & Yes                  & Yes                   \\ 
+		Passive Adversary    & \bluecheck                & \bluecheck                & \bluecheck                 \\ 
 		\hline
-		Active~ Adversary    & No                   & No                   & No                    \\ 
+		Active~ Adversary    & \xmark                   & \xmark                   & \xmark                    \\ 
 		\hline
-		Composable           & Yes                  & Yes                  & No                    \\ 
+		Composable           & \bluecheck               & \bluecheck                 & \xmark                    \\ 
 		\hline
-		Quick Start Guide    & Yes                  & Yes                  & No                    \\ 
+		Quick Start Guide    & \bluecheck                & \bluecheck                & \xmark                    \\ 
 		\hline
-		UNION Operator       & Yes                  & Yes                  & Yes                   \\ 
+		UNION Operator       & \bluecheck                 & \bluecheck                & \bluecheck                  \\ 
 		\hline
-		Equi-join            & Yes                  & Yes                  & Yes                   \\ 
+		Equi-join            & \bluecheck                 & \bluecheck                & \bluecheck                 \\ 
 		\hline
-		Left Join            & Yes                  & No                   & No                    \\ 
+		Left Join            & \bluecheck                & \xmark                   & \xmark                    \\ 
 		\hline
-		Right Join           & Yes                  & No                   & No                    \\ 
+		Right Join           & \bluecheck                & \xmark                   & \xmark                    \\ 
 		\hline
-		Theta Join           & No                   & No                   & Yes                   \\ 
+		Theta Join           & \xmark                   & \xmark                   & \bluecheck                  \\ 
 		\hline
-		SUM aggregate        & No                   & Yes                  & Yes                   \\ 
+		SUM aggregate        & \xmark                   & \bluecheck              & \bluecheck                 \\ 
 		\hline
-		MIN/MAX aggregate    & No                   & No                   & Yes                   \\ 
+		MIN/MAX aggregate    & \xmark                   & \xmark                   & \bluecheck                 \\ 
 		\hline
-		Projection           & No                   & Yes                  & Yes                   \\ 
+		Projection           & \xmark                  & \bluecheck                 & \bluecheck                \\ 
 		\hline
-		Automated Setup           & Yes                   & No                  & No                   \\ 
+		Automated Setup           & \bluecheck                   & \xmark                  & \xmark                   \\ 
 		\hline
 		
 		\multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} & \multicolumn{1}{l}{} 
@@ -68,7 +68,7 @@ Especially for Conclave and SMCQL the instructions are often vague or incomplete
 
 \section{Rejected Frameworks}
 \paragraph{CipherCompute}
-One candidate for our study was CipherCompute \cite{Cosmian}. With the CypherCompute framework it is possible to solve a huge range of MPC problems using Rust. These include SQL operations like joins that are of interest for us. Furthermore, CypherCompute provides a rich documentation, consisting of a full quickstart guide and several well documented example projects. CypherCompute utilises the SCALE-MAMBA \cite{aly2021scale} framework for its underlying MPC operations. SCALE-MAMBA  itself has evolved out of the well-known SPDZ \cite{SPDZ} protocol. Unfortunately the early access version of CypherCompute is out of maintenance by the time we conducting this study. Therefore we have decided to not include CypherCompute in our study.
+One candidate for our study was CipherCompute\footnote{https://github.com/Cosmian/CipherCompute}. With the CypherCompute framework it is possible to solve a huge range of MPC problems using Rust. These include SQL operations like joins that are of interest for us. Furthermore, CypherCompute provides a rich documentation, consisting of a full quickstart guide and several well documented example projects. CypherCompute utilises the SCALE-MAMBA \cite{aly2021scale} framework for its underlying MPC operations. SCALE-MAMBA  itself has evolved out of the SPDZ \cite{SPDZ} protocol. Unfortunately the early access version of CypherCompute is out of maintenance by the time we conducting this study. Therefore we have decided to not include CypherCompute in our study.
 
 \paragraph{Prio+}
 Prio+ \cite{cryptoeprint:2021:576} is the next generation of the Prio \cite{201553} framework. Prio+ strives to maintain the same use and security as Prio, while significantly increasing performance compared to its predecessor. Prio Plus allows an arbitrary number of parties to jointly compute aggregated statistics, like SUM, MAX, MIN operators. Prio+ utilises a client server model in which the (potentially many) input parties use a small number of servers to compute the statistics. Prio+ guarantees confidentiality of the input values if at least one server stays honest. Unlike CipherCompute or Conclave, Prio+ is not a framework for developing MPC solutions. Its rather a system for special purposes. This means that the use of Prio+ can not be extended beyond the usecases that have been originally implemented by the authors of Prio+. This leaves Prio+ with a relatively small range of usecases compared to frameworks like ABY3 or Conclave. Therefore we have decided to not include Prio+ in our study.

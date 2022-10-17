@@ -147,7 +147,7 @@ It's notable that for large input sizes SMCQL is more space efficient than Concl
 			width = \textwidth,
 			height = 0.5\textwidth,
 			xlabel = { Size of Dataset },
-			ylabel = { Space consumption in kbytes},
+			ylabel = { Runtime in ms},
 			legend style={at={(0.5,-0.2)},
 				anchor=north,legend columns=-1}]	
 			
@@ -349,14 +349,14 @@ In our second use case Conclave scales better than in the first one. For a visua
 %\end{tikzpicture}
 
 
-\section{Use Case Four}
-As we described in Section 6.1 our fourth use case has an identical semantic to our first use case but we make use of Conclave's trust annotations, that allow the leakage of some of the input data, which allows Conclave to apply optimizations that speed up the computation. Therefore we focus on a comparison between the performance of Conclave in the first and fourth use case. At the end out of the section we also compare the first implementation of ABY3 to the implementation of use case four with Conclave to see if Conclave yields comparable result if it has the advantage of its trust annotations.
+\section{Use Case Three}
+As we described in Section 6.1 our third use case has an identical semantic to our first use case but we make use of Conclave's trust annotations, that allow the leakage of some of the input data, which allows Conclave to apply optimizations that speed up the computation. Therefore we focus on a comparison between the performance of Conclave in the first and fourth use case. At the end out of the section we also compare the first implementation of ABY3 with the implementation of use case three with Conclave to see if Conclave yields comparable result if it has the advantage of its trust annotations.
  A visualisation of our comparison can found in Figures 6.6 and 6.7. 
 \paragraph{Comparison between use case One and use case Four }
-With the usage of trust annotation we have observed an significant improvement in speed and efficiency. We have been able to evaluate the query for input-sizes of up to 3000 rows, which are 6 times larger then in use case one. For input-sizes larger then 3000 Conclave tends to crash because of internal errors that are outside of our control. Therefore we were unable to obtain result for larger inputs.  For an input of size 500 in use case four, Conclave needs less then 5 minutes which more then 80 times faster then the 8 hours required in use case one. For an input of size 3000, Conclave is able to compute the correct result in less then 25 minutes. From the perspective of memory requirement, the situation is very similar, as Conclave requires less memory in use case four then in use case one, for all input-sizes we observed. 
+As Figure 6.9 depicts, with the usage of trust annotation we have observed an significant improvement in speed and efficiency. We have been able to evaluate the query for input-sizes of up to 3000 rows, which are 6 times larger then in use case one. For input-sizes larger then 3000 Conclave tends to crash because of internal errors that are outside of our control. Therefore we were unable to obtain result for larger inputs.  For an input of size 500 in use case three, Conclave needs less then 5 minutes which more then 80 times faster then the 8 hours required in use case one. For an input of size 3000, Conclave is able to compute the correct result in less then 25 minutes. From the perspective of memory requirement, the situation is very similar, as Figure 6.10 depicts, Conclave requires less memory in use case three then in use case one, for all input-sizes we observed. 
 
 \paragraph{Comparison between ABY3 and Conclave}
-It is notable that even with the unfair advantage of leaking some input data, Conclave is not able to yield similar performance to ABY3. The implementation of use case one with ABY3, which has no such advantage, is still multiple orders of magnitude faster then Conclave in use case four and also requires significantly less memory. On average ABY3 is more then 360 times faster. The difference in speed becomes more significant with larger input-sizes, in the extreme case of input-size 3000 ABY3 is more then 1300 times faster then Conclave. 
+It is notable that even with the unfair advantage of leaking some input data, Conclave is not able to yield similar performance to ABY3. The implementation of use case one with ABY3, which has no such advantage, is still multiple orders of magnitude faster than Conclave in use case three and also requires significantly less memory. On average ABY3 is more than 360 times faster. The difference in speed becomes more significant with larger input-sizes, in the extreme case of input-size 3000 ABY3 is more then 1300 times faster than Conclave. 
 
 
 \begin{figure}[H]
@@ -382,16 +382,16 @@ It is notable that even with the unfair advantage of leaking some input data, Co
 			\addplot[
 			color=green!50!cyan,smooth,tension=0.7,very thick
 			] file[skip first] {Conclave_use_case1_loca.dat};
-			\addlegendentry{Conclave use case1}
+			\addlegendentry{Conclave use case three}
 			
 			\addplot[
 			color=black!50!black,smooth,tension=0.7,very thick
 			] file[skip first] {conclave_use_case4_loca.dat};
-			\addlegendentry{Conclave use case4}
+			\addlegendentry{Conclave use case three}
 		\end{axis}
 		
 	\end{tikzpicture}
-\caption{Runtime of Conclave in use case one and use case two}
+\caption{Runtime of Conclave in use case one and use case three}
 \end{figure}
 \begin{figure}[H]
 	\begin{tikzpicture}
@@ -421,15 +421,16 @@ It is notable that even with the unfair advantage of leaking some input data, Co
 			\addplot[
 			color=black!50!black,smooth,tension=0.7,very thick
 			] file[skip first] {space_conclave_4.dat};
-			\addlegendentry{Conclave use case four}
+			\addlegendentry{Conclave use case three}
 		\end{axis}
 		
 	\end{tikzpicture}
-	\caption{Comparison between Conlave's space consumption in use case one and use case four}
+	\caption{Comparison between Conlave's space consumption in use case one and use case three}
 \end{figure}
 
-\section{Conclusion}
+\chapter{Conclusion}
  In our work we have implemented several different use cases for the secure multiparty computation frameworks ABY3, SMCQL, Conclave. We had to overcome problems like missing documentation and complex installation procedures. However, we have able to overcome them and therefore demonstrated the feasibility of the task. 
- In particular, the reasons for problems like the lack of documentation are not inherent properties of multiparty computation, but limited time and resources of the frameworks authors. From the frameworks we used in our tests, only ABY3 was able to demonstrate the capability to handle input sizes of practical relevance, as ABY3 has demonstrated that it is able handle millions of input rows an a moderate hardware. Conclave and SMCQL could only handle a few hundred or thousand input rows. 
+ In particular, the reasons for problems like the lack of documentation are not inherent properties of multiparty computation, but limited time and resources of the frameworks authors. From the frameworks we used in our tests, only ABY3 was able to demonstrate the capability to handle input sizes of practical relevance, as ABY3 has demonstrated that it is able handle millions of input rows an a moderate hardware. Conclave and SMCQL could only handle a few hundred or thousand input rows. It is notable that each generation of frameworks was more efficient the previous one, as Conclave was more efficient than SMCQL, which was the oldest framework, and ABY3 was more efficient than Conclave the second oldest framework. 
+ Since we have only considered open-source applications, all frameworks included in our study have been developed in an academic context. It remains an open task for future research to evaluate similar frameworks from an industrial context, such as CipherCompute or Sharemind \cite{bogdanov2008sharemind}, and evaluate how efficient they are and if they have similar usability problems. 
 
 

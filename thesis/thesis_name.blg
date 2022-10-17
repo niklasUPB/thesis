@@ -5,56 +5,51 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: alpha.bst
 Reallocating 'name_of_file' (item size: 1) to 11 items.
 Database file #1: references.bib
-Warning--entry type for "toxiproxy" isn't style-file defined
---line 173 of file references.bib
-I was expecting a `,' or a `}'---line 231 of file references.bib
+I was expecting a `,' or a `}'---line 158 of file references.bib
  :  
  :  url = {https://github.com/multiparty/jiff}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--to sort, need author or key in time_sh
-Warning--to sort, need author or key in time
-Warning--to sort, need author or key in cProfile
-Warning--to sort, need author or key in wireshark
-You've used 32 entries,
+Warning--I didn't find a database entry for "Cosmian"
+You've used 24 entries,
             2543 wiz_defined-function locations,
-            730 strings with 10327 characters,
-and the built_in function-call counts, 14531 in all, are:
-= -- 1437
-> -- 803
-< -- 19
-+ -- 291
-- -- 289
-* -- 996
-:= -- 2302
-add.period$ -- 101
-call.type$ -- 32
-change.case$ -- 236
-chr.to.int$ -- 31
-cite$ -- 40
-duplicate$ -- 553
-empty$ -- 1019
-format.name$ -- 314
-if$ -- 3065
-int.to.chr$ -- 2
+            699 strings with 9654 characters,
+and the built_in function-call counts, 12613 in all, are:
+= -- 1246
+> -- 767
+< -- 15
++ -- 281
+- -- 281
+* -- 909
+:= -- 2043
+add.period$ -- 81
+call.type$ -- 24
+change.case$ -- 200
+chr.to.int$ -- 24
+cite$ -- 24
+duplicate$ -- 469
+empty$ -- 811
+format.name$ -- 298
+if$ -- 2634
+int.to.chr$ -- 1
 int.to.str$ -- 0
 missing$ -- 20
-newline$ -- 161
-num.names$ -- 86
-pop$ -- 295
+newline$ -- 125
+num.names$ -- 74
+pop$ -- 225
 preamble$ -- 1
-purify$ -- 268
+purify$ -- 224
 quote$ -- 0
-skip$ -- 513
+skip$ -- 427
 stack$ -- 0
-substring$ -- 656
-swap$ -- 156
-text.length$ -- 19
-text.prefix$ -- 6
+substring$ -- 595
+swap$ -- 148
+text.length$ -- 15
+text.prefix$ -- 2
 top$ -- 0
-type$ -- 256
-warning$ -- 4
-while$ -- 117
-width$ -- 38
-write$ -- 405
+type$ -- 192
+warning$ -- 0
+while$ -- 109
+width$ -- 30
+write$ -- 318
 (There was 1 error message)

@@ -99,14 +99,14 @@ void use_case_two(u32 rows, u32 cols ){
 	t1.join(); # wait for Bob to finish
 }
 \end{lstlisting}
-\paragraph{use case Two}
+\paragraph{Use Case Two}
 \phantomsection
 \label{use_case2}
 For our second use case, we do not implement the query directly, as described in \hyperref[SQL2_label]{Listing 5.2}  Instead, we apply an optimized query that has an identical output. To obtain the desired result Alice and Bob compute two intermediate results, the union of these intermediate results will then yield our final result, an equivalent SQL statement is listened \hyperref[use_case2_alternative_sql]{ in Listing 6.5}.
 In the first step, Alice and Bob filter their input once so that it contains only entries with the value false in its boolean column. Afterward, they can compute the join of these two filtered tables. The result of this join is the first important intermediate result, as each of its entries is also part of the final result. The second important intermediate result can be obtained by the same procedure when filtering the input for entries that contain true.
 The union of these two intermediate results is our final result. 
 
-We have chosen to implement the use case in this indirect way for two reasons. First Conclave cannot evaluate the query directly, as Conclave's current prototype implementation can apply a WHERE filter exclusivity to a table that is either the direct input of a party or the output of a unary operator, that has only one table as input. Additionally, our indirect implementation has a significantly better performance compared to the direct implementation, for a detailed analysis see our evaluation in \hyperref[evaluation]{Chapter 7}.   
+We have chosen to implement the use case in this indirect way for two reasons. First Conclave cannot evaluate the query directly, as Conclave's current prototype implementation can apply a WHERE filter exclusivity to a table that is either the direct input of a party or the output of a unary operator, that has only one table as input. Additionally, our indirect implementation has a significantly better performance compared to the direct implementation, for a detailed analysis see our evaluation in \hyperref[evaluation]{Chapter 6}.   
 
 
 \phantomsection
@@ -233,18 +233,15 @@ Our second use case is also a showcase example of how we use ABY3's integrated b
 	write_to_file(t) # Write timer information to file for further analysis
 \end{lstlisting}
 
-\paragraph{use case Three}
-comming soon sollte aber nicht so viel sein da nicht mit aby3 implmentiert wird
-
-\paragraph{use case Four}
-As our first and fourth use case a nearly identical their implementation differs only in minor details. Especially for Conclave the implementation is identical besides the fact that we need to use different trust annotations. In order to allow Conclave to apply its public join optimization, we annotate that each party is allowed to learn both of the key columns.
+\paragraph{Use Case Three}
+As our first and third use case are a nearly identical their implementation differs only in minor details. Especially for Conclave the implementation is identical besides the fact that we need to use different trust annotations. In order to allow Conclave to apply its public join optimization, we annotate that each party is allowed to learn both of the key columns.
 
 \begin{lstlisting}[caption={ The Python protocol of Conclave for our last use case    }]
 	def protocol():
 	# define the schema for the input tables 
 	AliceColumns = [
 	# annotate that Alice trust Bob to learn hear key column
-	defCol("primary_key", "INTEGER", [1,2]), #
+	defCol("primary_key", "INTEGER", [1,2]), 
 	defCol("user_data1_Alice", "INTEGER", [1]),
 	defCol("user_data2_Alice", "INTEGER", [1]),
 	defCol("user_data3_Alice", "INTEGER", [1]),

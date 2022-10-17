@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  17 OCT 2022 09:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.2) (preloaded format=pdflatex 2021.2.23)  17 OCT 2022 18:28
 entering extended mode
 **./thesis_name.tex
 (thesis_name.tex
@@ -1194,7 +1194,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 48
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 56
 .
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1202,27 +1202,27 @@ File: t1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 (thesis_name.aux)
 \openout1 = `thesis_name.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-Package scrbase Info: activating english \contentsname on input line 48.
-Package scrbase Info: activating english \listfigurename on input line 48.
-Package scrbase Info: activating english \listtablename on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 56.
+LaTeX Font Info:    ... okay on input line 56.
+Package scrbase Info: activating english \contentsname on input line 56.
+Package scrbase Info: activating english \listfigurename on input line 56.
+Package scrbase Info: activating english \listtablename on input line 56.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1280,7 +1280,7 @@ Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 85.
 )
-Package hyperref Info: Link coloring OFF on input line 48.
+Package hyperref Info: Link coloring OFF on input line 56.
 
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
@@ -1294,9 +1294,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count337
 )
-LaTeX Info: Redefining \ref on input line 48.
-LaTeX Info: Redefining \pageref on input line 48.
-LaTeX Info: Redefining \nameref on input line 48.
+LaTeX Info: Redefining \ref on input line 56.
+LaTeX Info: Redefining \pageref on input line 56.
+LaTeX Info: Redefining \nameref on input line 56.
  (thesis_name.out) (thesis_name.out)
 \@outlinefile=\write5
 \openout5 = `thesis_name.out'.
@@ -1308,7 +1308,7 @@ Class scrbook Info: loading recommended package `bookmark'.
 (scrbook)           `bookmarkpackage=false' before \begin{document} and
 (scrbook)           you can avoid this message adding:
 (scrbook)             \usepackage{bookmark}
-(scrbook)           before \begin{document} on input line 48.
+(scrbook)           before \begin{document} on input line 56.
 
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/bookmark\bookmark.sty
 Package: bookmark 2020-11-06 v1.29 PDF bookmarks (HO)
@@ -1459,6 +1459,8 @@ Class scrbook Warning: \float@addtolists detected!
 (scrbook)              a package that still implements the
 (scrbook)              deprecated \float@addtolist interface.
 
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <9> on input line 10.
 [1
 
 
@@ -1470,7 +1472,7 @@ Overfull \hbox (13.81212pt too wide) in paragraph at lines 11--1
 pu-ta-tion[][] \T1/lmr/m/n/10.95 Keller et al. [[]]
  []
 
-[2]) (struktur.tex) (preliminary.tex [3] [4]
+[2]) (struktur.tex [3]) (preliminary.tex [4]
 chapter 2.
 
 Overfull \hbox (7.92795pt too wide) in paragraph at lines 6--10
@@ -1493,13 +1495,9 @@ File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
 ]
 chapter 3.
-) (conclave.tex [11] [12]) (aby3.tex [13] [14]) (smcql.tex [15] [16])
-(old_framework.tex [17] [18]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [19]
-[20pdfTeX warning (ext4): destination with the same identifier (name{table.3.1}
-) has been already used, duplicate ignored
+) (conclave.tex [11] [12]) (aby3.tex [13] [14] [15]) (smcql.tex [16] [17])
+(old_framework.tex [18] [19] [20pdfTeX warning (ext4): destination with the sam
+e identifier (name{table.3.1}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.75 
@@ -1508,12 +1506,11 @@ l.75
 
 ]
 chapter 4.
-[23] [24]
+[23] [24] [25]
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 42.
- [25]
+nput line 44.
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 5
-4.
+6.
 
 (C:\Users\Niklas\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1524,14 +1521,18 @@ Class scrbook Warning: `\caption' outside float.
 (scrbook)              Maybe you are using a package that uses `\@makecaption'
 (scrbook)              without setting `\@captype' before.
 (scrbook)              Because I cannot detect the caption type, I'm using
-(scrbook)              the empty one. on input line 57.
+(scrbook)              the empty one. on input line 59.
 
 [26]) (Use-Cases.tex [27] [28
 
 
 ]
 chapter 5.
-[29]) (code.tex [30] [31] [32] [33]
+[29]) (code.tex [30] [31]
+Underfull \vbox (badness 1082) has occurred while \output is active []
+
+ [32]
+[33]
 
 Class scrbook Warning: `\caption' outside float.
 (scrbook)              Seems you are using `\caption' outside a float.
@@ -1773,19 +1774,24 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
 l.430 
-      ]) (thesis_name.bbl [48pdfTeX warning (ext4): destination with the same i
-dentifier (name{figure.6.10}) has been already used, duplicate ignored
+      ] [48pdfTeX warning (ext4): destination with the same identifier (name{fi
+gure.6.10}) has been already used, duplicate ignored
 <argument> ...shipout:D \box_use:N \l_shipout_box 
                                                   
-l.2 \begin{thebibliography}{LWN{\etalchar{+}}15}
-                                                ]
-chapter without number
-[49
+l.431 \chapter
+              {Conclusion}]
+chapter 7.
+) (thesis_name.bbl [49
+
+
+] [50
 
 
 ]
+chapter without number
+[51]
 ! Misplaced alignment tab character &.
-l.106 ...\em 2013 IEEE Conference on Information &
+l.97 ...{\em 2013 IEEE Conference on Information &
                                                    Communication
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -1794,27 +1800,18 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-[50]
-Underfull \hbox (badness 2150) in paragraph at lines 157--159
-[]\T1/lmr/m/n/10.95 time.  []$\T1/lmtt/m/n/10.95 https : / / manpages . debian 
-. org / stretch / time / time . 1 . en . html$[]\T1/lmr/m/n/10.95 ,
- []
-
-) [51] (thesis_name.aux)
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+[52]) [53] (thesis_name.aux)
 Package rerunfilecheck Info: File `thesis_name.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 42608 strings out of 479334
- 969537 string characters out of 2856609
- 2020691 words of memory out of 3000000
- 58761 multiletter control sequences out of 15000+200000
- 488670 words of font info for 83 fonts, out of 3000000 for 9000
+ 42609 strings out of 479334
+ 969512 string characters out of 2856609
+ 2040712 words of memory out of 3000000
+ 58762 multiletter control sequences out of 15000+200000
+ 495676 words of font info for 89 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 125i,20n,130p,10609b,2674s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 125i,20n,130p,10609b,2195s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{
 C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}{C:
 /Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C
@@ -1842,9 +1839,9 @@ c/lm/lmsy10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmsy8.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/publ
 ic/lm/lmtt10.pfb><C:/Users/Niklas/AppData/Local/Programs/MiKTeX/fonts/type1/pub
 lic/amsfonts/symbols/msam10.pfb>
-Output written on thesis_name.pdf (57 pages, 708956 bytes).
+Output written on thesis_name.pdf (59 pages, 710457 bytes).
 PDF statistics:
- 1204 PDF objects out of 1440 (max. 8388607)
- 551 named destinations out of 1000 (max. 500000)
+ 1201 PDF objects out of 1440 (max. 8388607)
+ 547 named destinations out of 1000 (max. 500000)
  359 words of extra memory for PDF output out of 10000 (max. 10000000)
 

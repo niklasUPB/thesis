@@ -64,15 +64,6 @@ Henry Corrigan-Gibbs and Dan Boneh.
   Implementation (NSDI 17)}, pages 259--282, Boston, MA, March 2017. USENIX
   Association.
 
-\bibitem[Cos21]{Cosmian}
-Cosmian.
-\newblock Ciphercompute.
-\newblock \url{https://github.com/Cosmian/CipherCompute}, 2021.
-
-\bibitem[cPr21]{cProfile}
-The python profilers.
-\newblock \url{https://docs.python.org/3/library/profile.html}, 2021.
-
 \bibitem[DPSZ11]{SPDZ}
 I.~Damgard, V.~Pastro, N.~P. Smart, and S.~Zakarias.
 \newblock Multiparty computation from somewhat homomorphic encryption.
@@ -138,39 +129,12 @@ Jennie Rogers, Elizabeth Adetoro, Johes Bater, Talia Canter, Dong Fu, Andrew
   a clinical research network.
 \newblock {\em arXiv preprint arXiv:2203.00146}, 2022.
 
-\bibitem[Rin]{aby3}
-Peter Rindal.
-\newblock {The ABY3 Framework for Machine Learning and Database Operations.}
-\newblock \url{https://github.com/ladnir/aby3}.
-
-\bibitem[Rin21]{cryotoTools}
-Peter Rindal.
-\newblock cryptotools.
-\newblock \url{https://github.com/ladnir/cryptoTools}, 2021.
-
-\bibitem[Sho22]{toxiproxy}
-Shopify.
-\newblock toxiproxy.
-\newblock https://github.com/Shopify/toxiproxy, 2022.
-
-\bibitem[tim21a]{time_sh}
-time.
-\newblock \url{https://manpages.debian.org/stretch/time/time.1.en.html}, 2021.
-
-\bibitem[tim21b]{time}
-timeit.
-\newblock \url{https://docs.python.org/3/library/timeit.html}, 2021.
-
 \bibitem[VSG{\etalchar{+}}19]{10.1145/3302424.3303982}
 Nikolaj Volgushev, Malte Schwarzkopf, Ben Getchell, Mayank Varia, Andrei
   Lapets, and Azer Bestavros.
 \newblock Conclave: Secure multi-party computation on big data.
 \newblock In {\em Proceedings of the Fourteenth EuroSys Conference 2019},
   EuroSys '19, New York, NY, USA, 2019. Association for Computing Machinery.
-
-\bibitem[wir22]{wireshark}
-wireshark.
-\newblock \url{https://www.wireshark.org}, 2022.
 
 \bibitem[WMK16]{emp-toolkit}
 Xiao Wang, Alex~J. Malozemoff, and Jonathan Katz.
