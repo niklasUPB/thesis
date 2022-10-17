@@ -5,8 +5,8 @@ In this chapter we discuss the results of our benchmarks. We provide figures for
 \paragraph{Experimental Setup}
 All our benchmarks are conducted on a single machine that hosts all parties. Our machine runs on a 64 bit Linux operations system, more precisely we use Debian 11 with the Linux Kernel version 5.10.0-18.amd64. The system features 4 CPUs that each run at 2,3 GHz and 128 GB of RAM. In order to fit the results of different frameworks into shared figures, we use a logarithmic scaling to base 10 for our figures. We always annotate the total amount of input-rows included in a computation. For example, if a computation involves two parties that each provide an input of 100 rows, we will annotate that as 200 rows of input. To obtain more reliable measurements, we perform each measurement multiple times, wherever possible, and select the median of our measurements as final result.
 \section{Use case One}
-For our first evaluation we are inspecting the result of our first use case in the localhost setting. Our first use case is a simple join for a detailed description see \hyperref[Use Case]{Section 5.1}. We have visualised a comparison of runtime and space consumption in Figure 6.1 and 6.2.
-
+For our first evaluation we are inspecting the result of our first use case in the localhost setting. Our first use case is a simple join for a detailed description see \hyperref[Use Case]{Section 5.1}. We have visualised a comparison of runtime and space consumption in Figure 6.1 and 6.2. In the localhost setting the parties are connected with a nearly perfect LAN connection. At the end of the section we also test the frameworks with a WAN connection, in our WAN setup each connection has a simulated latency of 100 milliseconds and a simulated maximum bandwidth of 10000 KB/s.
+\subsection{LAN Setting}
 \paragraph{Required Runtime}
 For SMCQL we have been able to evaluate the query for up to 140 input-rows. In order to compute the query with 140 input-rows SMCQL took about 10 hours. For Conclave we have been able to scale up to 500 input-rows, with 500 rows taking about 8 hours. Neither SMCQL nor Conclave could produce a result for larger datasets within 24 hours and after 24 hours we stopped the computation. A visitation of the result for our result can be found in Figure 6.1.
 We have observed that the difference in speed between SMCQL and Conclave grows significantly with increasing input size. For an input of size 20, Conclave is 5 times faster than SMCQL, for an input of size 100 Conclave already is more than 50 times faster and for an input of size 140, Conclave is more than 75 times faster than SMCQL. In the first use case ABY3 is by far the best scaling framework. ABY3 is able to compute the query with 140 and 500 input columns in less than a second. ABY3 runtimes does not increase in any significant way before its input reaches the mark of 128000 input-rows, for which it requires 1107 milliseconds. We have been able to evaluate the query with 16.000.000 input-rows in one minute and 46 seconds. 
@@ -128,11 +128,109 @@ It's notable that for large input sizes SMCQL is more space efficient than Concl
 \end{tikzpicture}
 	\caption{Memory usage of ABY3, Conclave and SMCQL in our first use case}
 \end{figure}
+\subsection{WAN Setting}
+
+
+
+\begin{figure}[H]
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin = 0, xmax = 120,
+			ymode=log,
+			xtick distance = 25,
+			%	log ticks with fixed point,
+			%	x filter/.code=\pgfmathparse{#1 },
+			grid = both,
+			minor tick num = 1,
+			major grid style = {lightgray},
+			minor grid style = {lightgray!25},
+			width = \textwidth,
+			height = 0.5\textwidth,
+			xlabel = { Size of Dataset },
+			ylabel = { Space consumption in kbytes},
+			legend style={at={(0.5,-0.2)},
+				anchor=north,legend columns=-1}]	
+			
+			\addplot[
+			color=orange!50!cyan,smooth,tension=0.7,very thick
+			] file[skip first] {conclave_use_case1_loca.dat};
+			\addlegendentry{Conclave LAN setting}
+			\addplot[
+			color=green!50!red,smooth,tension=0.7,very thick
+			] file[skip first] {conclave_use_case1_remote.dat};
+			\addlegendentry{Conclave WAN setting}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Runtime of Conclave for use case one in LAN and WAN setting}
+\end{figure}
+\begin{figure}[H]
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin = 0, xmax = 120,
+			ymode=log,
+			xtick distance = 25,
+			%	log ticks with fixed point,
+			%	x filter/.code=\pgfmathparse{#1 },
+			grid = both,
+			minor tick num = 1,
+			major grid style = {lightgray},
+			minor grid style = {lightgray!25},
+			width = \textwidth,
+			height = 0.5\textwidth,
+			xlabel = { Size of Dataset },
+			ylabel = { Space consumption in kbytes},
+			legend style={at={(0.5,-0.2)},
+				anchor=north,legend columns=-1}]	
+			
+			\addplot[
+			color=orange!50!cyan,smooth,tension=0.7,very thick
+			] file[skip first] {conclave_use_case1_loca.dat};
+			\addlegendentry{Conclave LAN setting}
+			\addplot[
+			color=green!50!red,smooth,tension=0.7,very thick
+			] file[skip first] {conclave_use_case1_remote.dat};
+			\addlegendentry{Conclave WAN setting}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Runtime of ABY3 for use case one in LAN and WAN setting}
+\end{figure}
+\begin{figure}[H]
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin = 0, xmax = 120,
+			ymode=log,
+			xtick distance = 25,
+			%	log ticks with fixed point,
+			%	x filter/.code=\pgfmathparse{#1 },
+			grid = both,
+			minor tick num = 1,
+			major grid style = {lightgray},
+			minor grid style = {lightgray!25},
+			width = \textwidth,
+			height = 0.5\textwidth,
+			xlabel = { Size of Dataset },
+			ylabel = { Space consumption in kbytes},
+			legend style={at={(0.5,-0.2)},
+				anchor=north,legend columns=-1}]	
+			
+			\addplot[
+			color=orange!50!cyan,smooth,tension=0.7,very thick
+			] file[skip first] {conclave_use_case1_loca.dat};
+			\addlegendentry{Conclave LAN setting}
+			\addplot[
+			color=green!50!red,smooth,tension=0.7,very thick
+			] file[skip first] {conclave_use_case1_remote.dat};
+			\addlegendentry{Conclave WAN setting}
+		\end{axis}
+	\end{tikzpicture}
+	\caption{Runtime of SCMQL for use case one in LAN and WAN setting}
+\end{figure}
+
 \section{Use Case Two} 
-In \hyperref[use_case2]{Section 5.2} we have described an optimized way to evaluate the query of our second use case. In order to see if how large our efficiency gain is in practice, we have implemented this use case for ABY3 twice. One implementation is optimised to evaluate the query indirectly, such that in obtains a result with two joins of size n/2 and a local application of filters, the other implementation is fully unoptimized and obtains a result with one join of size n and  an application of filter with an MPC algorithm. Because our other result are very similar to the results of use case one, we focus on a comparison between the two implementation of ABY3.  TODO naive implementation im appendix wenn zeit
+In \hyperref[use_case2]{Section 5.2} we have described an optimized way to evaluate the query of our second use case. In order to see if how large our efficiency gain is in practice, we have implemented this use case for ABY3 twice. One implementation is optimised to evaluate the query indirectly, such that in obtains a result with two joins of size n/2, a UNION operation over to inputs of size n/2 and a local application of filters, the other implementation is fully unoptimized and obtains a result with one join of size n and  an application of filter with an MPC algorithm. Because our other result are very similar to the results of use case one, we focus on a comparison between the two implementation of ABY3.  TODO naive implementation im appendix wenn zeit
 \paragraph{Evaluation of Runtime}
-As Figure 5.3 depicts, our measurement shows that for small input sizes the unoptimised implementation is faster, while for larger input sizes the optimized implementation is faster. For a visualisation of our comparison see Figure 6.3. For input size 2000, the unoptimised implementation runs within 182 milliseconds, which is 1,5 times faster then our optimised implementation, that needs 276 milliseconds. With increasing input size, the difference between their performances becomes less significant, for input size 8000 the unoptimized implementation is less then 1,4 times faster. For an input of size 64000 the two implementation have very similar runtime and both need about 500 milliseconds. From there on onwards, our optimization starts to pay of and is constantly about 1,5 times faster then the unoptimised version. 
-TODO ursache erklären warum erst langsamer dann schneller
+As Figure 5.3 depicts, our measurement shows that for small input sizes the unoptimised implementation is faster, while for larger input sizes the optimized implementation is faster. For a visualisation of our comparison see Figure 6.3. For input size 2000, the unoptimised implementation runs within 182 milliseconds, which is 1,5 times faster then our optimised implementation, that needs 276 milliseconds. With increasing input size, the difference between their performances becomes less significant, for input size 8000 the unoptimized implementation is less then 1,4 times faster. For an input of size 64000 the two implementation have very similar runtime and both need about 500 milliseconds. From there on onwards, our optimization starts to pay of and is constantly about 1,5 times faster then the unoptimised version.  
+A disadvantage of our optimization is that it requires the use of an additional union operator to concatenates the two important intermediate results, which is not needed in the naive implementation. The reason that our optimization is less efficient for small datasets is that the additional cost of the union operator exceeds the savings of the optimizations. This thesis is supported by the collected data. With the ability of cryptoTools to measure individual parts of the protocol, we are able to measure the contribution of the union operator to the total runtime precisely. For small dataset the UNION operator contributes more then a third of the total runtime. For example, for an input of size 400 it contributes 90 out of 275 milliseconds. Its contribution becomes less significant with increasing input size. For an input of size 1 million the UNION operator only contributes about 10 \% of the total runtime. 
 
 \begin{figure}[H]
 \begin{tikzpicture}
