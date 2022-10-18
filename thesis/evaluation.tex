@@ -11,7 +11,7 @@ For our first evaluation we are inspecting the result of our first use case in t
 For SMCQL we have been able to evaluate the query for up to 140 input-rows. In order to compute the query with 140 input-rows SMCQL took about 10 hours. For Conclave we have been able to scale up to 500 input-rows, with 500 rows taking about 8 hours. Neither SMCQL nor Conclave could produce a result for larger datasets within 24 hours and after 24 hours we stopped the computation. A visitation of the result for our result can be found in Figure 6.1.
 We have observed that the difference in speed between SMCQL and Conclave grows significantly with increasing input size. For an input of size 20, Conclave is 5 times faster than SMCQL, for an input of size 100 Conclave already is more than 50 times faster and for an input of size 140, Conclave is more than 75 times faster than SMCQL. In the first use case ABY3 is by far the best scaling framework. ABY3 is able to compute the query with 140 and 500 input columns in less than a second. ABY3 runtimes does not increase in any significant way before its input reaches the mark of 128000 input-rows, for which it requires 1107 milliseconds. We have been able to evaluate the query with 16.000.000 input-rows in one minute and 46 seconds. 
 \paragraph{Evaluation of used Space}
-It's notable that for large input sizes SMCQL is more space efficient than Conclave, while for small input input sizes Conclave is more space efficient than SMCQL. They break even at an input size of 60 rows, for which they both require about 870 MB of space.  For input larger than 60 rows SMCQL scales significantly better than Conclave. For an input of size 140 rows SMCQL only needs about 1300MB while Conclave needs more than 4 times as much. As the space consumption of SMCQL grows linear and the space consumption of Conclave doubles, roughly every time the input-size grows by 100, we can only assumes that this trend would continue for large datasets. Similar to the case of the runtime, ABY3 also performs significantly better than Conclave and SMCQL. For input size 140, ABY3 only allocates 28MB of space and therefore is over 46 times more efficient than SMCQL. For input size 500, ABY3 allocates about 32 MB of space and is therefore 1800 times more efficient than Conclave, which requires over 58 GB of space.          
+It is notable that for large input sizes SMCQL is more space efficient than Conclave, while for small input input sizes Conclave is more space efficient than SMCQL. They break even at an input size of 60 rows, for which they both require about 870 MB of space.  For input larger than 60 rows SMCQL scales significantly better than Conclave. For an input of size 140 rows SMCQL only needs about 1300MB while Conclave needs more than 4 times as much. As the space consumption of SMCQL grows linear and the space consumption of Conclave doubles every time the input-size grows by 100, we can only assumes that this trend would continue for large datasets. Similar to the case of the runtime, ABY3 also performs significantly better than Conclave and SMCQL. For input size 140, ABY3 only allocates 28MB of space and therefore is over 46 times more efficient than SMCQL. For input size 500, ABY3 allocates about 32 MB of space and is therefore 1800 times more efficient than Conclave, which requires over 58 GB of space.          
 
 \label{evaluation}
 %10 6:17
@@ -129,7 +129,9 @@ It's notable that for large input sizes SMCQL is more space efficient than Concl
 	\caption{Memory usage of ABY3, Conclave and SMCQL in our first use case}
 \end{figure}
 \subsection{WAN Setting}
-For both Conclave and SMCQL we have observed a significant reduction in performance. For SMCQL we have been able to obtain a result for an input of size 80 within 5 hours and 54 minutes, for Conclave obtained a result for an input of size 120 within 4 hours. Neither of the two frameworks produced an output for larger inputs within 10 hours and after 10 hours we have terminated to computation. Just like in the LAN setting, ABY3 was able to compute a correct result for an input of size 16.000.000. Yet we also observed an reduction in performance, because ABY3 was significantly slower in the WAN setting. 
+For both Conclave and SMCQL we have observed a significant reduction in performance. For SMCQL we have been able to obtain a result for an input of size 80 within 5 hours and 54 minutes, for Conclave we obtained a result for an input of size 120 within 4 hours. Neither of the two frameworks produced an output for larger inputs within 10 hours and after 10 hours we have terminated to computation. Just like in the LAN setting, ABY3 was able to compute a correct result for an input of size 16.000.000. Yet we also observed an reduction in performance, because ABY3 was significantly slower in the WAN setting. As Figure 6.5 depicts ABY3 was constantly between 10 and 4 times slower in the WAN setting than in LAN setting. The factor between the performances shrink with increasing input size.  For example for an input of size 4.000.000 the LAN setting takes 25000 ms and the WAN setting requires 110000 ms, while for an input of size 128.000 the WAN setting is 10 times slower than the LAN setting.
+The largest loss in performance has been demonstrated by Conclave. As we show in Figure 6.3 Conclave is for an input of size 40 more then 113 times faster in the LAN setting than in WAN setting. With increasing input size the difference between the LAN and the WAN does not change in a significant way, as for an input of size 80 Conclave is 116 times faster in the WAN than in the LAN setting. For SMCQL we have observed an similar, yet better performance like Conclave. 
+We summarise that ABY3 proved to be the most resilient to unfavourable networking conditions, while Conclave showed to be the least resistant and even moderate networking conditions have a signifiant impact on the performance of the frameworks.
 
 
 \begin{figure}[H]
@@ -163,37 +165,7 @@ For both Conclave and SMCQL we have observed a significant reduction in performa
 	\end{tikzpicture}
 	\caption{Runtime of Conclave for use case one in LAN and WAN setting}
 \end{figure}
-\begin{figure}[H]
-	\begin{tikzpicture}
-		\begin{axis}[
-			xmin = 0, xmax = 100,
-			ymode=log,
-			xtick distance = 25,
-			%	log ticks with fixed point,
-			%	x filter/.code=\pgfmathparse{#1 },
-			grid = both,
-			minor tick num = 1,
-			major grid style = {lightgray},
-			minor grid style = {lightgray!25},
-			width = \textwidth,
-			height = 0.5\textwidth,
-			xlabel = { Size of Dataset },
-			ylabel = { Runtime in ms},
-			legend style={at={(0.5,-0.2)},
-				anchor=north,legend columns=-1}]	
-			
-			\addplot[
-			color=orange!50!cyan,smooth,tension=0.7,very thick
-			] file[skip first] {SMCQL_use_case1_local.dat};
-			\addlegendentry{SMCQL LAN setting}
-			\addplot[
-			color=green!50!red,smooth,tension=0.7,very thick
-			] file[skip first] {SMCQL_use_case1_remote.dat};
-			\addlegendentry{SCMQL WAN setting}
-		\end{axis}
-	\end{tikzpicture}
-	\caption{Runtime of SMCQL for use case one in LAN and WAN setting}
-\end{figure}
+
 \begin{figure}[H]
 	\begin{tikzpicture}
 		\begin{axis}[

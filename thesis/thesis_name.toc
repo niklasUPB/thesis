@@ -97,7 +97,7 @@
 \contentsline {paragraph}{\nonumberline Required Runtime}{39}{paragraph*.137}%
 \contentsline {paragraph}{\nonumberline Evaluation of used Space}{40}{paragraph*.139}%
 \contentsline {subsection}{\numberline {6.1.2}WAN Setting}{41}{subsection.6.1.2}%
-\contentsline {section}{\numberline {6.2}Use Case Two}{43}{section.6.2}%
+\contentsline {section}{\numberline {6.2}Use Case Two}{42}{section.6.2}%
 \contentsline {paragraph}{\nonumberline Evaluation of Runtime}{43}{paragraph*.141}%
 \contentsline {paragraph}{\nonumberline Evaluation of Space}{44}{paragraph*.143}%
 \contentsline {paragraph}{\nonumberline Comparison between Conclave and ABY3}{45}{paragraph*.145}%
