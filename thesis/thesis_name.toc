@@ -11,7 +11,7 @@
 \contentsline {paragraph}{\nonumberline Preliminary}{3}{paragraph*.16}%
 \contentsline {paragraph}{\nonumberline Framework Description}{3}{paragraph*.18}%
 \contentsline {paragraph}{\nonumberline Benchmarking}{3}{paragraph*.20}%
-\contentsline {paragraph}{\nonumberline Implementation}{4}{paragraph*.22}%
+\contentsline {paragraph}{\nonumberline Implementation}{3}{paragraph*.22}%
 \contentsline {paragraph}{\nonumberline Evaluation}{4}{paragraph*.24}%
 \contentsline {chapter}{\numberline {2}Preliminary}{5}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Secure Multiparty Computation}{5}{section.2.1}%
@@ -45,7 +45,7 @@
 \contentsline {subsection}{\numberline {3.2.2}Documentation and Usability}{14}{subsection.3.2.2}%
 \contentsline {paragraph}{\nonumberline Documentation}{14}{paragraph*.61}%
 \contentsline {paragraph}{\nonumberline Prototype Implementations}{14}{paragraph*.63}%
-\contentsline {subsection}{\numberline {3.2.3}Underlying MPC technology}{15}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.3}Underlying MPC Technology}{15}{subsection.3.2.3}%
 \contentsline {subsection}{\numberline {3.2.4}Optimizations}{15}{subsection.3.2.4}%
 \contentsline {paragraph}{\nonumberline Secure Join using Cuckoo Hashing}{15}{paragraph*.65}%
 \contentsline {section}{\numberline {3.3}SMCQL}{16}{section.3.3}%
@@ -73,8 +73,8 @@
 \contentsline {section}{\numberline {4.2}Networking}{24}{section.4.2}%
 \contentsline {paragraph}{\nonumberline Wireshark}{25}{paragraph*.97}%
 \contentsline {paragraph}{\nonumberline Toxiproxy}{25}{paragraph*.99}%
-\contentsline {paragraph}{\nonumberline Node-Http-Proxy}{26}{paragraph*.102}%
-\contentsline {section}{\numberline {4.3}Measuring Memory Consumption}{27}{section.4.3}%
+\contentsline {paragraph}{\nonumberline Node-Http-Proxy}{27}{paragraph*.102}%
+\contentsline {section}{\numberline {4.3}Measuring Memory Consumption}{28}{section.4.3}%
 \contentsline {chapter}{\numberline {5}Implementation}{29}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Use Case Description}{29}{section.5.1}%
 \contentsline {paragraph}{\nonumberline Use Case One}{29}{paragraph*.107}%

@@ -130,7 +130,7 @@ For SMCQL we also provide an overview how of SMCQL is used to obtain a result. S
 \subsection{Use Case Two}
 \phantomsection
 \label{use_case2}
-For our second use case, we do not implement the query directly, as described in \hyperref[SQL2_label]{Listing 5.2}  Instead, we apply an optimized query that has an identical output. To obtain the desired result, Alice and Bob compute two intermediate results, the union of these intermediate results will then yield our final result, an equivalent SQL statement is listed \hyperref[use_case2_alternative_sql]{ in Listing 6.6}.
+For our second use case, we do not implement the query directly, as described in \hyperref[SQL2_label]{Listing 5.2}  Instead, we apply an optimized query that has an identical output. To obtain the desired result, Alice and Bob compute two intermediate results, the union of these intermediate results will then yield our final result, an equivalent SQL statement is listed \hyperref[use_case2_alternative_sql]{ in Listing 5.6}.
 In the first step, Alice and Bob filter their input once so that it contains only entries with the value false in its boolean column. Afterward, they can compute the join of these two filtered tables. The result of this join is the first important intermediate result, as each of its entries is also part of the final result. The second important intermediate result can be obtained by the same procedure when filtering the input for entries that contain true.
 The union of these two intermediate results is our final result. 
 

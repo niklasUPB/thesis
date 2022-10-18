@@ -1,6 +1,6 @@
 \chapter{Evaluation}
 \phantomsection
-\label{Evaluation}	
+\label{evaluation}	
 In this chapter we discuss the results of our benchmarks. We provide figures for the individual performance of the frameworks and highlight notable details. We evaluate the result of each use case individually, ordered from least complex to most complex. At the end of the chapter we discuss our results and provide our final conclusion.
 \paragraph{Experimental Setup}
 All our benchmarks are conducted on a single machine that hosts all parties. Our machine runs on a 64 bit Linux operations system, more precisely we use Debian 11 with the Linux Kernel version 5.10.0-18.amd64. The system features 4 CPUs that each run at 2,3 GHz and 128 GB of RAM. In order to fit the results of different frameworks into shared figures, we use a logarithmic scaling to base 10 for our figures. We always annotate the total amount of input-rows included in a computation. For example, if a computation involves two parties that each provide an input of 100 rows, we will annotate that as 200 rows of input. To obtain more reliable measurements, we perform each measurement multiple times, wherever possible, and select the median of our measurements as final result.
@@ -11,21 +11,10 @@ For our first evaluation we are inspecting the result of our first use case in t
 For SMCQL we have been able to evaluate the query for up to 140 input-rows. In order to compute the query with 140 input-rows SMCQL took about 10 hours. For Conclave we have been able to scale up to 500 input-rows, with 500 rows taking about 8 hours. Neither SMCQL nor Conclave could produce a result for larger datasets within 24 hours and after 24 hours we stopped the computation. A visitation of the result for our result can be found in Figure 6.1.
 We have observed that the difference in speed between SMCQL and Conclave grows significantly with increasing input size. For an input of size 20, Conclave is 5 times faster than SMCQL, for an input of size 100 Conclave already is more than 50 times faster and for an input of size 140, Conclave is more than 75 times faster than SMCQL. In the first use case ABY3 is by far the best scaling framework. ABY3 is able to compute the query with 140 and 500 input columns in less than a second. ABY3 runtimes does not increase in any significant way before its input reaches the mark of 128000 input-rows, for which it requires 1107 milliseconds. We have been able to evaluate the query with 16.000.000 input-rows in one minute and 46 seconds. 
 \paragraph{Evaluation of used Space}
-It is notable that for large input sizes SMCQL is more space efficient than Conclave, while for small input input sizes Conclave is more space efficient than SMCQL. They break even at an input size of 60 rows, for which they both require about 870 MB of space.  For input larger than 60 rows SMCQL scales significantly better than Conclave. For an input of size 140 rows SMCQL only needs about 1300MB while Conclave needs more than 4 times as much. As the space consumption of SMCQL grows linear and the space consumption of Conclave doubles every time the input-size grows by 100, we can only assumes that this trend would continue for large datasets. Similar to the case of the runtime, ABY3 also performs significantly better than Conclave and SMCQL. For input size 140, ABY3 only allocates 28MB of space and therefore is over 46 times more efficient than SMCQL. For input size 500, ABY3 allocates about 32 MB of space and is therefore 1800 times more efficient than Conclave, which requires over 58 GB of space.          
+It is notable that for large input sizes SMCQL is more space efficient than Conclave, while for small input input sizes Conclave is more space efficient than SMCQL. As shown by figure 6.2, they break even at an input size of 60 rows, for which they both require about 870 MB of space.  For input larger than 60 rows SMCQL scales significantly better than Conclave. For an input of size 140 rows SMCQL only needs about 1300MB while Conclave needs more than 4 times as much. As the space consumption of SMCQL grows linear and the space consumption of Conclave doubles every time the input-size grows by 100, we can only assumes that this trend would continue for large datasets. Similar to the case of the runtime, ABY3 also performs significantly better than Conclave and SMCQL. For input size 140, ABY3 only allocates 28MB of space and therefore is over 46 times more efficient than SMCQL. For input size 500, ABY3 allocates about 32 MB of space and is therefore 1800 times more efficient than Conclave, which requires over 58 GB of space.          
 
-\label{evaluation}
-%10 6:17
-%20 25:02
-%40 2:55:29
-%50 23:05
-%60 7:24:52
-%40 3:07:24
-%50 4:00
-%70 7:38
-%100 17:24.14
-%150 53:23
-%200 2:57:41
-%250 6:58:13 6.90775527898214
+
+
 \begin{figure}[H]
 \begin{tikzpicture}
 		\begin{axis}[
@@ -65,12 +54,7 @@ It is notable that for large input sizes SMCQL is more space efficient than Conc
 \end{tikzpicture}
 	\caption{Runtime of ABY3, Conclave and SMCQL for in our first use case}
 \end{figure}
-%1466320 + 1419280 + 335772
-%2300692 + 2470452 + 780664
-%4344428 + 4358604 + 1217576
-%9497772 + 9710384 + 2649820 
-%14496916 + 16821556 + 6677548
-%25940748 + 26352440 + 5739388
+
 
 
 \begin{filecontents}{space_conclave_1.dat}
@@ -129,9 +113,9 @@ It is notable that for large input sizes SMCQL is more space efficient than Conc
 	\caption{Memory usage of ABY3, Conclave and SMCQL in our first use case}
 \end{figure}
 \subsection{WAN Setting}
-For both Conclave and SMCQL we have observed a significant reduction in performance. For SMCQL we have been able to obtain a result for an input of size 80 within 5 hours and 54 minutes, for Conclave we obtained a result for an input of size 120 within 4 hours. Neither of the two frameworks produced an output for larger inputs within 10 hours and after 10 hours we have terminated to computation. Just like in the LAN setting, ABY3 was able to compute a correct result for an input of size 16.000.000. Yet we also observed an reduction in performance, because ABY3 was significantly slower in the WAN setting. As Figure 6.5 depicts ABY3 was constantly between 10 and 4 times slower in the WAN setting than in LAN setting. The factor between the performances shrink with increasing input size.  For example for an input of size 4.000.000 the LAN setting takes 25000 ms and the WAN setting requires 110000 ms, while for an input of size 128.000 the WAN setting is 10 times slower than the LAN setting.
+For both Conclave and SMCQL we have observed a significant reduction in performance. For SMCQL we have been able to obtain a result for an input of size 80 within 5 hours and 54 minutes, for Conclave we obtained a result for an input of size 120 within 4 hours. Neither of the two frameworks produced an output for larger inputs within 10 hours and after 10 hours we have terminated to computation. Just like in the LAN setting, ABY3 was able to compute a correct result for an input of size 16.000.000. Yet we also observed an reduction in performance, because ABY3 was significantly slower in the WAN setting. As Figure 6.4 depicts ABY3 was constantly between 10 and 4 times slower in the WAN setting than in LAN setting. The factor between the performances shrink with increasing input size.  For example for an input of size 4.000.000 the LAN setting takes 25000 ms and the WAN setting requires 110000 ms, while for an input of size 128.000 the WAN setting is 10 times slower than the LAN setting.
 The largest loss in performance has been demonstrated by Conclave. As we show in Figure 6.3 Conclave is for an input of size 40 more then 113 times faster in the LAN setting than in WAN setting. With increasing input size the difference between the LAN and the WAN does not change in a significant way, as for an input of size 80 Conclave is 116 times faster in the WAN than in the LAN setting. For SMCQL we have observed an similar, yet better performance like Conclave. 
-We summarise that ABY3 proved to be the most resilient to unfavourable networking conditions, while Conclave showed to be the least resistant and even moderate networking conditions have a signifiant impact on the performance of the frameworks.
+We summarise that ABY3 proved to be the most resilient to unfavourable networking conditions, while Conclave showed to be the least resistant. Even moderate networking conditions have a signifiant impact on the performance of any of the frameworks.
 
 
 \begin{figure}[H]
@@ -191,16 +175,15 @@ We summarise that ABY3 proved to be the most resilient to unfavourable networkin
 			\addplot[
 			color=green!50!red,smooth,tension=0.7,very thick
 			] file[skip first] {ABY_use_case1_remote_for_WAN.dat};
-			\addlegendentry{AYB3 WAN setting}
-		\end{axis}
+			\addlegendentry{AYB3 WAN setting}		\end{axis}
 	\end{tikzpicture}
 	\caption{Runtime of ABY3 for use case one in LAN and WAN setting}
 \end{figure}
 
 \section{Use Case Two} 
-In \hyperref[use_case2]{Section 5.2} we have described an optimized way to evaluate the query of our second use case. In order to see if how large our efficiency gain is in practice, we have implemented this use case for ABY3 twice. One implementation is optimised to evaluate the query indirectly, such that in obtains a result with two joins of size n/2, a UNION operation over to inputs of size n/2 and a local application of filters, the other implementation is fully unoptimized and obtains a result with one join of size n and  an application of filter with an MPC algorithm. Because our other result are very similar to the results of use case one, we focus on a comparison between the two implementation of ABY3. 
+In \hyperref[use_case2]{Section 5.2} we have described an optimized way to evaluate the query of our second use case. In order to see if how large our efficiency gain is in practice, we have implemented this use case for ABY3 twice. One implementation is optimised to evaluate the query indirectly, such that in obtains a result with two joins of size n/2, a \code{union} operation over to inputs of size n/2 and a local application of filters, the other implementation is fully unoptimized and obtains a result with one join of size n and  an application of filter with an MPC algorithm. Because our other result are very similar to the results of use case one, we focus on a comparison between the two implementation of ABY3. 
 \paragraph{Evaluation of Runtime}
-As Figure 5.3 depicts, our measurement shows that for small input sizes the unoptimised implementation is faster, while for larger input sizes the optimized implementation is faster. For a visualisation of our comparison see Figure 6.3. For input size 2000, the unoptimised implementation runs within 182 milliseconds, which is 1,5 times faster then our optimised implementation, which needs 276 milliseconds. With increasing input size, the difference between their performances becomes less significant, for input size 8000 the unoptimized implementation is less then 1,4 times faster. For an input of size 64000 the two implementation have very similar runtime and both need about 500 milliseconds. From there on onwards, our optimization starts to pay of and is constantly about 1,5 times faster then the unoptimised version.  
+As Figure 6.5 depicts, our measurement shows that for small input sizes the unoptimised implementation is faster, while for larger input sizes the optimized implementation is faster.  For input size 2000, the unoptimised implementation runs within 182 milliseconds, which is 1,5 times faster then our optimised implementation, which needs 276 milliseconds. With increasing input size, the difference between their performances becomes less significant, for input size 8000 the unoptimized implementation is less then 1,4 times faster. For an input of size 64000 the two implementation have very similar runtime and both need about 500 milliseconds. From there on onwards, our optimization starts to pay of and is constantly about 1,5 times faster then the unoptimised version.  
 A disadvantage of our optimization is that it requires the use of an additional \code{union} operator to concatenate the two important intermediate results, which is not needed in the naive implementation. The reason that our optimization is less efficient in small datasets is that the additional cost of the union operator exceeds the savings of the optimizations. This thesis is supported by the collected data. With the ability of cryptoTools to measure individual parts of the protocol, we are able to measure the contribution of the \code{union} operator to the total runtime precisely. In small datasets the \code{union} operator contributes more then a third of the total runtime. For example, for an input of size 400, it contributes 90 out of 275 milliseconds. Its contribution becomes less significant with increasing input size. For an input of size 1 million the \code{union} operator only contributes about 10 \% of the total runtime. Therefore we conclude that in small datasets the \code{union} operation is an expensive operation, while in large datasets it cost is an insignificant additional factor compared to the cost of the other operations. 
 
 \begin{figure}[H]
@@ -239,7 +222,7 @@ A disadvantage of our optimization is that it requires the use of an additional 
 \end{figure}
 \paragraph{Evaluation of Space}
 From the perspective of memory consumption our optimization is a strict improvement over the unoptimized implementation.
-The optimized implementation is strictly better, as for every single input size we have tested, it requires less memory. We visualise the memory requirements of our two implementations in Figure 6.4.
+The optimized implementation is strictly better, as for every single input size we have tested, it requires less memory. We visualise the memory requirements of our two implementations in Figure 6.6.
 It is notable how similar both implementations scale. For large inputs, they both very reliably double their memory consumption each time their input is doubled and the optimized implementation consistently takes half the memory of the unoptimised implementation. This trend start with input of size 64000 where our optimization needs about 300MB and the naive implementation about 150MB and continues from there on.
 \begin{figure}[H]
 	\begin{tikzpicture}
@@ -276,7 +259,7 @@ It is notable how similar both implementations scale. For large inputs, they bot
 	\caption{Space requirement of our two implementations using ABY3 in use case two}
 \end{figure}
 \paragraph{Comparison between Conclave and ABY3}
-In our second use case Conclave scales better than in the first one. For a visualisation of its results see Figure 6.5. We have been able to obtain a result for 1000 input columns in 6 hours and 32 minutes. Compared to the 500 input columns in 8 hours from the first use case, Conclave has been able to handle an input twice as large in less time. Yet despite these better results Conclave is still unable to compete with the results of our two ABY3 implementations for the second use case results, that both have been able to compute the result for 1000 input-rows in less then a second.
+In our second use case Conclave scales better than in the first one. For a visualisation of its results see Figure 6.7. We have been able to obtain a result for 1000 input columns in 6 hours and 32 minutes. Compared to the 500 input columns in 8 hours from the first use case, Conclave has been able to handle an input twice as large in less time. Yet despite these better results Conclave is still unable to compete with the results of our two ABY3 implementations for the second use case results, that both have been able to compute the result for 1000 input-rows in less then a second.
 
 \begin{figure}[H]
 	\begin{tikzpicture}
@@ -321,10 +304,10 @@ In our second use case Conclave scales better than in the first one. For a visua
 
 
 \section{Use Case Three}
-As we described in Section 6.1 our third use case has an identical semantic to our first use case but we make use of Conclave's trust annotations, that allow the leakage of some of the input data, which allows Conclave to apply optimizations that speed up the computation. Therefore we focus on a comparison between the performance of Conclave in the first and third use case. At the end out of the section we also compare the first implementation of ABY3 with the implementation of use case three with Conclave to see if Conclave yields comparable result if it has the advantage of its trust annotations.
- A visualisation of our comparison can found in Figures 6.6 and 6.7. 
+As we described in  \hyperref[Implementation]{Section 5.1} our third use case has an identical semantic to our first use case but we make use of Conclave's trust annotations, that allow the leakage of some of the input data, which allows Conclave to apply optimizations that speed up the computation. Therefore we focus on a comparison between the performance of Conclave in the first and third use case. At the end out of the section we also compare the first implementation of ABY3 with the implementation of use case three with Conclave to see if Conclave yields comparable result if it has the advantage of its trust annotations.
+ A visualisation of our comparison can found in Figures 6.8 and 6.9. 
 \paragraph{Comparison between Use Case One and Use Case Three}
-As Figure 6.9 depicts, with the usage of trust annotation we have observed an significant improvement in speed and efficiency. We have been able to evaluate the query for input-sizes of up to 3000 rows, which are 6 times larger then in use case one. For input-sizes larger then 3000 Conclave tends to crash because of internal errors that are outside of our control. Therefore we were unable to obtain result for larger inputs.  For an input of size 500 in use case three, Conclave needs less then 5 minutes which more then 80 times faster then the 8 hours required in use case one. For an input of size 3000, Conclave is able to compute the correct result in less then 25 minutes. From the perspective of memory requirement, the situation is very similar, as Figure 6.10 depicts, Conclave requires less memory in use case three then in use case one, for all input-sizes we observed. 
+As Figure 6.8 depicts, with the usage of trust annotation we have observed an significant improvement in speed and efficiency. We have been able to evaluate the query for input-sizes of up to 3000 rows, which are 6 times larger then in use case one. For input-sizes larger then 3000 Conclave tends to crash because of internal errors that are outside of our control. Therefore we were unable to obtain result for larger inputs.  For an input of size 500 in use case three, Conclave needs less then 5 minutes which more then 80 times faster then the 8 hours required in use case one. For an input of size 3000, Conclave is able to compute the correct result in less then 25 minutes. From the perspective of memory requirement, the situation is very similar, as Figure 6.9 depicts, Conclave requires less memory in use case three then in use case one, for all input-sizes we observed. 
 
 \paragraph{Comparison between ABY3 and Conclave}
 It is notable that even with the unfair advantage of leaking some input data, Conclave is not able to yield similar performance to ABY3. The implementation of use case one with ABY3, which has no such advantage, is still multiple orders of magnitude faster than Conclave in use case three and also requires significantly less memory. On average ABY3 is more than 360 times faster. The difference in speed becomes more significant with larger input-sizes, in the extreme case of input-size 3000 ABY3 is more then 1300 times faster than Conclave. 
